@@ -10,12 +10,28 @@ st.set_page_config(
     layout="centered"
 )
 
-# CSS
+# CSS (FUNDO BRANCO + ESTILO)
 st.markdown("""
 <style>
-.main {background-color: #0e1117;}
-h1, h2, h3 {color: white;}
-p {color: #cfcfcf; font-size: 18px;}
+.main {
+    background-color: white;
+}
+
+h1, h2, h3 {
+    color: #222;
+    text-align: center;
+}
+
+p {
+    color: #444;
+    font-size: 18px;
+    text-align: center;
+}
+
+.stTextInput > div > div > input {
+    background-color: #f5f5f5;
+}
+
 .stButton>button {
     background-color: #00C9A7;
     color: black;
@@ -27,7 +43,7 @@ p {color: #cfcfcf; font-size: 18px;}
 </style>
 """, unsafe_allow_html=True)
 
-# 🔐 CONEXÃO COM GOOGLE SHEETS (SECRETS)
+# 🔐 CONEXÃO COM GOOGLE SHEETS
 scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
@@ -40,23 +56,26 @@ creds = Credentials.from_service_account_info(
 client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
+# 🖼️ IMAGEM NO TOPO (AGORA CORRETO)
+st.image("logomza.png", use_container_width=True)
+
 # HERO
-st.markdown("<h1 style='text-align:center;'>💰 Valores Retroativos</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Verifique se você pode ter direito à revisão salarial</p>", unsafe_allow_html=True)
+st.markdown("## 💰 Valores Retroativos")
+st.markdown("Verifique se você pode ter direito à revisão salarial")
 
 # CONTEÚDO
-st.markdown("## 📌 Entenda a situação")
+st.markdown("### 📌 Entenda a situação")
 st.markdown("""
 Professores substitutos podem ter recebido valores inferiores aos professores efetivos em situações semelhantes.
 """)
 
-st.markdown("## ⚖️ Possibilidade jurídica")
+st.markdown("### ⚖️ Possibilidade jurídica")
 st.markdown("""
 Cada caso deve ser analisado individualmente, com base na legislação.
 """)
 
 # FORMULÁRIO
-st.markdown("## 📩 Solicitar análise")
+st.markdown("### 📩 Solicitar análise")
 
 nome = st.text_input("Nome completo")
 email = st.text_input("Email")
@@ -72,19 +91,17 @@ if st.button("📨 Enviar para análise"):
     if nome and email:
         salvar(nome, email, telefone)
 
-        # LINK WHATSAPP
         link = f"https://wa.me/5583991241249?text=Olá, sou {nome} e quero verificar valores retroativos"
 
         st.success("✅ Dados enviados com sucesso!")
         st.link_button("💬 Falar no WhatsApp", link)
-
     else:
         st.error("Preencha nome e email")
 
 # RODAPÉ
 st.markdown("---")
 st.markdown("""
-<p style='text-align:center; font-size:12px; color:gray;'>
+<p style='font-size:12px; color:gray; text-align:center;'>
 Seus dados são tratados com confidencialidade.<br>
 Este contato não garante direito ao recebimento.<br>
 Mouzalas Advogados
