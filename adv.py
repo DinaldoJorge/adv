@@ -73,7 +73,7 @@ if st.button("📨 Enviar para análise"):
         salvar(nome, email, telefone)
 
         # LINK WHATSAPP
-        link = f"https://wa.me/5583SEUNUMERO?text=Olá, sou {nome} e quero verificar valores retroativos"
+        link = f"https://wa.me/5583991241249?text=Olá, sou {nome} e quero verificar valores retroativos"
 
         st.success("✅ Dados enviados com sucesso!")
         st.link_button("💬 Falar no WhatsApp", link)
