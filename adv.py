@@ -23,7 +23,7 @@ p {color: #cfcfcf; font-size: 18px;}
 </style>
 """, unsafe_allow_html=True)
 
-# CONEXÃO GOOGLE SHEETS
+# GOOGLE SHEETS
 scope = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/drive"
@@ -56,7 +56,7 @@ nome = st.text_input("Nome completo")
 email = st.text_input("Email")
 telefone = st.text_input("Telefone")
 
-# FUNÇÃO SALVAR
+# SALVAR
 def salvar(nome, email, telefone):
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
     planilha.append_row([nome, email, telefone, data])
@@ -66,7 +66,6 @@ if st.button("📨 Enviar para análise"):
     if nome and email:
         salvar(nome, email, telefone)
 
-        # LINK WHATSAPP
         link = f"https://wa.me/5583SEUNUMERO?text=Olá, sou {nome} e quero verificar valores retroativos"
 
         st.success("✅ Dados enviados com sucesso!")
@@ -75,16 +74,12 @@ if st.button("📨 Enviar para análise"):
     else:
         st.error("Preencha nome e email")
 
-# RODAPÉ
+# RODAPÉ (CORRIGIDO)
 st.markdown("---")
 st.markdown("""
 <p style='text-align:center; font-size:12px; color:gray;'>
 Seus dados são confidenciais.<br>
-Mouzalas Advogados
-</p>
-""", unsafe_allow_html=True)
-Seus dados são tratados com confidencialidade.<br>
-Este contato não garante direito ao recebimento, sendo necessária análise individual.<br>
+Este contato não garante direito ao recebimento.<br>
 Mouzalas Advogados
 </p>
 """, unsafe_allow_html=True)
