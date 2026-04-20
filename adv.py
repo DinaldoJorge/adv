@@ -10,7 +10,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# CSS (FUNDO BRANCO + ESTILO)
+# CSS (FUNDO BRANCO + INPUT MELHORADO)
 st.markdown("""
 <style>
 .main {
@@ -28,10 +28,21 @@ p {
     text-align: center;
 }
 
+/* INPUT MAIS ESCURO E VISÍVEL */
 .stTextInput > div > div > input {
-    background-color: #f5f5f5;
+    background-color: #e0e0e0;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    color: #000;
 }
 
+/* EFEITO AO CLICAR */
+.stTextInput > div > div > input:focus {
+    border: 1px solid #00C9A7;
+    background-color: #e8fdf8;
+}
+
+/* BOTÃO */
 .stButton>button {
     background-color: #00C9A7;
     color: black;
@@ -56,7 +67,7 @@ creds = Credentials.from_service_account_info(
 client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
-# 🖼️ IMAGEM NO TOPO (AGORA CORRETO)
+# 🖼️ IMAGEM NO TOPO
 st.image("logomza.png", use_container_width=True)
 
 # HERO
