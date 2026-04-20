@@ -41,8 +41,8 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # HERO
-st.markdown("<h1 style='text-align:center;'>💰 Valores Retroativos para Professores</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Verifique gratuitamente se você pode ter direito à revisão salarial</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>💰 Valores Retroativos</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Verifique se você pode ter direito à revisão salarial</p>", unsafe_allow_html=True)
 
 # CONTEÚDO
 st.markdown("## 📌 Entenda a situação")
@@ -56,7 +56,7 @@ Cada caso deve ser analisado individualmente, com base na legislação.
 """)
 
 # FORMULÁRIO
-st.markdown("## 📩 Solicitar análise gratuita")
+st.markdown("## 📩 Solicitar análise")
 
 nome = st.text_input("Nome completo")
 email = st.text_input("Email")
