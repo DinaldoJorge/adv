@@ -1,10 +1,14 @@
 import streamlit as st
 from datetime import datetime
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
-# CONFIG
-st.set_page_config(page_title="Revisão de Valores", page_icon="💰", layout="wide")
+# CONFIGURAÇÃO DA PÁGINA
+st.set_page_config(
+    page_title="Revisão de Valores",
+    page_icon="💰",
+    layout="centered"
+)
 
 # CSS
 st.markdown("""
@@ -23,15 +27,17 @@ p {color: #cfcfcf; font-size: 18px;}
 </style>
 """, unsafe_allow_html=True)
 
-# GOOGLE SHEETS
+# 🔐 CONEXÃO COM GOOGLE SHEETS (SECRETS)
 scope = [
-    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name("credenciais.json", scope)
-client = gspread.authorize(creds)
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"], scopes=scope
+)
 
+client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # HERO
@@ -41,31 +47,32 @@ st.markdown("<p style='text-align:center;'>Verifique gratuitamente se você pode
 # CONTEÚDO
 st.markdown("## 📌 Entenda a situação")
 st.markdown("""
-Professores substitutos podem ter recebido valores inferiores aos professores efetivos.
+Professores substitutos podem ter recebido valores inferiores aos professores efetivos em situações semelhantes.
 """)
 
 st.markdown("## ⚖️ Possibilidade jurídica")
 st.markdown("""
-Cada caso deve ser analisado individualmente.
+Cada caso deve ser analisado individualmente, com base na legislação.
 """)
 
-# FORM
+# FORMULÁRIO
 st.markdown("## 📩 Solicitar análise gratuita")
 
 nome = st.text_input("Nome completo")
 email = st.text_input("Email")
 telefone = st.text_input("Telefone")
 
-# SALVAR
+# FUNÇÃO PARA SALVAR
 def salvar(nome, email, telefone):
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
     planilha.append_row([nome, email, telefone, data])
 
-# ENVIO
+# BOTÃO
 if st.button("📨 Enviar para análise"):
     if nome and email:
         salvar(nome, email, telefone)
 
+        # LINK WHATSAPP
         link = f"https://wa.me/5583SEUNUMERO?text=Olá, sou {nome} e quero verificar valores retroativos"
 
         st.success("✅ Dados enviados com sucesso!")
@@ -74,11 +81,11 @@ if st.button("📨 Enviar para análise"):
     else:
         st.error("Preencha nome e email")
 
-# RODAPÉ (CORRIGIDO)
+# RODAPÉ
 st.markdown("---")
 st.markdown("""
 <p style='text-align:center; font-size:12px; color:gray;'>
-Seus dados são confidenciais.<br>
+Seus dados são tratados com confidencialidade.<br>
 Este contato não garante direito ao recebimento.<br>
 Mouzalas Advogados
 </p>
