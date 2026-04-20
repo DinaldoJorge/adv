@@ -39,7 +39,7 @@ st.write("")
 
 # BOTÃO PRINCIPAL
 if st.button("🔎 Verificar meu direito agora"):
-    st.experimental_rerun()
+    st.rerun()
 
 st.write("")
 
