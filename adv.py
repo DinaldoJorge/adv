@@ -13,14 +13,14 @@ st.set_page_config(
 )
 
 # =========================================
-# CSS MODERNO
+# CSS PREMIUM MODERNO
 # =========================================
 st.markdown("""
 <style>
 
 /* FUNDO */
 .stApp {
-    background: #000000;
+    background-color: #050505;
 }
 
 /* REMOVE MENU */
@@ -28,9 +28,9 @@ st.markdown("""
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* CENTRALIZA CONTEÚDO */
+/* CONTAINER */
 .block-container {
-    max-width: 560px;
+    max-width: 460px;
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
@@ -46,89 +46,90 @@ html, body, [class*="css"] {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     color: white;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 45px;
 }
 
 .frase span {
     color: #00E0B8;
+    font-weight: 700;
 }
 
 /* LABELS */
 label {
-    color: #ffffff !important;
-    font-size: 20px !important;
-    font-weight: 700 !important;
+    color: white !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
 }
 
 /* INPUTS */
 .stTextInput input {
 
-    background: rgba(12,12,12,0.96) !important;
+    background: rgba(10,10,10,0.95) !important;
 
-    border: 2px solid rgba(0,224,184,0.75) !important;
+    border: 1.8px solid rgba(0,224,184,0.60) !important;
 
-    border-radius: 18px !important;
+    border-radius: 12px !important;
 
     color: white !important;
 
-    font-size: 22px !important;
+    font-size: 19px !important;
 
-    font-weight: 500 !important;
+    font-weight: 400 !important;
 
-    height: 68px !important;
+    height: 58px !important;
 
-    padding-left: 22px !important;
+    padding-left: 18px !important;
 
     transition: 0.3s ease;
 
     box-shadow:
-        0 0 12px rgba(0,224,184,0.10);
+        0 0 10px rgba(0,224,184,0.08);
 }
 
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: rgba(12,12,12,0.96) !important;
+    background: rgba(10,10,10,0.95) !important;
 
-    border: 2px solid rgba(0,224,184,0.75) !important;
+    border: 1.8px solid rgba(0,224,184,0.60) !important;
 
-    border-radius: 20px !important;
+    border-radius: 14px !important;
 
     color: white !important;
 
-    font-size: 21px !important;
+    font-size: 18px !important;
 
-    font-weight: 500 !important;
+    font-weight: 400 !important;
 
-    padding: 22px !important;
+    padding: 18px !important;
 
-    line-height: 1.7 !important;
+    line-height: 1.6 !important;
 
     transition: 0.3s ease;
 
     box-shadow:
-        0 0 12px rgba(0,224,184,0.10);
+        0 0 10px rgba(0,224,184,0.08);
 }
 
 /* PLACEHOLDER */
 input::placeholder,
 textarea::placeholder {
 
-    color: #b0b0b0 !important;
+    color: #9f9f9f !important;
 
     opacity: 1 !important;
 
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
 /* FOCO */
@@ -138,10 +139,8 @@ textarea::placeholder {
     border: 2px solid #00ffd0 !important;
 
     box-shadow:
-        0 0 18px rgba(0,255,208,0.35),
-        0 0 35px rgba(0,255,208,0.12) !important;
-
-    transform: scale(1.01);
+        0 0 15px rgba(0,255,208,0.25),
+        0 0 25px rgba(0,255,208,0.08) !important;
 }
 
 /* BOTÃO */
@@ -155,24 +154,24 @@ textarea::placeholder {
 
     color: black !important;
 
-    font-size: 28px !important;
+    font-size: 26px !important;
 
-    font-weight: 800 !important;
+    font-weight: 700 !important;
 
-    border-radius: 18px !important;
+    border-radius: 14px !important;
 
-    height: 74px !important;
+    height: 64px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 30px;
+    margin-top: 28px;
 
     transition: all 0.3s ease;
 
     box-shadow:
-        0 0 20px rgba(0,245,196,0.25);
+        0 0 18px rgba(0,245,196,0.20);
 }
 
 /* HOVER */
@@ -181,22 +180,22 @@ textarea::placeholder {
     transform: translateY(-2px);
 
     box-shadow:
-        0 0 28px rgba(0,255,208,0.45),
-        0 0 50px rgba(0,255,208,0.18);
+        0 0 25px rgba(0,255,208,0.35),
+        0 0 40px rgba(0,255,208,0.12);
 }
 
 /* ESPAÇAMENTO */
 div[data-baseweb="input"] {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 /* RODAPÉ */
 .footer {
     text-align: center;
-    color: #8d8d8d;
-    font-size: 15px;
-    margin-top: 30px;
-    line-height: 1.8;
+    color: #7f7f7f;
+    font-size: 13px;
+    margin-top: 25px;
+    line-height: 1.7;
 }
 
 </style>
@@ -220,13 +219,13 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # =========================================
-# LOGO
+# LOGO CENTRALIZADA
 # =========================================
 st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=220,
+    width=190,
     output_format="PNG"
 )
 
@@ -251,18 +250,18 @@ nome = st.text_input(
 
 email = st.text_input(
     "Email",
-    placeholder="Digite seu melhor e-mail"
+    placeholder="✉️   Digite seu melhor e-mail"
 )
 
 telefone = st.text_input(
     "Telefone",
-    placeholder="Digite seu número de telefone"
+    placeholder="📞   Digite seu número de telefone"
 )
 
 caso = st.text_area(
     "Escreva seu caso jurídico para análise",
     placeholder="Explique sua dúvida ou situação jurídica...",
-    height=220
+    height=180
 )
 
 # =========================================
@@ -283,7 +282,7 @@ def salvar(nome, email, telefone, caso):
 # =========================================
 # BOTÃO
 # =========================================
-if st.button("📨 Enviar para análise"):
+if st.button("✈️  Enviar"):
 
     if nome and email and caso:
 
@@ -309,7 +308,6 @@ if st.button("📨 Enviar para análise"):
 # =========================================
 st.markdown("""
 <div class="footer">
-🔒 Seus dados estão protegidos e não serão compartilhados.<br>
-Mouzalas Advogados
+🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
