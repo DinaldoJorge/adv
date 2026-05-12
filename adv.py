@@ -10,12 +10,14 @@ st.set_page_config(
     layout="centered"
 )
 
-# CSS (FUNDO preto + INPUT MELHORADO)
+# CSS (FUNDO PRETO + INPUT MELHORADO)
 st.markdown("""
 <style>
 .main {
     background-color: black;
 }
+</style>
+""", unsafe_allow_html=True)
 
 h1, h2, h3 {
     color: #222;
