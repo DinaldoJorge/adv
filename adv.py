@@ -52,7 +52,7 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 10px;
+    font-size: 25px;
     font-weight: 500;
     color: white;
     margin-top: 5px;
@@ -67,7 +67,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
     color: white !important;
-    font-size: 17px !important;
+    font-size: 10px !important;
     font-weight: 600 !important;
 }
 
