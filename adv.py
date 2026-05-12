@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # =========================================
-# CSS PREMIUM MODERNO
+# CSS PREMIUM
 # =========================================
 st.markdown("""
 <style>
@@ -30,7 +30,7 @@ header {visibility: hidden;}
 
 /* CONTAINER */
 .block-container {
-    max-width: 460px;
+    max-width: 470px;
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
@@ -74,33 +74,31 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: rgba(10,10,10,0.95) !important;
+    background: rgba(12,12,12,0.96) !important;
 
-    border: 1.8px solid rgba(0,224,184,0.60) !important;
+    border: 1.8px solid rgba(0,224,184,0.65) !important;
 
     border-radius: 14px !important;
 
     color: white !important;
 
-    font-size: 18px !important;
+    font-size: 17px !important;
 
     font-weight: 400 !important;
 
-    height: 68px !important;
+    height: 64px !important;
 
-    padding-left: 22px !important;
+    padding-left: 20px !important;
 
-    padding-top: 0px !important;
+    padding-right: 20px !important;
 
-    padding-bottom: 0px !important;
+    padding-top: 18px !important;
 
-    line-height: 68px !important;
+    padding-bottom: 18px !important;
 
     transition: 0.3s ease;
 
-    display: flex !important;
-
-    align-items: center !important;
+    box-sizing: border-box !important;
 
     box-shadow:
         0 0 10px rgba(0,224,184,0.08);
@@ -109,23 +107,25 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: rgba(10,10,10,0.95) !important;
+    background: rgba(12,12,12,0.96) !important;
 
-    border: 1.8px solid rgba(0,224,184,0.60) !important;
+    border: 1.8px solid rgba(0,224,184,0.65) !important;
 
     border-radius: 14px !important;
 
     color: white !important;
 
-    font-size: 18px !important;
+    font-size: 17px !important;
 
     font-weight: 400 !important;
 
-    padding: 18px !important;
+    padding: 20px !important;
 
     line-height: 1.7 !important;
 
     transition: 0.3s ease;
+
+    box-sizing: border-box !important;
 
     box-shadow:
         0 0 10px rgba(0,224,184,0.08);
@@ -139,17 +139,9 @@ textarea::placeholder {
 
     opacity: 1 !important;
 
-    font-size: 18px !important;
-}
+    font-size: 17px !important;
 
-/* PLACEHOLDER CENTRALIZADO */
-input::placeholder {
-
-    line-height: 68px !important;
-
-    position: relative;
-
-    top: 1px;
+    line-height: normal !important;
 }
 
 /* FOCO */
@@ -239,7 +231,7 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # =========================================
-# LOGO CENTRALIZADA
+# LOGO
 # =========================================
 st.markdown('<div class="logo">', unsafe_allow_html=True)
 
