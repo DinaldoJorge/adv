@@ -3,18 +3,18 @@ from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
-# =====================================================
+# =========================================
 # CONFIGURAÇÃO DA PÁGINA
-# =====================================================
+# =========================================
 st.set_page_config(
     page_title="MZA",
     page_icon="💼",
     layout="centered"
 )
 
-# =====================================================
+# =========================================
 # CSS PERSONALIZADO
-# =====================================================
+# =========================================
 st.markdown("""
 <style>
 
@@ -36,10 +36,10 @@ header {
     visibility: hidden;
 }
 
-/* TEXTO */
+/* TEXTO GERAL */
 html, body, [class*="css"] {
+    font-family: 'Arial', sans-serif;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 /* LOGO */
@@ -53,9 +53,9 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 34px;
-    font-weight: 700;
-    margin-top: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 5px;
     margin-bottom: 40px;
     color: white;
 }
@@ -73,63 +73,66 @@ label {
 
 /* INPUTS */
 .stTextInput > div > div > input {
-    background-color: #111111 !important;
+    background-color: #0f0f0f;
+    border: 2px solid #00E0B8;
+    border-radius: 16px;
     color: white !important;
-    border: 2px solid #00C9A7 !important;
-    border-radius: 16px !important;
-    padding-left: 15px !important;
-    height: 60px !important;
-    font-size: 20px !important;
-    transition: 0.3s;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 20px;
 }
 
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
-    color: #9e9e9e !important;
-    font-size: 18px !important;
+    color: #9e9e9e;
+    font-size: 18px;
 }
 
-/* INPUT FOCUS */
+/* INPUT AO CLICAR */
 .stTextInput > div > div > input:focus {
-    border: 2px solid #00FFD0 !important;
-    box-shadow: 0 0 15px #00FFD0 !important;
+    border: 2px solid #00ffd0 !important;
+    box-shadow: 0 0 12px #00ffd0;
 }
 
 /* BOTÃO */
 .stButton > button {
-    width: 100%;
-    height: 65px;
-    border-radius: 18px;
-    border: none;
-    background: linear-gradient(90deg, #00D9B0, #00F0C0);
+    background: linear-gradient(90deg, #00d4aa, #00f5c4);
     color: black;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
-    margin-top: 20px;
+    border-radius: 18px;
+    height: 70px;
+    width: 100%;
+    border: none;
+    margin-top: 25px;
     transition: 0.3s;
 }
 
 /* HOVER */
 .stButton > button:hover {
     transform: scale(1.02);
-    background: linear-gradient(90deg, #00F0C0, #00D9B0);
+    box-shadow: 0 0 20px #00f5c4;
+}
+
+/* MENSAGEM */
+.stSuccess {
+    border-radius: 12px;
 }
 
 /* RODAPÉ */
 .footer {
     text-align: center;
-    color: #8c8c8c;
+    color: #8f8f8f;
     font-size: 15px;
-    margin-top: 25px;
-    line-height: 1.8;
+    margin-top: 30px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =====================================================
+# =========================================
 # GOOGLE SHEETS
-# =====================================================
+# =========================================
 scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
@@ -144,30 +147,31 @@ client = gspread.authorize(creds)
 
 planilha = client.open("leads_professores").sheet1
 
-# =====================================================
+# =========================================
 # LOGO CENTRALIZADA
-# =====================================================
-col1, col2, col3 = st.columns([1,2,1])
+# =========================================
+st.markdown('<div class="logo-container">', unsafe_allow_html=True)
 
-with col2:
-    st.image(
-        "logomza.png",
-        width=230,
-        output_format="PNG"
-    )
+st.image(
+    "logomza.png",
+    width=260,
+    output_format="PNG"
+)
 
-# =====================================================
+st.markdown('</div>', unsafe_allow_html=True)
+
+# =========================================
 # FRASE
-# =====================================================
+# =========================================
 st.markdown("""
 <div class="frase">
 🛡️ Vamos <span>analisar</span> seus dados
 </div>
 """, unsafe_allow_html=True)
 
-# =====================================================
-# CAMPOS
-# =====================================================
+# =========================================
+# FORMULÁRIO
+# =========================================
 nome = st.text_input(
     "Nome completo",
     placeholder="Digite seu nome completo"
@@ -183,17 +187,23 @@ telefone = st.text_input(
     placeholder="Digite seu número de telefone"
 )
 
-# =====================================================
+# =========================================
 # FUNÇÃO SALVAR
-# =====================================================
+# =========================================
 def salvar(nome, email, telefone):
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
-    planilha.append_row([nome, email, telefone, data])
 
-# =====================================================
+    planilha.append_row([
+        nome,
+        email,
+        telefone,
+        data
+    ])
+
+# =========================================
 # BOTÃO
-# =====================================================
-if st.button("✈️ Enviar"):
+# =========================================
+if st.button("📨 Enviar"):
 
     if nome and email:
 
@@ -201,22 +211,22 @@ if st.button("✈️ Enviar"):
 
         link = (
             f"https://wa.me/5583991241249"
-            f"?text=Olá, sou {nome} e quero analisar meus dados."
+            f"?text=Olá, sou {nome} e desejo analisar meus dados."
         )
 
         st.success("✅ Dados enviados com sucesso!")
 
         st.link_button(
-            "💬 Abrir WhatsApp",
+            "💬 Falar no WhatsApp",
             link
         )
 
     else:
-        st.error("⚠️ Preencha nome e email")
+        st.error("⚠️ Preencha nome e email.")
 
-# =====================================================
+# =========================================
 # RODAPÉ
-# =====================================================
+# =========================================
 st.markdown("""
 <div class="footer">
 🔒 Seus dados estão protegidos e não serão compartilhados.
