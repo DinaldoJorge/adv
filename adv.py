@@ -78,25 +78,29 @@ label {
 
     border: 1.8px solid rgba(0,224,184,0.60) !important;
 
-    border-radius: 12px !important;
+    border-radius: 14px !important;
 
     color: white !important;
 
-    font-size: 16px !important;
+    font-size: 18px !important;
 
     font-weight: 400 !important;
 
-    height: 56px !important;
+    height: 68px !important;
 
-    padding-left: 18px !important;
+    padding-left: 22px !important;
 
     padding-top: 0px !important;
 
     padding-bottom: 0px !important;
 
-    line-height: 56px !important;
+    line-height: 68px !important;
 
     transition: 0.3s ease;
+
+    display: flex !important;
+
+    align-items: center !important;
 
     box-shadow:
         0 0 10px rgba(0,224,184,0.08);
@@ -113,13 +117,13 @@ label {
 
     color: white !important;
 
-    font-size: 16px !important;
+    font-size: 18px !important;
 
     font-weight: 400 !important;
 
     padding: 18px !important;
 
-    line-height: 1.6 !important;
+    line-height: 1.7 !important;
 
     transition: 0.3s ease;
 
@@ -135,7 +139,17 @@ textarea::placeholder {
 
     opacity: 1 !important;
 
-    font-size: 16px !important;
+    font-size: 18px !important;
+}
+
+/* PLACEHOLDER CENTRALIZADO */
+input::placeholder {
+
+    line-height: 68px !important;
+
+    position: relative;
+
+    top: 1px;
 }
 
 /* FOCO */
@@ -166,7 +180,7 @@ textarea::placeholder {
 
     border-radius: 14px !important;
 
-    height: 62px !important;
+    height: 64px !important;
 
     width: 100%;
 
@@ -261,8 +275,7 @@ email = st.text_input(
 
 telefone = st.text_input(
     "Telefone",
-    placeholder="📞   Digite seu número de telefone",
-    height=90
+    placeholder="📞   Digite seu número de telefone"
 )
 
 caso = st.text_area(
