@@ -261,7 +261,8 @@ email = st.text_input(
 
 telefone = st.text_input(
     "Telefone",
-    placeholder="📞   Digite seu número de telefone"
+    placeholder="📞   Digite seu número de telefone",
+    height=90
 )
 
 caso = st.text_area(
