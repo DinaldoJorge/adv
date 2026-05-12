@@ -10,109 +10,192 @@ st.set_page_config(
     layout="centered"
 )
 
-import streamlit as st
-
-# CSS
+# =========================
+# CSS PERSONALIZADO
+# =========================
 st.markdown("""
 <style>
-.main {
-    background-color: black;
+
+/* FUNDO GERAL */
+.stApp {
+    background-color: #000000;
 }
 
-p {
-    color: white;
-    font-size: 18px;
+/* TEXTOS */
+h1, h2, h3, h4, h5, h6, p, label, div {
+    color: white !important;
 }
-</style>
-""", unsafe_allow_html=True)
 
-/* INPUT MAIS ESCURO E VISÍVEL */
+/* INPUTS */
 .stTextInput > div > div > input {
-    background-color: #e0e0e0;
-    border: 1px solid #bdbdbd;
-    border-radius: 8px;
-    color: #000;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: white;
+    height: 50px;
+    font-size: 16px;
 }
 
-/* EFEITO AO CLICAR */
+/* INPUT AO CLICAR */
 .stTextInput > div > div > input:focus {
-    border: 1px solid #00C9A7;
-    background-color: #e8fdf8;
+    border: 1px solid #00C9A7 !important;
+    box-shadow: 0 0 8px #00C9A7;
 }
 
 /* BOTÃO */
-.stButton>button {
+.stButton > button {
     background-color: #00C9A7;
     color: black;
     font-size: 18px;
-    border-radius: 10px;
-    height: 50px;
+    font-weight: bold;
+    border-radius: 12px;
+    height: 55px;
     width: 100%;
+    border: none;
+    transition: 0.3s;
 }
+
+/* EFEITO HOVER */
+.stButton > button:hover {
+    background-color: #00e6bf;
+    transform: scale(1.02);
+}
+
+/* CENTRALIZA IMAGEM */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* MELHORA QUALIDADE DA IMAGEM */
+.logo-container img {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* RODAPÉ */
+.footer {
+    font-size: 12px;
+    color: #9e9e9e;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
-# 🔐 CONEXÃO COM GOOGLE SHEETS
+# =========================
+# GOOGLE SHEETS
+# =========================
 scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
 
 creds = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"], scopes=scope
+    st.secrets["gcp_service_account"],
+    scopes=scope
 )
 
 client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
-# 🖼️ IMAGEM NO TOPO
-st.image("logomza.png", use_container_width=True)
+# =========================
+# LOGO MELHORADA
+# =========================
+col1, col2, col3 = st.columns([1,2,1])
 
+with col2:
+    st.image(
+        "logomza.png",
+        use_container_width=True
+    )
+
+# =========================
 # HERO
-st.markdown("## 💰 Valores Retroativos")
-st.markdown("Verifique se você pode ter direito à revisão salarial")
-
-# CONTEÚDO
-st.markdown("### 📌 Entenda a situação")
+# =========================
 st.markdown("""
-Professores substitutos podem ter recebido valores inferiores aos professores efetivos em situações semelhantes.
+<h1 style='text-align:center;'>
+💰 Valores Retroativos
+</h1>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<p style='text-align:center; font-size:18px;'>
+Verifique se você pode ter direito à revisão salarial
+</p>
+""", unsafe_allow_html=True)
+
+# =========================
+# CONTEÚDO
+# =========================
+st.markdown("### 📌 Entenda a situação")
+
+st.markdown("""
+Professores substitutos podem ter recebido valores inferiores
+a professores efetivos em situações semelhantes.
 """)
 
 st.markdown("### ⚖️ Possibilidade jurídica")
+
 st.markdown("""
-Cada caso deve ser analisado individualmente, com base na legislação.
+Cada caso deve ser analisado individualmente,
+com base na legislação e nos documentos funcionais.
 """)
 
+# =========================
 # FORMULÁRIO
+# =========================
 st.markdown("### 📩 Solicitar análise")
 
 nome = st.text_input("Nome completo")
 email = st.text_input("Email")
 telefone = st.text_input("Telefone")
 
-# FUNÇÃO PARA SALVAR
+# =========================
+# FUNÇÃO SALVAR
+# =========================
 def salvar(nome, email, telefone):
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
     planilha.append_row([nome, email, telefone, data])
 
+# =========================
 # BOTÃO
+# =========================
 if st.button("📨 Enviar para análise"):
+
     if nome and email:
+
         salvar(nome, email, telefone)
 
-        link = f"https://wa.me/5583991241249?text=Olá, sou {nome} e quero verificar valores retroativos"
+        link = (
+            f"https://wa.me/5583991241249"
+            f"?text=Olá, sou {nome} e quero verificar valores retroativos"
+        )
 
         st.success("✅ Dados enviados com sucesso!")
-        st.link_button("💬 Falar no WhatsApp", link)
-    else:
-        st.error("Preencha nome e email")
 
+        st.link_button(
+            "💬 Falar no WhatsApp",
+            link
+        )
+
+    else:
+        st.error("⚠️ Preencha nome e email")
+
+# =========================
 # RODAPÉ
+# =========================
 st.markdown("---")
+
 st.markdown("""
-<p style='font-size:12px; color:gray; text-align:center;'>
+<div class="footer">
 Seus dados são tratados com confidencialidade.<br>
-Este contato não garante direito ao recebimento.<br>
+Este contato não garante direito ao recebimento.<br><br>
 Mouzalas Advogados
-</p>
+</div>
 """, unsafe_allow_html=True)
