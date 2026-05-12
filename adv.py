@@ -86,7 +86,7 @@ label {
 
     font-weight: 400 !important;
 
-    height: 52px !important;
+    height: 32px !important;
 
     padding-left: 30px !important;
 
