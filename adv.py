@@ -45,7 +45,7 @@ html, body, [class*="css"] {
 .logo {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 25px;
     margin-bottom: 25px;
 }
 
