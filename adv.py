@@ -82,17 +82,17 @@ label {
 
     color: white !important;
 
-    font-size: 17px !important;
+    font-size: 19px !important;
 
     font-weight: 400 !important;
 
-    height: 64px !important;
+    height: 72px !important;
 
-    padding-left: 20px !important;
+    padding-left: 22px !important;
 
     padding-right: 20px !important;
 
-    padding-top: 18px !important;
+    padding-top: 10px !important;
 
     padding-bottom: 18px !important;
 
