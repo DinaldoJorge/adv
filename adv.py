@@ -3,16 +3,18 @@ from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 
+# =========================================
 # CONFIGURAÇÃO DA PÁGINA
+# =========================================
 st.set_page_config(
     page_title="Revisão de Valores",
     page_icon="💰",
     layout="centered"
 )
 
-# =========================
+# =========================================
 # CSS PERSONALIZADO
-# =========================
+# =========================================
 st.markdown("""
 <style>
 
@@ -55,23 +57,23 @@ h1, h2, h3, h4, h5, h6, p, label, div {
     transition: 0.3s;
 }
 
-/* EFEITO HOVER */
+/* HOVER */
 .stButton > button:hover {
     background-color: #00e6bf;
     transform: scale(1.02);
 }
 
-/* CENTRALIZA IMAGEM */
+/* LOGO */
 .logo-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 25px;
 }
 
-/* MELHORA QUALIDADE DA IMAGEM */
+/* QUALIDADE DA IMAGEM */
 .logo-container img {
-    width: 320px;
+    width: 370px;
     max-width: 100%;
     border-radius: 12px;
 }
@@ -81,16 +83,16 @@ h1, h2, h3, h4, h5, h6, p, label, div {
     font-size: 12px;
     color: #9e9e9e;
     text-align: center;
-    margin-top: 30px;
-    line-height: 1.7;
+    margin-top: 35px;
+    line-height: 1.8;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =========================
+# =========================================
 # GOOGLE SHEETS
-# =========================
+# =========================================
 scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
@@ -102,37 +104,41 @@ creds = Credentials.from_service_account_info(
 )
 
 client = gspread.authorize(creds)
+
 planilha = client.open("leads_professores").sheet1
 
-# =========================
-# LOGO MELHORADA
-# =========================
+# =========================================
+# LOGO CENTRALIZADA
+# =========================================
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
     st.image(
         "logomza.png",
-        use_container_width=True
+        width=370,
+        output_format="PNG"
     )
 
-# =========================
+# =========================================
 # HERO
-# =========================
+# =========================================
 st.markdown("""
-<h1 style='text-align:center;'>
+<h1 style='text-align:center; margin-top:10px;'>
 💰 Valores Retroativos
 </h1>
 """, unsafe_allow_html=True)
 
 st.markdown("""
-<p style='text-align:center; font-size:18px;'>
+<p style='text-align:center; font-size:18px; color:#d9d9d9;'>
 Verifique se você pode ter direito à revisão salarial
 </p>
 """, unsafe_allow_html=True)
 
-# =========================
+st.markdown("<br>", unsafe_allow_html=True)
+
+# =========================================
 # CONTEÚDO
-# =========================
+# =========================================
 st.markdown("### 📌 Entenda a situação")
 
 st.markdown("""
@@ -147,25 +153,27 @@ Cada caso deve ser analisado individualmente,
 com base na legislação e nos documentos funcionais.
 """)
 
-# =========================
+st.markdown("<br>", unsafe_allow_html=True)
+
+# =========================================
 # FORMULÁRIO
-# =========================
+# =========================================
 st.markdown("### 📩 Solicitar análise")
 
 nome = st.text_input("Nome completo")
 email = st.text_input("Email")
 telefone = st.text_input("Telefone")
 
-# =========================
+# =========================================
 # FUNÇÃO SALVAR
-# =========================
+# =========================================
 def salvar(nome, email, telefone):
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
     planilha.append_row([nome, email, telefone, data])
 
-# =========================
+# =========================================
 # BOTÃO
-# =========================
+# =========================================
 if st.button("📨 Enviar para análise"):
 
     if nome and email:
@@ -187,9 +195,9 @@ if st.button("📨 Enviar para análise"):
     else:
         st.error("⚠️ Preencha nome e email")
 
-# =========================
+# =========================================
 # RODAPÉ
-# =========================
+# =========================================
 st.markdown("---")
 
 st.markdown("""
