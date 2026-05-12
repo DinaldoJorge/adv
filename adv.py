@@ -78,7 +78,7 @@ label {
 
     border: 1.8px solid rgba(0,224,184,0.65) !important;
 
-    border-radius: 16px !important;
+    border-radius: 30px !important;
 
     color: white !important;
 
