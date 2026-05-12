@@ -52,7 +52,7 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 20px;
+    font-size: 10px;
     font-weight: 500;
     color: white;
     margin-top: 5px;
