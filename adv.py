@@ -82,13 +82,19 @@ label {
 
     color: white !important;
 
-    font-size: 19px !important;
+    font-size: 16px !important;
 
     font-weight: 400 !important;
 
-    height: 58px !important;
+    height: 56px !important;
 
     padding-left: 18px !important;
+
+    padding-top: 0px !important;
+
+    padding-bottom: 0px !important;
+
+    line-height: 56px !important;
 
     transition: 0.3s ease;
 
@@ -107,7 +113,7 @@ label {
 
     color: white !important;
 
-    font-size: 18px !important;
+    font-size: 16px !important;
 
     font-weight: 400 !important;
 
@@ -129,7 +135,7 @@ textarea::placeholder {
 
     opacity: 1 !important;
 
-    font-size: 18px !important;
+    font-size: 16px !important;
 }
 
 /* FOCO */
@@ -154,13 +160,13 @@ textarea::placeholder {
 
     color: black !important;
 
-    font-size: 26px !important;
+    font-size: 24px !important;
 
     font-weight: 700 !important;
 
     border-radius: 14px !important;
 
-    height: 64px !important;
+    height: 62px !important;
 
     width: 100%;
 
