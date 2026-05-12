@@ -10,25 +10,21 @@ st.set_page_config(
     layout="centered"
 )
 
-# CSS (FUNDO PRETO + INPUT MELHORADO)
+import streamlit as st
+
+# CSS
 st.markdown("""
 <style>
 .main {
     background-color: black;
 }
-</style>
-""", unsafe_allow_html=True)
-
-h1, h2, h3 {
-    color: #222;
-    text-align: center;
-}
 
 p {
-    color: #444;
+    color: white;
     font-size: 18px;
-    text-align: center;
 }
+</style>
+""", unsafe_allow_html=True)
 
 /* INPUT MAIS ESCURO E VISÍVEL */
 .stTextInput > div > div > input {
