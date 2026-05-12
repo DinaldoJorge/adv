@@ -13,30 +13,31 @@ st.set_page_config(
 )
 
 # =========================================
-# CSS MELHORADO
+# CSS MODERNO
 # =========================================
 st.markdown("""
 <style>
 
 /* FUNDO */
 .stApp {
-    background-color: #000000;
+    background: #000000;
 }
 
-/* REMOVE ELEMENTOS */
+/* REMOVE MENU */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
 /* CENTRALIZA CONTEÚDO */
 .block-container {
-    max-width: 520px;
+    max-width: 560px;
     padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 /* FONTE */
 html, body, [class*="css"] {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: white;
 }
 
@@ -45,16 +46,17 @@ html, body, [class*="css"] {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
+    font-size: 34px;
+    font-weight: 700;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 45px;
 }
 
 .frase span {
@@ -63,79 +65,138 @@ html, body, [class*="css"] {
 
 /* LABELS */
 label {
-    color: white !important;
-    font-size: 19px !important;
-    font-weight: bold !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
 }
 
 /* INPUTS */
 .stTextInput input {
-    background-color: #0a0a0a !important;
-    border: 2px solid #00E0B8 !important;
-    border-radius: 14px !important;
+
+    background: rgba(12,12,12,0.96) !important;
+
+    border: 2px solid rgba(0,224,184,0.75) !important;
+
+    border-radius: 18px !important;
+
     color: white !important;
-    font-size: 20px !important;
-    height: 60px !important;
-    padding-left: 18px !important;
+
+    font-size: 22px !important;
+
+    font-weight: 500 !important;
+
+    height: 68px !important;
+
+    padding-left: 22px !important;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 12px rgba(0,224,184,0.10);
 }
 
 /* TEXTAREA */
 .stTextArea textarea {
-    background-color: #0a0a0a !important;
-    border: 2px solid #00E0B8 !important;
-    border-radius: 14px !important;
+
+    background: rgba(12,12,12,0.96) !important;
+
+    border: 2px solid rgba(0,224,184,0.75) !important;
+
+    border-radius: 20px !important;
+
     color: white !important;
-    font-size: 18px !important;
-    padding: 18px !important;
+
+    font-size: 21px !important;
+
+    font-weight: 500 !important;
+
+    padding: 22px !important;
+
+    line-height: 1.7 !important;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 12px rgba(0,224,184,0.10);
 }
 
 /* PLACEHOLDER */
 input::placeholder,
 textarea::placeholder {
-    color: #a5a5a5 !important;
+
+    color: #b0b0b0 !important;
+
     opacity: 1 !important;
-    font-size: 18px !important;
+
+    font-size: 20px !important;
 }
 
 /* FOCO */
 .stTextInput input:focus,
 .stTextArea textarea:focus {
+
     border: 2px solid #00ffd0 !important;
-    box-shadow: 0 0 12px #00ffd0 !important;
+
+    box-shadow:
+        0 0 18px rgba(0,255,208,0.35),
+        0 0 35px rgba(0,255,208,0.12) !important;
+
+    transform: scale(1.01);
 }
 
 /* BOTÃO */
 .stButton > button {
-    background: linear-gradient(90deg, #00d9b5, #00f5c4);
+
+    background: linear-gradient(
+        90deg,
+        #00d9b5,
+        #00f5c4
+    );
+
     color: black !important;
-    font-size: 26px !important;
-    font-weight: bold !important;
-    border-radius: 16px !important;
-    height: 68px !important;
+
+    font-size: 28px !important;
+
+    font-weight: 800 !important;
+
+    border-radius: 18px !important;
+
+    height: 74px !important;
+
     width: 100%;
+
     border: none !important;
-    margin-top: 25px;
-    transition: 0.3s;
+
+    margin-top: 30px;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(0,245,196,0.25);
 }
 
 /* HOVER */
 .stButton > button:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 20px #00ffd0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 28px rgba(0,255,208,0.45),
+        0 0 50px rgba(0,255,208,0.18);
+}
+
+/* ESPAÇAMENTO */
+div[data-baseweb="input"] {
+    margin-bottom: 24px;
 }
 
 /* RODAPÉ */
 .footer {
     text-align: center;
     color: #8d8d8d;
-    font-size: 14px;
-    margin-top: 25px;
+    font-size: 15px;
+    margin-top: 30px;
     line-height: 1.8;
-}
-
-/* ESPAÇAMENTO */
-div[data-baseweb="input"] {
-    margin-bottom: 20px;
 }
 
 </style>
@@ -159,13 +220,13 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # =========================================
-# LOGO CENTRALIZADA
+# LOGO
 # =========================================
 st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=230,
+    width=220,
     output_format="PNG"
 )
 
@@ -201,7 +262,7 @@ telefone = st.text_input(
 caso = st.text_area(
     "Escreva seu caso jurídico para análise",
     placeholder="Explique sua dúvida ou situação jurídica...",
-    height=180
+    height=220
 )
 
 # =========================================
@@ -230,7 +291,7 @@ if st.button("📨 Enviar para análise"):
 
         link = (
             f"https://wa.me/5583991241249"
-            f"?text=Olá, sou {nome} e desejo análise jurídica."
+            f"?text=Olá, sou {nome} e desejo uma análise jurídica."
         )
 
         st.success("✅ Dados enviados com sucesso!")
