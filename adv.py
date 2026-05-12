@@ -13,39 +13,36 @@ st.set_page_config(
 )
 
 # =========================================
-# CSS PERSONALIZADO
+# CSS
 # =========================================
 st.markdown("""
 <style>
 
 /* FUNDO */
 .stApp {
-    background-color: #000000;
+    background-color: #050505;
 }
 
-/* REMOVE MENU */
-#MainMenu {
-    visibility: hidden;
-}
+/* REMOVE ELEMENTOS */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
 
-footer {
-    visibility: hidden;
-}
-
-header {
-    visibility: hidden;
-}
-
-/* TEXTO GERAL */
+/* FONTE */
 html, body, [class*="css"] {
-    font-family: 'Arial', sans-serif;
-    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTAINER CENTRAL */
+.block-container {
+    max-width: 430px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* LOGO */
-.logo-container {
-    display: flex;
-    justify-content: center;
+.logo {
+    text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -53,78 +50,79 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 40px;
     color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    font-weight: 500;
 }
 
 .frase span {
     color: #00E0B8;
+    font-weight: bold;
 }
 
 /* LABELS */
 label {
     color: white !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
 }
 
 /* INPUTS */
 .stTextInput > div > div > input {
-    background-color: #0f0f0f;
-    border: 2px solid #00E0B8;
-    border-radius: 16px;
+    background-color: #0d0d0d !important;
+    border: 1.8px solid #00C9A7 !important;
+    border-radius: 14px !important;
     color: white !important;
-    height: 60px;
-    font-size: 20px;
-    padding-left: 20px;
+    height: 58px !important;
+    font-size: 18px !important;
+    padding-left: 18px !important;
 }
 
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
-    color: #9e9e9e;
-    font-size: 18px;
+    color: #8d8d8d !important;
+    font-size: 17px !important;
 }
 
-/* INPUT AO CLICAR */
+/* FOCO */
 .stTextInput > div > div > input:focus {
     border: 2px solid #00ffd0 !important;
-    box-shadow: 0 0 12px #00ffd0;
+    box-shadow: 0 0 10px #00ffd0 !important;
 }
 
 /* BOTÃO */
 .stButton > button {
-    background: linear-gradient(90deg, #00d4aa, #00f5c4);
-    color: black;
-    font-size: 28px;
-    font-weight: bold;
-    border-radius: 18px;
-    height: 70px;
+    background: linear-gradient(90deg, #00d9b5, #00f2c9);
+    color: black !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    border-radius: 14px !important;
+    height: 68px !important;
     width: 100%;
-    border: none;
+    border: none !important;
     margin-top: 25px;
     transition: 0.3s;
 }
 
 /* HOVER */
 .stButton > button:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px #00f5c4;
-}
-
-/* MENSAGEM */
-.stSuccess {
-    border-radius: 12px;
+    transform: scale(1.01);
+    box-shadow: 0 0 20px #00ffd0;
 }
 
 /* RODAPÉ */
 .footer {
     text-align: center;
-    color: #8f8f8f;
-    font-size: 15px;
-    margin-top: 30px;
+    color: #7e7e7e;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+/* ESPAÇAMENTO */
+div[data-baseweb="input"] {
+    margin-bottom: 18px;
 }
 
 </style>
@@ -148,13 +146,13 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # =========================================
-# LOGO CENTRALIZADA
+# LOGO
 # =========================================
-st.markdown('<div class="logo-container">', unsafe_allow_html=True)
+st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=260,
+    width=190,
     output_format="PNG"
 )
 
@@ -179,18 +177,19 @@ nome = st.text_input(
 
 email = st.text_input(
     "Email",
-    placeholder="Digite seu melhor e-mail"
+    placeholder="✉️   Digite seu melhor e-mail"
 )
 
 telefone = st.text_input(
     "Telefone",
-    placeholder="Digite seu número de telefone"
+    placeholder="📞   Digite seu número de telefone"
 )
 
 # =========================================
 # FUNÇÃO SALVAR
 # =========================================
 def salvar(nome, email, telefone):
+
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
 
     planilha.append_row([
@@ -203,7 +202,7 @@ def salvar(nome, email, telefone):
 # =========================================
 # BOTÃO
 # =========================================
-if st.button("📨 Enviar"):
+if st.button("✈️  Enviar"):
 
     if nome and email:
 
