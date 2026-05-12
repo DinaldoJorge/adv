@@ -8,19 +8,19 @@ from google.oauth2.service_account import Credentials
 # =========================================
 st.set_page_config(
     page_title="MZA",
-    page_icon="💼",
+    page_icon="⚖️",
     layout="centered"
 )
 
 # =========================================
-# CSS
+# CSS MELHORADO
 # =========================================
 st.markdown("""
 <style>
 
 /* FUNDO */
 .stApp {
-    background-color: #050505;
+    background-color: #000000;
 }
 
 /* REMOVE ELEMENTOS */
@@ -28,77 +28,89 @@ st.markdown("""
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
+/* CENTRALIZA CONTEÚDO */
+.block-container {
+    max-width: 520px;
+    padding-top: 1rem;
+}
+
 /* FONTE */
 html, body, [class*="css"] {
     font-family: Arial, sans-serif;
-}
-
-/* CONTAINER CENTRAL */
-.block-container {
-    max-width: 430px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    color: white;
 }
 
 /* LOGO */
 .logo {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* FRASE */
 .frase {
     text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
     color: white;
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 35px;
-    font-weight: 500;
 }
 
 .frase span {
     color: #00E0B8;
-    font-weight: bold;
 }
 
 /* LABELS */
 label {
     color: white !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
+    font-size: 19px !important;
+    font-weight: bold !important;
 }
 
 /* INPUTS */
-.stTextInput > div > div > input {
-    background-color: #0d0d0d !important;
-    border: 1.8px solid #00C9A7 !important;
+.stTextInput input {
+    background-color: #0a0a0a !important;
+    border: 2px solid #00E0B8 !important;
     border-radius: 14px !important;
     color: white !important;
-    height: 58px !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
+    height: 60px !important;
     padding-left: 18px !important;
 }
 
+/* TEXTAREA */
+.stTextArea textarea {
+    background-color: #0a0a0a !important;
+    border: 2px solid #00E0B8 !important;
+    border-radius: 14px !important;
+    color: white !important;
+    font-size: 18px !important;
+    padding: 18px !important;
+}
+
 /* PLACEHOLDER */
-.stTextInput input::placeholder {
-    color: #8d8d8d !important;
-    font-size: 17px !important;
+input::placeholder,
+textarea::placeholder {
+    color: #a5a5a5 !important;
+    opacity: 1 !important;
+    font-size: 18px !important;
 }
 
 /* FOCO */
-.stTextInput > div > div > input:focus {
+.stTextInput input:focus,
+.stTextArea textarea:focus {
     border: 2px solid #00ffd0 !important;
-    box-shadow: 0 0 10px #00ffd0 !important;
+    box-shadow: 0 0 12px #00ffd0 !important;
 }
 
 /* BOTÃO */
 .stButton > button {
-    background: linear-gradient(90deg, #00d9b5, #00f2c9);
+    background: linear-gradient(90deg, #00d9b5, #00f5c4);
     color: black !important;
-    font-size: 28px !important;
+    font-size: 26px !important;
     font-weight: bold !important;
-    border-radius: 14px !important;
+    border-radius: 16px !important;
     height: 68px !important;
     width: 100%;
     border: none !important;
@@ -115,14 +127,15 @@ label {
 /* RODAPÉ */
 .footer {
     text-align: center;
-    color: #7e7e7e;
-    font-size: 13px;
-    margin-top: 18px;
+    color: #8d8d8d;
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 1.8;
 }
 
 /* ESPAÇAMENTO */
 div[data-baseweb="input"] {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 </style>
@@ -146,13 +159,13 @@ client = gspread.authorize(creds)
 planilha = client.open("leads_professores").sheet1
 
 # =========================================
-# LOGO
+# LOGO CENTRALIZADA
 # =========================================
 st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=190,
+    width=230,
     output_format="PNG"
 )
 
@@ -177,18 +190,24 @@ nome = st.text_input(
 
 email = st.text_input(
     "Email",
-    placeholder="✉️   Digite seu melhor e-mail"
+    placeholder="Digite seu melhor e-mail"
 )
 
 telefone = st.text_input(
     "Telefone",
-    placeholder="📞   Digite seu número de telefone"
+    placeholder="Digite seu número de telefone"
+)
+
+caso = st.text_area(
+    "Escreva seu caso jurídico para análise",
+    placeholder="Explique sua dúvida ou situação jurídica...",
+    height=180
 )
 
 # =========================================
 # FUNÇÃO SALVAR
 # =========================================
-def salvar(nome, email, telefone):
+def salvar(nome, email, telefone, caso):
 
     data = datetime.now().strftime("%d/%m/%Y %H:%M")
 
@@ -196,21 +215,22 @@ def salvar(nome, email, telefone):
         nome,
         email,
         telefone,
+        caso,
         data
     ])
 
 # =========================================
 # BOTÃO
 # =========================================
-if st.button("✈️  Enviar"):
+if st.button("📨 Enviar para análise"):
 
-    if nome and email:
+    if nome and email and caso:
 
-        salvar(nome, email, telefone)
+        salvar(nome, email, telefone, caso)
 
         link = (
             f"https://wa.me/5583991241249"
-            f"?text=Olá, sou {nome} e desejo analisar meus dados."
+            f"?text=Olá, sou {nome} e desejo análise jurídica."
         )
 
         st.success("✅ Dados enviados com sucesso!")
@@ -221,13 +241,14 @@ if st.button("✈️  Enviar"):
         )
 
     else:
-        st.error("⚠️ Preencha nome e email.")
+        st.error("⚠️ Preencha os campos obrigatórios.")
 
 # =========================================
 # RODAPÉ
 # =========================================
 st.markdown("""
 <div class="footer">
-🔒 Seus dados estão protegidos e não serão compartilhados.
+🔒 Seus dados estão protegidos e não serão compartilhados.<br>
+Mouzalas Advogados
 </div>
 """, unsafe_allow_html=True)
