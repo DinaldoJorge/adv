@@ -52,9 +52,9 @@ html, body, [class*="css"] {
 
     align-items: center;
 
-    margin-top: 25px;
+    margin-top: 5px;
 
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* FRASE */
