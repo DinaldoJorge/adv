@@ -45,7 +45,7 @@ html, body, [class*="css"] {
 /* LOGO */
 .logo {
 
-    width: 100%;
+    width: 200%;
 
     display: flex;
 
