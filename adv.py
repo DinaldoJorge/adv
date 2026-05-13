@@ -245,7 +245,7 @@ st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=190,
+    width=130,
     output_format="PNG"
 )
 
