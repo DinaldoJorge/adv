@@ -43,9 +43,17 @@ html, body, [class*="css"] {
 
 /* LOGO */
 .logo {
+
+    width: 100%;
+
     display: flex;
+
     justify-content: center;
+
+    align-items: center;
+
     margin-top: 25px;
+
     margin-bottom: 25px;
 }
 
