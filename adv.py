@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -40,6 +41,7 @@ html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
     color: white;
 }
+
 /* LOGO */
 .logo {
 
@@ -58,7 +60,7 @@ html, body, [class*="css"] {
     margin-bottom: 15px;
 }
 
-/* CENTRALIZA A IMAGEM */
+/* CENTRALIZA IMAGEM */
 .logo img {
 
     display: block;
@@ -86,7 +88,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
     color: white !important;
-    font-size: 10px !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
 }
 
@@ -101,19 +103,19 @@ label {
 
     color: white !important;
 
-    font-size: 19px !important;
+    font-size: 18px !important;
 
     font-weight: 400 !important;
 
-    height: 32px !important;
+    height: 64px !important;
 
     padding-left: 20px !important;
 
     padding-right: 20px !important;
 
-    padding-top: 20px !important;
+    padding-top: 18px !important;
 
-    padding-bottom: 20px !important;
+    padding-bottom: 18px !important;
 
     transition: 0.3s ease;
 
@@ -300,7 +302,10 @@ caso = st.text_area(
 # =========================================
 def salvar(nome, email, telefone, caso):
 
-    data = datetime.now().strftime("%d/%m/%Y %H:%M")
+    # HORÁRIO DE BRASÍLIA
+    data = datetime.now(
+        ZoneInfo("America/Sao_Paulo")
+    ).strftime("%d/%m/%Y %H:%M")
 
     planilha.append_row([
         nome,
