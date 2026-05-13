@@ -55,7 +55,7 @@ html, body, [class*="css"] {
 
     text-align: center;
 
-    margin-top: 5px;
+    margin-top: -5px;
 
     margin-bottom: 15px;
 }
