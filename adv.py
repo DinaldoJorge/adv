@@ -199,7 +199,7 @@ textarea::placeholder {
 
     border: none !important;
 
-    margin-top: 28px;
+    margin-top: 22px;
 
     transition: all 0.3s ease;
 
