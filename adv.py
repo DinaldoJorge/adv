@@ -57,7 +57,7 @@ html, body, [class*="css"] {
 
     margin-top: -5px;
 
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 /* CENTRALIZA IMAGEM */
