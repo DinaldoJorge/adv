@@ -45,19 +45,19 @@ html, body, [class*="css"] {
 /* LOGO */
 .logo {
 
-    width: 50%;
+    width: 100%;
 
     display: flex;
 
-    justify-content: center;
+    justify-content: flex-end;
 
     align-items: center;
 
     text-align: center;
 
-    margin-top: -5px;
+    margin-top: 5px;
 
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 /* CENTRALIZA IMAGEM */
@@ -107,7 +107,7 @@ label {
 
     font-weight: 400 !important;
 
-    height: 50px !important;
+    height: 48px !important;
 
     padding-left: 20px !important;
 
@@ -193,7 +193,7 @@ textarea::placeholder {
 
     border-radius: 14px !important;
 
-    height: 52px !important;
+    height: 49px !important;
 
     width: 100%;
 
