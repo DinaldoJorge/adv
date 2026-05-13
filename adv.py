@@ -40,7 +40,6 @@ html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
     color: white;
 }
-
 /* LOGO */
 .logo {
 
@@ -52,9 +51,21 @@ html, body, [class*="css"] {
 
     align-items: center;
 
+    text-align: center;
+
     margin-top: 5px;
 
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* CENTRALIZA A IMAGEM */
+.logo img {
+
+    display: block;
+
+    margin-left: auto;
+
+    margin-right: auto;
 }
 
 /* FRASE */
