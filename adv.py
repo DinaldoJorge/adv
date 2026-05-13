@@ -193,7 +193,7 @@ textarea::placeholder {
 
     border-radius: 14px !important;
 
-    height: 64px !important;
+    height: 52px !important;
 
     width: 100%;
 
