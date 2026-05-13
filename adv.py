@@ -78,7 +78,7 @@ label {
 
     border: 1.8px solid rgba(0,224,184,0.65) !important;
 
-    border-radius: 12px !important;
+    border-radius: 10px !important;
 
     color: white !important;
 
@@ -88,13 +88,13 @@ label {
 
     height: 32px !important;
 
-    padding-left: 30px !important;
+    padding-left: 20px !important;
 
-    padding-right: 30px !important;
+    padding-right: 20px !important;
 
-    padding-top: 30px !important;
+    padding-top: 20px !important;
 
-    padding-bottom: 30px !important;
+    padding-bottom: 20px !important;
 
     transition: 0.3s ease;
 
