@@ -63,8 +63,8 @@ html, body, [class*="css"] {
 
 /* LOGO */
 .logo {
-    display: flex;
-    justify-content: flex-end;
+    display: center;
+    justify-content: center;
     padding-right: 40px;
     
 }
@@ -293,7 +293,7 @@ planilha = client.open("leads_professores").sheet1
 # =========================================
 st.markdown("""
 <div style="
-display:flex;
+display:center;
 justify-content:center;
 margin-top:0px;
 margin-bottom:8px;
@@ -303,7 +303,7 @@ padding-left:320px;
 
 st.image(
     "logomza.png",
-    width=980
+    width=680
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
