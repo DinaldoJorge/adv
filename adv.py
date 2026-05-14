@@ -66,13 +66,13 @@ html, body, [class*="css"] {
     display: flex;
     justify-content: center;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 900;
     color: #FFFFFF;
     margin-top: 5px;
@@ -95,7 +95,7 @@ label,
 
     color: #FFFFFF !important;
 
-    font-size: 42px !important;
+    font-size: 32px !important;
 
     font-weight: 900 !important;
 
