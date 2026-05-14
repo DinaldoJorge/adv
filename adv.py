@@ -509,13 +509,13 @@ if st.session_state.logado:
             ">
 
             <div style="
-            font-size:32px;
+            font-size:22px;
             ">
             👤
             </div>
 
             <div style="
-            font-size:30px;
+            font-size:22px;
             font-weight:900;
             color:#00ffd0;
             line-height:1;
@@ -535,7 +535,7 @@ if st.session_state.logado:
             ">
 
             <div style="
-            font-size:32px;
+            font-size:22px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:14px;
@@ -544,7 +544,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:36px;
+            font-size:22px;
             font-weight:900;
             color:#FFFFFF;
             letter-spacing:1px;
@@ -557,14 +557,14 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:30px;
+            padding:22px;
             border-radius:24px;
             margin-bottom:24px;
             border-left:8px solid #00ffd0;
             ">
 
             <div style="
-            font-size:32px;
+            font-size:22px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:14px;
@@ -573,7 +573,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:48px;
+            font-size:22px;
             font-weight:900;
             color:#FFFFFF;
             text-shadow:0 0 16px rgba(255,255,255,0.12);
@@ -593,7 +593,7 @@ if st.session_state.logado:
             ">
 
             <div style="
-            font-size:34px;
+            font-size:22px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:22px;
@@ -602,7 +602,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:38px;
+            font-size:22px;
             font-weight:800;
             color:#FFFFFF;
             line-height:1.8;
@@ -615,7 +615,7 @@ if st.session_state.logado:
 
             <div style="
             color:#FFFFFF;
-            font-size:28px;
+            font-size:22px;
             font-weight:800;
             margin-top:14px;
             opacity:0.92;
