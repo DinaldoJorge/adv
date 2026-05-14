@@ -246,7 +246,7 @@ BOTÕES
     font-weight: 900;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: white;
     text-shadow: 0 0 16px rgba(255,255,255,0.18);
 }
