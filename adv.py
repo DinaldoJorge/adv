@@ -65,7 +65,7 @@ html, body, [class*="css"] {
 .logo {
     display: flex;
     justify-content: flex-end;
-    padding-right: 120px;
+    padding-right: 320px;
     
 }
 
