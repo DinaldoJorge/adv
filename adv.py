@@ -23,13 +23,6 @@ SENHA = "mza2026"
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
-# LIMPAR CAMPOS LOGIN
-if "usuario_login" not in st.session_state:
-    st.session_state.usuario_login = ""
-
-if "senha_login" not in st.session_state:
-    st.session_state.senha_login = ""
-
 # =========================================
 # CSS PREMIUM
 # =========================================
@@ -68,14 +61,6 @@ html, body, [class*="css"] {
     padding-bottom: 2rem;
 }
 
-/* LOGO */
-.logo {
-    display: center;
-    justify-content: center;
-    padding-right: 100px;
-    
-}
-
 /* FRASE */
 .frase {
     text-align: center;
@@ -92,32 +77,22 @@ html, body, [class*="css"] {
     font-weight: 900;
 }
 
-/* =========================================
-TÍTULOS DO FORMULÁRIO
-========================================= */
-
+/* LABELS */
 label,
 .stTextInput label,
 .stTextArea label {
 
     color: #FFFFFF !important;
-
     font-size: 22px !important;
-
     font-weight: 900 !important;
-
     opacity: 1 !important;
-
     letter-spacing: 0.5px;
 
     text-shadow:
         0 0 18px rgba(255,255,255,0.22);
 }
 
-/* =========================================
-INPUTS
-========================================= */
-
+/* INPUTS */
 .stTextInput input {
 
     background: rgba(12,12,12,0.98) !important;
@@ -140,8 +115,7 @@ INPUTS
         0 0 26px rgba(0,255,208,0.12);
 }
 
-/* PLACEHOLDER INPUT */
-
+/* PLACEHOLDER */
 .stTextInput input::placeholder {
 
     color: #FFFFFF !important;
@@ -153,10 +127,7 @@ INPUTS
     font-weight: 700 !important;
 }
 
-/* =========================================
-TEXTAREA
-========================================= */
-
+/* TEXTAREA */
 .stTextArea textarea {
 
     background: rgba(12,12,12,0.98) !important;
@@ -179,23 +150,7 @@ TEXTAREA
         0 0 26px rgba(0,255,208,0.12);
 }
 
-/* PLACEHOLDER TEXTAREA */
-
-.stTextArea textarea::placeholder {
-
-    color: #FFFFFF !important;
-
-    opacity: 0.88 !important;
-
-    font-size: 22px !important;
-
-    font-weight: 700 !important;
-}
-
-/* =========================================
-FOCO
-========================================= */
-
+/* FOCO */
 .stTextInput input:focus,
 .stTextArea textarea:focus {
 
@@ -205,10 +160,7 @@ FOCO
         0 0 34px rgba(0,255,208,0.38);
 }
 
-/* =========================================
-BOTÕES
-========================================= */
-
+/* BOTÕES */
 .stButton > button {
 
     background: linear-gradient(
@@ -298,22 +250,13 @@ planilha = client.open("leads_professores").sheet1
 # =========================================
 # LOGO
 # =========================================
-st.markdown("""
-<div style="
-display:center;
-justify-content:center;
-margin-top:0px;
-margin-bottom:20px;
-padding-left:80px;
-">
-""", unsafe_allow_html=True)
+col1, col2, col3 = st.columns([1,2,1])
 
-st.image(
-    "logomza.png",
-    width=300
-)
-
-st.markdown("</div>", unsafe_allow_html=True)
+with col2:
+    st.image(
+        "logomza.png",
+        width=300
+    )
 
 # =========================================
 # FRASE
@@ -404,17 +347,21 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# CAMPOS LOGIN
 usuario_input = st.text_input(
     "Usuário",
-    key="usuario_login"
+    value="",
+    key="usuario"
 )
 
 senha_input = st.text_input(
     "Senha",
     type="password",
-    key="senha_login"
+    value="",
+    key="senha"
 )
 
+# BOTÃO LOGIN
 if st.button("🚪 Entrar no Painel"):
 
     if (
@@ -425,17 +372,16 @@ if st.button("🚪 Entrar no Painel"):
         st.session_state.logado = True
 
         # LIMPA CAMPOS
-        st.session_state.usuario_login = ""
-        st.session_state.senha_login = ""
+        st.session_state["usuario"] = ""
+        st.session_state["senha"] = ""
 
-        st.success("✅ Login realizado!")
         st.rerun()
 
     else:
 
         # LIMPA CAMPOS
-        st.session_state.usuario_login = ""
-        st.session_state.senha_login = ""
+        st.session_state["usuario"] = ""
+        st.session_state["senha"] = ""
 
         st.error("❌ Usuário ou senha inválidos.")
 
@@ -484,7 +430,6 @@ if st.session_state.logado:
         font-weight:900;
         color:white;
         margin-bottom:34px;
-        text-shadow:0 0 14px rgba(255,255,255,0.18);
         ">
         📊 Total de clientes: {len(df)}
         </div>
@@ -515,130 +460,32 @@ if st.session_state.logado:
             border-radius:32px;
             margin-bottom:42px;
             border:2px solid rgba(0,255,208,0.25);
-            box-shadow:
-            0 0 38px rgba(0,255,208,0.10);
             ">
 
             <div style="
-            display:flex;
-            align-items:center;
-            gap:24px;
-            margin-bottom:36px;
-            ">
-
-            <div style="
-            font-size:22px;
-            ">
-            👤
-            </div>
-
-            <div style="
-            font-size:22px;
+            font-size:24px;
             font-weight:900;
             color:#00ffd0;
-            line-height:1;
-            text-shadow:0 0 22px rgba(0,255,208,0.22);
-            ">
-            {nome_cliente}
-            </div>
-
-            </div>
-
-            <div style="
-            background:#050505;
-            padding:30px;
-            border-radius:24px;
             margin-bottom:24px;
-            border-left:8px solid #00ffd0;
             ">
-
-            <div style="
-            font-size:22px;
-            font-weight:900;
-            color:#FFFFFF;
-            margin-bottom:14px;
-            ">
-            📞 Telefone:
+            👤 {nome_cliente}
             </div>
 
             <div style="
             font-size:22px;
-            font-weight:900;
-            color:#FFFFFF;
-            letter-spacing:1px;
-            text-shadow:0 0 16px rgba(255,255,255,0.12);
-            ">
-            {telefone_cliente}
-            </div>
-
-            </div>
-
-            <div style="
-            background:#050505;
-            padding:22px;
-            border-radius:24px;
-            margin-bottom:24px;
-            border-left:8px solid #00ffd0;
-            ">
-
-            <div style="
-            font-size:22px;
-            font-weight:900;
-            color:#FFFFFF;
-            margin-bottom:14px;
-            ">
-            ✉️ Email:
-            </div>
-
-            <div style="
-            font-size:22px;
-            font-weight:900;
-            color:#FFFFFF;
-            text-shadow:0 0 16px rgba(255,255,255,0.12);
-            ">
-            {email_cliente}
-            </div>
-
-            </div>
-
-            <div style="
-            background:#050505;
-            padding:32px;
-            border-radius:24px;
-            margin-top:18px;
-            margin-bottom:24px;
-            border-left:8px solid #00ffd0;
-            ">
-
-            <div style="
-            font-size:22px;
-            font-weight:900;
-            color:#FFFFFF;
-            margin-bottom:22px;
-            ">
-            ⚖️ Caso Jurídico
-            </div>
-
-            <div style="
-            font-size:22px;
+            color:white;
+            line-height:2;
             font-weight:800;
-            color:#FFFFFF;
-            line-height:1.8;
-            text-shadow:0 0 14px rgba(255,255,255,0.10);
             ">
-            {caso_cliente}
-            </div>
 
-            </div>
+            📞 {telefone_cliente}<br><br>
 
-            <div style="
-            color:#FFFFFF;
-            font-size:22px;
-            font-weight:800;
-            margin-top:14px;
-            opacity:0.92;
-            ">
+            ✉️ {email_cliente}<br><br>
+
+            ⚖️ {caso_cliente}<br><br>
+
             🕒 {data_cliente}
+
             </div>
 
             </div>
