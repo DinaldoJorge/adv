@@ -125,7 +125,7 @@ INPUTS
 
     font-weight: 800 !important;
 
-    height: 80px !important;
+    height: 50px !important;
 
     padding-left: 28px !important;
 
