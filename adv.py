@@ -255,9 +255,9 @@ BOTÕES
 .footer {
     text-align: center;
     color: #f0f0f0;
-    font-size: 22px;
-    font-weight: 700;
-    margin-top: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 /* ALERTAS */
