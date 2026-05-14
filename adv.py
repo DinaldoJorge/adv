@@ -180,7 +180,7 @@ TEXTAREA
 
     opacity: 0.88 !important;
 
-    font-size: 30px !important;
+    font-size: 22px !important;
 
     font-weight: 700 !important;
 }
@@ -242,13 +242,13 @@ BOTÕES
 
 /* TITULO ADMIN */
 .titulo-admin {
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 900;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
     color: white;
-    text-shadow: 0 0 16px rgba(255,255,255,0.18);
+    text-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
 
 /* FOOTER */
@@ -256,7 +256,7 @@ BOTÕES
     text-align: center;
     color: #f0f0f0;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 30px;
 }
 
@@ -264,8 +264,8 @@ BOTÕES
 .stSuccess,
 .stError,
 .stWarning {
-    font-size: 24px !important;
-    font-weight: 800 !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }
 
 </style>
@@ -297,13 +297,13 @@ display:center;
 justify-content:center;
 margin-top:0px;
 margin-bottom:20px;
-padding-left:120px;
+padding-left:80px;
 ">
 """, unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=500
+    width=300
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
