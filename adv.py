@@ -294,7 +294,7 @@ planilha = client.open("leads_professores").sheet1
 st.markdown("""
 <div style="
 display:flex;
-justify-content:center;
+justify-content:flex-end;
 margin-top:5px;
 margin-bottom:35px;
 ">
