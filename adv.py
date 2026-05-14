@@ -121,11 +121,11 @@ INPUTS
 
     color: #FFFFFF !important;
 
-    font-size: 34px !important;
+    font-size: 25px !important;
 
     font-weight: 800 !important;
 
-    height: 50px !important;
+    height: 47px !important;
 
     padding-left: 28px !important;
 
