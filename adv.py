@@ -121,7 +121,7 @@ INPUTS
 
     color: #FFFFFF !important;
 
-    font-size: 12px !important;
+    font-size: 20px !important;
 
     font-weight: 800 !important;
 
