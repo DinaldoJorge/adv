@@ -321,8 +321,6 @@ st.markdown("""
 # =========================================
 with st.form("formulario_cliente", clear_on_submit=True):
 
-    #st.subheader("📋 Formulário")
-
     nome = st.text_input(
         "Nome completo",
         placeholder="Digite seu nome completo"
