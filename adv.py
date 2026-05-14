@@ -515,7 +515,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:60px;
+            font-size:30px;
             font-weight:900;
             color:#00ffd0;
             line-height:1;
@@ -544,7 +544,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:56px;
+            font-size:36px;
             font-weight:900;
             color:#FFFFFF;
             letter-spacing:1px;
