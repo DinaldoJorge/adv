@@ -23,6 +23,13 @@ SENHA = "mza2026"
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
+# LIMPAR CAMPOS LOGIN
+if "usuario_login" not in st.session_state:
+    st.session_state.usuario_login = ""
+
+if "senha_login" not in st.session_state:
+    st.session_state.senha_login = ""
+
 # =========================================
 # CSS PREMIUM
 # =========================================
@@ -307,6 +314,7 @@ st.image(
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 # =========================================
 # FRASE
 # =========================================
@@ -397,12 +405,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 usuario_input = st.text_input(
-    "Usuário"
+    "Usuário",
+    key="usuario_login"
 )
 
 senha_input = st.text_input(
     "Senha",
-    type="password"
+    type="password",
+    key="senha_login"
 )
 
 if st.button("🚪 Entrar no Painel"):
@@ -413,10 +423,20 @@ if st.button("🚪 Entrar no Painel"):
     ):
 
         st.session_state.logado = True
+
+        # LIMPA CAMPOS
+        st.session_state.usuario_login = ""
+        st.session_state.senha_login = ""
+
         st.success("✅ Login realizado!")
         st.rerun()
 
     else:
+
+        # LIMPA CAMPOS
+        st.session_state.usuario_login = ""
+        st.session_state.senha_login = ""
+
         st.error("❌ Usuário ou senha inválidos.")
 
 # =========================================
