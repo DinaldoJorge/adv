@@ -56,7 +56,7 @@ html, body, [class*="css"] {
 
 /* CONTAINER */
 .block-container {
-    max-width: 1450px;
+    max-width: 1200px;
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
@@ -65,7 +65,7 @@ html, body, [class*="css"] {
 .logo {
     display: center;
     justify-content: center;
-    padding-right: 10px;
+    padding-right: 100px;
     
 }
 
