@@ -1,6 +1,3 @@
-# Código Completo Streamlit MZA Premium
-
-```python
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -75,12 +72,12 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 38px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 800;
     color: #FFFFFF;
     margin-top: 5px;
     margin-bottom: 45px;
-    text-shadow: 0 0 12px rgba(255,255,255,0.18);
+    text-shadow: 0 0 18px rgba(255,255,255,0.22);
 }
 
 .frase span {
@@ -98,10 +95,10 @@ label,
 .stTextInput label,
 .stTextArea label {
     color: #FFFFFF !important;
-    font-size: 24px !important;
-    font-weight: 800 !important;
+    font-size: 26px !important;
+    font-weight: 900 !important;
     opacity: 1 !important;
-    text-shadow: 0 0 10px rgba(255,255,255,0.10);
+    text-shadow: 0 0 12px rgba(255,255,255,0.14);
 }
 
 /* INPUTS */
@@ -111,28 +108,28 @@ label,
 
     border: 2px solid rgba(0,255,208,0.75) !important;
 
-    border-radius: 16px !important;
+    border-radius: 18px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 24px !important;
+    font-size: 26px !important;
 
-    font-weight: 700 !important;
+    font-weight: 800 !important;
 
-    height: 68px !important;
+    height: 72px !important;
 
-    padding-left: 22px !important;
+    padding-left: 24px !important;
 
     box-shadow:
-        0 0 18px rgba(0,255,208,0.08);
+        0 0 22px rgba(0,255,208,0.10);
 }
 
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
     color: #FFFFFF !important;
-    opacity: 0.78 !important;
-    font-size: 22px !important;
-    font-weight: 600 !important;
+    opacity: 0.82 !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
 }
 
 /* TEXTAREA */
@@ -142,28 +139,28 @@ label,
 
     border: 2px solid rgba(0,255,208,0.75) !important;
 
-    border-radius: 18px !important;
+    border-radius: 20px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 24px !important;
+    font-size: 26px !important;
 
     font-weight: 700 !important;
 
-    padding: 24px !important;
+    padding: 26px !important;
 
     line-height: 1.9 !important;
 
     box-shadow:
-        0 0 18px rgba(0,255,208,0.08);
+        0 0 22px rgba(0,255,208,0.10);
 }
 
 /* PLACEHOLDER TEXTAREA */
 .stTextArea textarea::placeholder {
     color: #FFFFFF !important;
-    opacity: 0.78 !important;
-    font-size: 22px !important;
-    font-weight: 600 !important;
+    opacity: 0.82 !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
 }
 
 /* FOCO */
@@ -173,7 +170,7 @@ label,
     border: 2px solid #00ffd0 !important;
 
     box-shadow:
-        0 0 25px rgba(0,255,208,0.30);
+        0 0 30px rgba(0,255,208,0.34);
 }
 
 /* BOTÕES */
@@ -187,24 +184,24 @@ label,
 
     color: #000000 !important;
 
-    font-size: 26px !important;
+    font-size: 28px !important;
 
     font-weight: 900 !important;
 
-    border-radius: 18px !important;
+    border-radius: 20px !important;
 
-    height: 64px !important;
+    height: 68px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 20px;
+    margin-top: 22px;
 
     transition: 0.3s ease;
 
     box-shadow:
-        0 0 24px rgba(0,255,208,0.20);
+        0 0 28px rgba(0,255,208,0.24);
 }
 
 .stButton > button:hover {
@@ -212,12 +209,12 @@ label,
     transform: translateY(-2px);
 
     box-shadow:
-        0 0 38px rgba(0,255,208,0.40);
+        0 0 40px rgba(0,255,208,0.45);
 }
 
-/* TÍTULO ADMIN */
+/* TITULO ADMIN */
 .titulo-admin {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 900;
     text-align: center;
     margin-top: 35px;
@@ -228,28 +225,18 @@ label,
 /* FOOTER */
 .footer {
     text-align: center;
-    color: #d9d9d9;
-    font-size: 18px;
-    font-weight: 600;
+    color: #f0f0f0;
+    font-size: 20px;
+    font-weight: 700;
     margin-top: 35px;
 }
 
-/* SUCESSO */
-.stSuccess {
-    font-size: 22px !important;
-    font-weight: 700 !important;
-}
-
-/* ERROR */
-.stError {
-    font-size: 22px !important;
-    font-weight: 700 !important;
-}
-
-/* WARNING */
+/* ALERTAS */
+.stSuccess,
+.stError,
 .stWarning {
     font-size: 22px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
 }
 
 </style>
@@ -316,7 +303,7 @@ telefone = st.text_input(
 caso = st.text_area(
     "Caso jurídico",
     placeholder="Explique sua situação jurídica...",
-    height=230
+    height=240
 )
 
 # =========================================
@@ -435,11 +422,11 @@ if st.session_state.logado:
 
         st.markdown(f"""
         <div style="
-        font-size:28px;
+        font-size:30px;
         font-weight:900;
         color:white;
         margin-bottom:30px;
-        text-shadow:0 0 10px rgba(255,255,255,0.12);
+        text-shadow:0 0 12px rgba(255,255,255,0.18);
         ">
         📊 Total de clientes: {len(df)}
         </div>
@@ -466,33 +453,33 @@ if st.session_state.logado:
             st.markdown(f"""
             <div style="
             background: linear-gradient(145deg,#0f0f0f,#161616);
-            padding:38px;
+            padding:40px;
             border-radius:30px;
-            margin-bottom:38px;
+            margin-bottom:40px;
             border:2px solid rgba(0,255,208,0.25);
             box-shadow:
-            0 0 34px rgba(0,255,208,0.08);
+            0 0 36px rgba(0,255,208,0.10);
             ">
 
             <div style="
             display:flex;
             align-items:center;
-            gap:20px;
-            margin-bottom:32px;
+            gap:22px;
+            margin-bottom:34px;
             ">
 
             <div style="
-            font-size:58px;
+            font-size:60px;
             ">
             👤
             </div>
 
             <div style="
-            font-size:56px;
+            font-size:58px;
             font-weight:900;
             color:#00ffd0;
             line-height:1;
-            text-shadow:0 0 18px rgba(0,255,208,0.22);
+            text-shadow:0 0 20px rgba(0,255,208,0.22);
             ">
             {nome_cliente}
             </div>
@@ -501,14 +488,14 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:26px;
-            border-radius:22px;
-            margin-bottom:22px;
-            border-left:7px solid #00ffd0;
+            padding:28px;
+            border-radius:24px;
+            margin-bottom:24px;
+            border-left:8px solid #00ffd0;
             ">
 
             <div style="
-            font-size:28px;
+            font-size:30px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:14px;
@@ -517,7 +504,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:52px;
+            font-size:54px;
             font-weight:900;
             color:#FFFFFF;
             letter-spacing:1px;
@@ -530,14 +517,14 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:26px;
-            border-radius:22px;
-            margin-bottom:22px;
-            border-left:7px solid #00ffd0;
+            padding:28px;
+            border-radius:24px;
+            margin-bottom:24px;
+            border-left:8px solid #00ffd0;
             ">
 
             <div style="
-            font-size:28px;
+            font-size:30px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:14px;
@@ -546,7 +533,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:44px;
+            font-size:46px;
             font-weight:900;
             color:#FFFFFF;
             text-shadow:0 0 14px rgba(255,255,255,0.12);
@@ -558,28 +545,28 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:28px;
-            border-radius:22px;
+            padding:30px;
+            border-radius:24px;
             margin-top:18px;
             margin-bottom:24px;
-            border-left:7px solid #00ffd0;
+            border-left:8px solid #00ffd0;
             ">
 
             <div style="
-            font-size:30px;
+            font-size:32px;
             font-weight:900;
             color:#FFFFFF;
-            margin-bottom:20px;
+            margin-bottom:22px;
             ">
             ⚖️ Caso Jurídico
             </div>
 
             <div style="
-            font-size:34px;
+            font-size:36px;
             font-weight:800;
             color:#FFFFFF;
-            line-height:1.7;
-            text-shadow:0 0 12px rgba(255,255,255,0.10);
+            line-height:1.8;
+            text-shadow:0 0 14px rgba(255,255,255,0.10);
             ">
             {caso_cliente}
             </div>
@@ -588,7 +575,7 @@ if st.session_state.logado:
 
             <div style="
             color:#FFFFFF;
-            font-size:24px;
+            font-size:26px;
             font-weight:800;
             margin-top:14px;
             opacity:0.92;
@@ -615,5 +602,3 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
-
-```
