@@ -297,13 +297,13 @@ display:center;
 justify-content:center;
 margin-top:0px;
 margin-bottom:20px;
-padding-left:-120px;
+padding-left:120px;
 ">
 """, unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=600
+    width=500
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
