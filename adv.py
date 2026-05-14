@@ -296,7 +296,7 @@ st.markdown("""
 display:flex;
 justify-content:center;
 margin-top:5px;
-margin-bottom:15px;
+margin-bottom:35px;
 ">
 """, unsafe_allow_html=True)
 
