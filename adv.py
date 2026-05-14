@@ -212,13 +212,13 @@ BOTÕES
 
     color: #000000 !important;
 
-    font-size: 30px !important;
+    font-size: 20px !important;
 
     font-weight: 900 !important;
 
     border-radius: 22px !important;
 
-    height: 72px !important;
+    height: 50px !important;
 
     width: 100%;
 
