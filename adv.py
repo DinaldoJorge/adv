@@ -3,6 +3,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import gspread
 from google.oauth2.service_account import Credentials
+import pandas as pd
 
 # =========================================
 # CONFIGURAÇÃO DA PÁGINA
@@ -10,7 +11,7 @@ from google.oauth2.service_account import Credentials
 st.set_page_config(
     page_title="MZA",
     page_icon="⚖️",
-    layout="centered"
+    layout="wide"
 )
 
 # =========================================
@@ -29,67 +30,39 @@ st.markdown("""
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* CONTAINER */
-.block-container {
-    max-width: 470px;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-}
-
 /* FONTE */
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
     color: white;
 }
 
-/* LOGO */
-.logo {
-
-    width: 200%;
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    align-items: center;
-
-    text-align: center;
-
-    margin-top: 5px;
-
-    margin-bottom: 15px;
+/* CONTAINER */
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
-/* CENTRALIZA IMAGEM */
-.logo img {
-
-    display: block;
-
-    margin-left: auto;
-
-    margin-right: auto;
+/* LOGO */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
     color: white;
     margin-top: 5px;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .frase span {
     color: #00E0B8;
     font-weight: 700;
-}
-
-/* LABELS */
-label {
-    color: white !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
 }
 
 /* INPUTS */
@@ -99,30 +72,15 @@ label {
 
     border: 1.8px solid rgba(0,224,184,0.65) !important;
 
-    border-radius: 10px !important;
+    border-radius: 12px !important;
 
     color: white !important;
 
     font-size: 18px !important;
 
-    font-weight: 400 !important;
-
-    height: 48px !important;
+    height: 50px !important;
 
     padding-left: 20px !important;
-
-    padding-right: 20px !important;
-
-    padding-top: 18px !important;
-
-    padding-bottom: 18px !important;
-
-    transition: 0.3s ease;
-
-    box-sizing: border-box !important;
-
-    box-shadow:
-        0 0 10px rgba(0,224,184,0.08);
 }
 
 /* TEXTAREA */
@@ -138,42 +96,9 @@ label {
 
     font-size: 17px !important;
 
-    font-weight: 400 !important;
-
     padding: 20px !important;
 
     line-height: 1.7 !important;
-
-    transition: 0.3s ease;
-
-    box-sizing: border-box !important;
-
-    box-shadow:
-        0 0 10px rgba(0,224,184,0.08);
-}
-
-/* PLACEHOLDER */
-input::placeholder,
-textarea::placeholder {
-
-    color: #9f9f9f !important;
-
-    opacity: 1 !important;
-
-    font-size: 17px !important;
-
-    line-height: normal !important;
-}
-
-/* FOCO */
-.stTextInput input:focus,
-.stTextArea textarea:focus {
-
-    border: 2px solid #00ffd0 !important;
-
-    box-shadow:
-        0 0 15px rgba(0,255,208,0.25),
-        0 0 25px rgba(0,255,208,0.08) !important;
 }
 
 /* BOTÃO */
@@ -187,48 +112,81 @@ textarea::placeholder {
 
     color: black !important;
 
-    font-size: 24px !important;
+    font-size: 22px !important;
 
     font-weight: 700 !important;
 
     border-radius: 14px !important;
 
-    height: 49px !important;
+    height: 50px !important;
 
     width: 100%;
 
     border: none !important;
 
     margin-top: 22px;
-
-    transition: all 0.3s ease;
-
-    box-shadow:
-        0 0 18px rgba(0,245,196,0.20);
 }
 
-/* HOVER */
-.stButton > button:hover {
+/* CARD */
+.card {
 
-    transform: translateY(-2px);
+    background: linear-gradient(
+        145deg,
+        #111111,
+        #1b1b1b
+    );
 
-    box-shadow:
-        0 0 25px rgba(0,255,208,0.35),
-        0 0 40px rgba(0,255,208,0.12);
-}
+    border: 1px solid rgba(0,255,208,0.20);
 
-/* ESPAÇAMENTO */
-div[data-baseweb="input"] {
+    border-radius: 22px;
+
+    padding: 25px;
+
     margin-bottom: 22px;
+
+    box-shadow:
+        0 0 18px rgba(0,255,208,0.08);
 }
 
-/* RODAPÉ */
+/* NOME */
+.nome {
+    font-size: 28px;
+    font-weight: 700;
+    color: #00ffd0;
+    margin-bottom: 15px;
+}
+
+/* INFO */
+.info {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* DATA */
+.data {
+    color: #8d8d8d;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+/* TITULO */
+.titulo-admin {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
     color: #7f7f7f;
     font-size: 13px;
     margin-top: 25px;
-    line-height: 1.7;
 }
 
 </style>
@@ -258,8 +216,7 @@ st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=420,
-    output_format="PNG"
+    width=420
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
@@ -274,73 +231,166 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================================
+# LAYOUT
+# =========================================
+col1, col2 = st.columns([1, 1.2])
+
+# =========================================
 # FORMULÁRIO
 # =========================================
-nome = st.text_input(
-    "Nome completo",
-    placeholder="Digite seu nome completo"
-)
+with col1:
 
-email = st.text_input(
-    "Email",
-    placeholder="✉️   Digite seu melhor e-mail"
-)
+    st.subheader("📋 Formulário")
 
-telefone = st.text_input(
-    "Telefone",
-    placeholder="📞   Digite seu número de telefone"
-)
+    nome = st.text_input(
+        "Nome completo",
+        placeholder="Digite seu nome completo"
+    )
 
-caso = st.text_area(
-    "Escreva seu caso jurídico para análise",
-    placeholder="Explique sua dúvida ou situação jurídica...",
-    height=180
-)
+    email = st.text_input(
+        "Email",
+        placeholder="Digite seu melhor e-mail"
+    )
+
+    telefone = st.text_input(
+        "Telefone",
+        placeholder="Digite seu telefone"
+    )
+
+    caso = st.text_area(
+        "Caso jurídico",
+        placeholder="Explique sua situação jurídica...",
+        height=180
+    )
+
+    # =========================================
+    # SALVAR
+    # =========================================
+    def salvar(nome, email, telefone, caso):
+
+        data = datetime.now(
+            ZoneInfo("America/Sao_Paulo")
+        ).strftime("%d/%m/%Y %H:%M")
+
+        planilha.append_row([
+            nome,
+            email,
+            telefone,
+            caso,
+            data
+        ])
+
+    # =========================================
+    # BOTÃO
+    # =========================================
+    if st.button("✈️ Enviar Dados"):
+
+        if nome and email and caso:
+
+            salvar(nome, email, telefone, caso)
+
+            link = (
+                f"https://wa.me/5583991241249"
+                f"?text=Olá, sou {nome} e desejo análise jurídica."
+            )
+
+            st.success("✅ Dados enviados com sucesso!")
+
+            st.link_button(
+                "💬 Falar no WhatsApp",
+                link
+            )
+
+            st.rerun()
+
+        else:
+            st.error("⚠️ Preencha os campos obrigatórios.")
 
 # =========================================
-# FUNÇÃO SALVAR
+# PAINEL ADMIN
 # =========================================
-def salvar(nome, email, telefone, caso):
+with col2:
 
-    # HORÁRIO DE BRASÍLIA
-    data = datetime.now(
-        ZoneInfo("America/Sao_Paulo")
-    ).strftime("%d/%m/%Y %H:%M")
+    st.markdown("""
+    <div class="titulo-admin">
+    ⚖️ Painel Jurídico
+    </div>
+    """, unsafe_allow_html=True)
 
-    planilha.append_row([
-        nome,
-        email,
-        telefone,
-        caso,
-        data
-    ])
+    dados = planilha.get_all_records()
 
-# =========================================
-# BOTÃO
-# =========================================
-if st.button("✈️  Enviar"):
+    if dados:
 
-    if nome and email and caso:
+        df = pd.DataFrame(dados)
 
-        salvar(nome, email, telefone, caso)
-
-        link = (
-            f"https://wa.me/5583991241249"
-            f"?text=Olá, sou {nome} e desejo uma análise jurídica."
+        busca = st.text_input(
+            "🔍 Pesquisar cliente"
         )
 
-        st.success("✅ Dados enviados com sucesso!")
+        if busca:
 
-        st.link_button(
-            "💬 Falar no WhatsApp",
-            link
-        )
+            df = df[
+                df.astype(str).apply(
+                    lambda x: x.str.contains(
+                        busca,
+                        case=False
+                    )
+                ).any(axis=1)
+            ]
+
+        st.write(f"📊 Total de clientes: {len(df)}")
+
+        df = df.iloc[::-1]
+
+        for i, row in df.iterrows():
+
+            nome_cliente = row.iloc[0]
+            email_cliente = row.iloc[1]
+            telefone_cliente = row.iloc[2]
+            caso_cliente = row.iloc[3]
+            data_cliente = row.iloc[4]
+
+            whatsapp = (
+                f"https://wa.me/55"
+                f"{telefone_cliente}"
+            )
+
+            st.markdown(f"""
+            <div class="card">
+
+                <div class="nome">
+                👤 {nome_cliente}
+                </div>
+
+                <div class="info">
+                📞 {telefone_cliente}
+                </div>
+
+                <div class="info">
+                ✉️ {email_cliente}
+                </div>
+
+                <div class="info">
+                ⚖️ {caso_cliente}
+                </div>
+
+                <div class="data">
+                🕒 {data_cliente}
+                </div>
+
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.link_button(
+                "💬 Abrir WhatsApp",
+                whatsapp
+            )
 
     else:
-        st.error("⚠️ Preencha os campos obrigatórios.")
+        st.warning("Nenhum cliente encontrado.")
 
 # =========================================
-# RODAPÉ
+# FOOTER
 # =========================================
 st.markdown("""
 <div class="footer">
