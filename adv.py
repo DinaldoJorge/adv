@@ -303,7 +303,7 @@ padding-left:320px;
 
 st.image(
     "logomza.png",
-    width=780
+    width=980
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
