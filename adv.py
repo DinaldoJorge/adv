@@ -242,7 +242,7 @@ BOTÕES
 
 /* TITULO ADMIN */
 .titulo-admin {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 900;
     text-align: center;
     margin-top: 40px;
