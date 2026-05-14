@@ -72,12 +72,12 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 42px;
+    font-weight: 900;
     color: #FFFFFF;
     margin-top: 5px;
     margin-bottom: 45px;
-    text-shadow: 0 0 18px rgba(255,255,255,0.22);
+    text-shadow: 0 0 20px rgba(255,255,255,0.22);
 }
 
 .frase span {
@@ -85,55 +85,33 @@ html, body, [class*="css"] {
     font-weight: 900;
 }
 
-/* SUBHEADER */
-.stSubheader {
-    color: white !important;
-}
+/* =========================================
+TÍTULOS DO FORMULÁRIO
+========================================= */
 
-/* LABELS */
 label,
 .stTextInput label,
 .stTextArea label {
+
     color: #FFFFFF !important;
-    font-size: 26px !important;
+
+    font-size: 42px !important;
+
     font-weight: 900 !important;
+
     opacity: 1 !important;
-    text-shadow: 0 0 12px rgba(255,255,255,0.14);
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,0.22);
 }
 
-/* INPUTS */
+/* =========================================
+INPUTS
+========================================= */
+
 .stTextInput input {
-
-    background: rgba(12,12,12,0.98) !important;
-
-    border: 2px solid rgba(0,255,208,0.75) !important;
-
-    border-radius: 18px !important;
-
-    color: #FFFFFF !important;
-
-    font-size: 26px !important;
-
-    font-weight: 800 !important;
-
-    height: 49px !important;
-
-    padding-left: 24px !important;
-
-    box-shadow:
-        0 0 22px rgba(0,255,208,0.10);
-}
-
-/* PLACEHOLDER */
-.stTextInput input::placeholder {
-    color: #FFFFFF !important;
-    opacity: 0.82 !important;
-    font-size: 23px !important;
-    font-weight: 700 !important;
-}
-
-/* TEXTAREA */
-.stTextArea textarea {
 
     background: rgba(12,12,12,0.98) !important;
 
@@ -143,37 +121,87 @@ label,
 
     color: #FFFFFF !important;
 
-    font-size: 26px !important;
+    font-size: 34px !important;
+
+    font-weight: 800 !important;
+
+    height: 80px !important;
+
+    padding-left: 28px !important;
+
+    box-shadow:
+        0 0 26px rgba(0,255,208,0.12);
+}
+
+/* PLACEHOLDER INPUT */
+
+.stTextInput input::placeholder {
+
+    color: #FFFFFF !important;
+
+    opacity: 0.88 !important;
+
+    font-size: 30px !important;
+
+    font-weight: 700 !important;
+}
+
+/* =========================================
+TEXTAREA
+========================================= */
+
+.stTextArea textarea {
+
+    background: rgba(12,12,12,0.98) !important;
+
+    border: 2px solid rgba(0,255,208,0.75) !important;
+
+    border-radius: 22px !important;
+
+    color: #FFFFFF !important;
+
+    font-size: 32px !important;
 
     font-weight: 700 !important;
 
-    padding: 26px !important;
+    padding: 30px !important;
 
     line-height: 1.9 !important;
 
     box-shadow:
-        0 0 22px rgba(0,255,208,0.10);
+        0 0 26px rgba(0,255,208,0.12);
 }
 
 /* PLACEHOLDER TEXTAREA */
+
 .stTextArea textarea::placeholder {
+
     color: #FFFFFF !important;
-    opacity: 0.82 !important;
-    font-size: 23px !important;
+
+    opacity: 0.88 !important;
+
+    font-size: 30px !important;
+
     font-weight: 700 !important;
 }
 
-/* FOCO */
+/* =========================================
+FOCO
+========================================= */
+
 .stTextInput input:focus,
 .stTextArea textarea:focus {
 
     border: 2px solid #00ffd0 !important;
 
     box-shadow:
-        0 0 30px rgba(0,255,208,0.34);
+        0 0 34px rgba(0,255,208,0.38);
 }
 
-/* BOTÕES */
+/* =========================================
+BOTÕES
+========================================= */
+
 .stButton > button {
 
     background: linear-gradient(
@@ -184,24 +212,24 @@ label,
 
     color: #000000 !important;
 
-    font-size: 28px !important;
+    font-size: 30px !important;
 
     font-weight: 900 !important;
 
-    border-radius: 20px !important;
+    border-radius: 22px !important;
 
-    height: 68px !important;
+    height: 72px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 22px;
+    margin-top: 24px;
 
     transition: 0.3s ease;
 
     box-shadow:
-        0 0 28px rgba(0,255,208,0.24);
+        0 0 30px rgba(0,255,208,0.24);
 }
 
 .stButton > button:hover {
@@ -209,33 +237,34 @@ label,
     transform: translateY(-2px);
 
     box-shadow:
-        0 0 40px rgba(0,255,208,0.45);
+        0 0 42px rgba(0,255,208,0.45);
 }
 
 /* TITULO ADMIN */
 .titulo-admin {
-    font-size: 52px;
+    font-size: 56px;
     font-weight: 900;
     text-align: center;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     color: white;
+    text-shadow: 0 0 16px rgba(255,255,255,0.18);
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
     color: #f0f0f0;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 /* ALERTAS */
 .stSuccess,
 .stError,
 .stWarning {
-    font-size: 22px !important;
+    font-size: 24px !important;
     font-weight: 800 !important;
 }
 
@@ -303,7 +332,7 @@ telefone = st.text_input(
 caso = st.text_area(
     "Caso jurídico",
     placeholder="Explique sua situação jurídica...",
-    height=240
+    height=260
 )
 
 # =========================================
@@ -422,11 +451,11 @@ if st.session_state.logado:
 
         st.markdown(f"""
         <div style="
-        font-size:30px;
+        font-size:34px;
         font-weight:900;
         color:white;
-        margin-bottom:30px;
-        text-shadow:0 0 12px rgba(255,255,255,0.18);
+        margin-bottom:34px;
+        text-shadow:0 0 14px rgba(255,255,255,0.18);
         ">
         📊 Total de clientes: {len(df)}
         </div>
@@ -453,33 +482,33 @@ if st.session_state.logado:
             st.markdown(f"""
             <div style="
             background: linear-gradient(145deg,#0f0f0f,#161616);
-            padding:40px;
-            border-radius:30px;
-            margin-bottom:40px;
+            padding:42px;
+            border-radius:32px;
+            margin-bottom:42px;
             border:2px solid rgba(0,255,208,0.25);
             box-shadow:
-            0 0 36px rgba(0,255,208,0.10);
+            0 0 38px rgba(0,255,208,0.10);
             ">
 
             <div style="
             display:flex;
             align-items:center;
-            gap:22px;
-            margin-bottom:34px;
+            gap:24px;
+            margin-bottom:36px;
             ">
 
             <div style="
-            font-size:60px;
+            font-size:62px;
             ">
             👤
             </div>
 
             <div style="
-            font-size:58px;
+            font-size:60px;
             font-weight:900;
             color:#00ffd0;
             line-height:1;
-            text-shadow:0 0 20px rgba(0,255,208,0.22);
+            text-shadow:0 0 22px rgba(0,255,208,0.22);
             ">
             {nome_cliente}
             </div>
@@ -488,66 +517,8 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:28px;
-            border-radius:24px;
-            margin-bottom:24px;
-            border-left:8px solid #00ffd0;
-            ">
-
-            <div style="
-            font-size:30px;
-            font-weight:900;
-            color:#FFFFFF;
-            margin-bottom:14px;
-            ">
-            📞 Telefone:
-            </div>
-
-            <div style="
-            font-size:54px;
-            font-weight:900;
-            color:#FFFFFF;
-            letter-spacing:1px;
-            text-shadow:0 0 14px rgba(255,255,255,0.12);
-            ">
-            {telefone_cliente}
-            </div>
-
-            </div>
-
-            <div style="
-            background:#050505;
-            padding:28px;
-            border-radius:24px;
-            margin-bottom:24px;
-            border-left:8px solid #00ffd0;
-            ">
-
-            <div style="
-            font-size:30px;
-            font-weight:900;
-            color:#FFFFFF;
-            margin-bottom:14px;
-            ">
-            ✉️ Email:
-            </div>
-
-            <div style="
-            font-size:46px;
-            font-weight:900;
-            color:#FFFFFF;
-            text-shadow:0 0 14px rgba(255,255,255,0.12);
-            ">
-            {email_cliente}
-            </div>
-
-            </div>
-
-            <div style="
-            background:#050505;
             padding:30px;
             border-radius:24px;
-            margin-top:18px;
             margin-bottom:24px;
             border-left:8px solid #00ffd0;
             ">
@@ -556,13 +527,71 @@ if st.session_state.logado:
             font-size:32px;
             font-weight:900;
             color:#FFFFFF;
+            margin-bottom:14px;
+            ">
+            📞 Telefone:
+            </div>
+
+            <div style="
+            font-size:56px;
+            font-weight:900;
+            color:#FFFFFF;
+            letter-spacing:1px;
+            text-shadow:0 0 16px rgba(255,255,255,0.12);
+            ">
+            {telefone_cliente}
+            </div>
+
+            </div>
+
+            <div style="
+            background:#050505;
+            padding:30px;
+            border-radius:24px;
+            margin-bottom:24px;
+            border-left:8px solid #00ffd0;
+            ">
+
+            <div style="
+            font-size:32px;
+            font-weight:900;
+            color:#FFFFFF;
+            margin-bottom:14px;
+            ">
+            ✉️ Email:
+            </div>
+
+            <div style="
+            font-size:48px;
+            font-weight:900;
+            color:#FFFFFF;
+            text-shadow:0 0 16px rgba(255,255,255,0.12);
+            ">
+            {email_cliente}
+            </div>
+
+            </div>
+
+            <div style="
+            background:#050505;
+            padding:32px;
+            border-radius:24px;
+            margin-top:18px;
+            margin-bottom:24px;
+            border-left:8px solid #00ffd0;
+            ">
+
+            <div style="
+            font-size:34px;
+            font-weight:900;
+            color:#FFFFFF;
             margin-bottom:22px;
             ">
             ⚖️ Caso Jurídico
             </div>
 
             <div style="
-            font-size:36px;
+            font-size:38px;
             font-weight:800;
             color:#FFFFFF;
             line-height:1.8;
@@ -575,7 +604,7 @@ if st.session_state.logado:
 
             <div style="
             color:#FFFFFF;
-            font-size:26px;
+            font-size:28px;
             font-weight:800;
             margin-top:14px;
             opacity:0.92;
