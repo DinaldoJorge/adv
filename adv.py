@@ -295,14 +295,14 @@ st.markdown("""
 <div style="
 display:flex;
 justify-content:center;
-margin-top:0px;
-margin-bottom:20px;
+margin-top:5px;
+margin-bottom:15px;
 ">
 """, unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=480
+    width=780
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
