@@ -23,6 +23,19 @@ SENHA = "mza2026"
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
+if "limpar_login" not in st.session_state:
+    st.session_state.limpar_login = False
+
+# =========================================
+# LIMPA CAMPOS LOGIN
+# =========================================
+if st.session_state.limpar_login:
+
+    st.session_state["usuario"] = ""
+    st.session_state["senha"] = ""
+
+    st.session_state.limpar_login = False
+
 # =========================================
 # CSS PREMIUM
 # =========================================
@@ -83,9 +96,13 @@ label,
 .stTextArea label {
 
     color: #FFFFFF !important;
+
     font-size: 22px !important;
+
     font-weight: 900 !important;
+
     opacity: 1 !important;
+
     letter-spacing: 0.5px;
 
     text-shadow:
@@ -150,6 +167,18 @@ label,
         0 0 26px rgba(0,255,208,0.12);
 }
 
+/* PLACEHOLDER TEXTAREA */
+.stTextArea textarea::placeholder {
+
+    color: #FFFFFF !important;
+
+    opacity: 0.88 !important;
+
+    font-size: 22px !important;
+
+    font-weight: 700 !important;
+}
+
 /* FOCO */
 .stTextInput input:focus,
 .stTextArea textarea:focus {
@@ -201,21 +230,33 @@ label,
 
 /* TITULO ADMIN */
 .titulo-admin {
+
     font-size: 22px;
+
     font-weight: 900;
+
     text-align: center;
+
     margin-top: 20px;
+
     margin-bottom: 20px;
+
     color: white;
+
     text-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
 
 /* FOOTER */
 .footer {
+
     text-align: center;
+
     color: #f0f0f0;
+
     font-size: 12px;
+
     font-weight: 400;
+
     margin-top: 30px;
 }
 
@@ -223,7 +264,9 @@ label,
 .stSuccess,
 .stError,
 .stWarning {
+
     font-size: 22px !important;
+
     font-weight: 600 !important;
 }
 
@@ -253,6 +296,7 @@ planilha = client.open("leads_professores").sheet1
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
+
     st.image(
         "logomza.png",
         width=300
@@ -334,6 +378,7 @@ if enviar:
         )
 
     else:
+
         st.error("⚠️ Preencha os campos obrigatórios.")
 
 # =========================================
@@ -347,43 +392,44 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# CAMPOS LOGIN
 usuario_input = st.text_input(
     "Usuário",
-    value="",
     key="usuario"
 )
 
 senha_input = st.text_input(
     "Senha",
     type="password",
-    value="",
     key="senha"
 )
 
+# =========================================
 # BOTÃO LOGIN
+# =========================================
 if st.button("🚪 Entrar no Painel"):
 
+    usuario_digitado = st.session_state.usuario
+    senha_digitada = st.session_state.senha
+
+    # MARCA LIMPEZA
+    st.session_state.limpar_login = True
+
     if (
-        usuario_input == USUARIO
-        and senha_input == SENHA
+        usuario_digitado == USUARIO
+        and senha_digitada == SENHA
     ):
 
         st.session_state.logado = True
 
-        # LIMPA CAMPOS
-        st.session_state["usuario"] = ""
-        st.session_state["senha"] = ""
+        st.success("✅ Login realizado!")
 
         st.rerun()
 
     else:
 
-        # LIMPA CAMPOS
-        st.session_state["usuario"] = ""
-        st.session_state["senha"] = ""
-
         st.error("❌ Usuário ou senha inválidos.")
+
+        st.rerun()
 
 # =========================================
 # PAINEL JURÍDICO
@@ -460,6 +506,8 @@ if st.session_state.logado:
             border-radius:32px;
             margin-bottom:42px;
             border:2px solid rgba(0,255,208,0.25);
+            box-shadow:
+            0 0 38px rgba(0,255,208,0.10);
             ">
 
             <div style="
@@ -497,6 +545,7 @@ if st.session_state.logado:
             )
 
     else:
+
         st.warning("Nenhum cliente encontrado.")
 
 # =========================================
