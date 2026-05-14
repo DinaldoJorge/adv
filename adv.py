@@ -509,7 +509,7 @@ if st.session_state.logado:
             ">
 
             <div style="
-            font-size:62px;
+            font-size:32px;
             ">
             👤
             </div>
