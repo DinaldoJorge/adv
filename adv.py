@@ -117,11 +117,11 @@ INPUTS
 
     border: 2px solid rgba(0,255,208,0.75) !important;
 
-    border-radius: 20px !important;
+    border-radius: 15px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 22px !important;
+    font-size: 12px !important;
 
     font-weight: 800 !important;
 
@@ -141,7 +141,7 @@ INPUTS
 
     opacity: 0.88 !important;
 
-    font-size: 30px !important;
+    font-size: 20px !important;
 
     font-weight: 700 !important;
 }
