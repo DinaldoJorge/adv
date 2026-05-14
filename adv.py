@@ -24,21 +24,6 @@ if "logado" not in st.session_state:
     st.session_state.logado = False
 
 # =========================================
-# RESET DOS CAMPOS
-# =========================================
-if "nome" not in st.session_state:
-    st.session_state.nome = ""
-
-if "email" not in st.session_state:
-    st.session_state.email = ""
-
-if "telefone" not in st.session_state:
-    st.session_state.telefone = ""
-
-if "caso" not in st.session_state:
-    st.session_state.caso = ""
-
-# =========================================
 # CSS PREMIUM
 # =========================================
 st.markdown("""
@@ -310,7 +295,7 @@ st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=430
+    width=830
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
@@ -327,32 +312,32 @@ st.markdown("""
 # =========================================
 # FORMULÁRIO
 # =========================================
-st.subheader("📋 Formulário")
+with st.form("formulario_cliente", clear_on_submit=True):
 
-nome = st.text_input(
-    "Nome completo",
-    placeholder="Digite seu nome completo",
-    key="nome"
-)
+    st.subheader("📋 Formulário")
 
-email = st.text_input(
-    "Email",
-    placeholder="Digite seu melhor e-mail",
-    key="email"
-)
+    nome = st.text_input(
+        "Nome completo",
+        placeholder="Digite seu nome completo"
+    )
 
-telefone = st.text_input(
-    "Telefone",
-    placeholder="Digite seu telefone",
-    key="telefone"
-)
+    email = st.text_input(
+        "Email",
+        placeholder="Digite seu melhor e-mail"
+    )
 
-caso = st.text_area(
-    "Caso jurídico",
-    placeholder="Explique sua situação jurídica...",
-    height=200,
-    key="caso"
-)
+    telefone = st.text_input(
+        "Telefone",
+        placeholder="Digite seu telefone"
+    )
+
+    caso = st.text_area(
+        "Caso jurídico",
+        placeholder="Explique sua situação jurídica...",
+        height=260
+    )
+
+    enviar = st.form_submit_button("✈️ Enviar Dados")
 
 # =========================================
 # SALVAR
@@ -374,7 +359,7 @@ def salvar(nome, email, telefone, caso):
 # =========================================
 # ENVIAR
 # =========================================
-if st.button("✈️ Enviar Dados"):
+if enviar:
 
     if nome and email and caso:
 
@@ -391,14 +376,6 @@ if st.button("✈️ Enviar Dados"):
             "💬 Falar no WhatsApp",
             link
         )
-
-        # RESET DOS CAMPOS
-        st.session_state.nome = ""
-        st.session_state.email = ""
-        st.session_state.telefone = ""
-        st.session_state.caso = ""
-
-        st.rerun()
 
     else:
         st.error("⚠️ Preencha os campos obrigatórios.")
@@ -560,7 +537,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:36px;
+            font-size:56px;
             font-weight:900;
             color:#FFFFFF;
             letter-spacing:1px;
@@ -589,7 +566,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:28px;
+            font-size:48px;
             font-weight:900;
             color:#FFFFFF;
             text-shadow:0 0 16px rgba(255,255,255,0.12);
@@ -609,7 +586,7 @@ if st.session_state.logado:
             ">
 
             <div style="
-            font-size:24px;
+            font-size:34px;
             font-weight:900;
             color:#FFFFFF;
             margin-bottom:22px;
@@ -618,7 +595,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:22px;
+            font-size:38px;
             font-weight:800;
             color:#FFFFFF;
             line-height:1.8;
