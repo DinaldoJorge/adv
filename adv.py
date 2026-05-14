@@ -95,7 +95,7 @@ label,
 
     color: #FFFFFF !important;
 
-    font-size: 32px !important;
+    font-size: 22px !important;
 
     font-weight: 900 !important;
 
@@ -121,7 +121,7 @@ INPUTS
 
     color: #FFFFFF !important;
 
-    font-size: 25px !important;
+    font-size: 22px !important;
 
     font-weight: 800 !important;
 
@@ -160,7 +160,7 @@ TEXTAREA
 
     color: #FFFFFF !important;
 
-    font-size: 32px !important;
+    font-size: 22px !important;
 
     font-weight: 700 !important;
 
@@ -295,7 +295,7 @@ st.markdown('<div class="logo">', unsafe_allow_html=True)
 
 st.image(
     "logomza.png",
-    width=430
+    width=830
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
@@ -451,7 +451,7 @@ if st.session_state.logado:
 
         st.markdown(f"""
         <div style="
-        font-size:34px;
+        font-size:22px;
         font-weight:900;
         color:white;
         margin-bottom:34px;
