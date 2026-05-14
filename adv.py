@@ -6,7 +6,7 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 
 # =========================================
-# CONFIGURAÇÃO DA PÁGINA
+# CONFIGURAÇÃO
 # =========================================
 st.set_page_config(
     page_title="MZA",
@@ -15,28 +15,33 @@ st.set_page_config(
 )
 
 # =========================================
-# CSS PREMIUM
+# LOGIN
+# =========================================
+USUARIO = "admin"
+SENHA = "mza2026"
+
+if "logado" not in st.session_state:
+    st.session_state.logado = False
+
+# =========================================
+# CSS
 # =========================================
 st.markdown("""
 <style>
 
-/* FUNDO */
 .stApp {
     background-color: #050505;
 }
 
-/* REMOVE MENU */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* FONTE */
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
     color: white;
 }
 
-/* CONTAINER */
 .block-container {
     padding-top: 1rem;
     padding-bottom: 2rem;
@@ -148,7 +153,6 @@ html, body, [class*="css"] {
         0 0 18px rgba(0,255,208,0.08);
 }
 
-/* NOME */
 .nome {
     font-size: 28px;
     font-weight: 700;
@@ -156,7 +160,6 @@ html, body, [class*="css"] {
     margin-bottom: 15px;
 }
 
-/* INFO */
 .info {
     font-size: 17px;
     color: white;
@@ -164,14 +167,12 @@ html, body, [class*="css"] {
     line-height: 1.7;
 }
 
-/* DATA */
 .data {
     color: #8d8d8d;
     font-size: 14px;
     margin-top: 18px;
 }
 
-/* TITULO */
 .titulo-admin {
     font-size: 36px;
     font-weight: 700;
@@ -181,7 +182,6 @@ html, body, [class*="css"] {
     text-align: center;
 }
 
-/* FOOTER */
 .footer {
     text-align: center;
     color: #7f7f7f;
@@ -231,91 +231,123 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================================
-# LAYOUT
-# =========================================
-col1, col2 = st.columns([1, 1.2])
-
-# =========================================
 # FORMULÁRIO
 # =========================================
-with col1:
+st.subheader("📋 Formulário")
 
-    st.subheader("📋 Formulário")
+nome = st.text_input(
+    "Nome completo",
+    placeholder="Digite seu nome completo"
+)
 
-    nome = st.text_input(
-        "Nome completo",
-        placeholder="Digite seu nome completo"
-    )
+email = st.text_input(
+    "Email",
+    placeholder="Digite seu melhor e-mail"
+)
 
-    email = st.text_input(
-        "Email",
-        placeholder="Digite seu melhor e-mail"
-    )
+telefone = st.text_input(
+    "Telefone",
+    placeholder="Digite seu telefone"
+)
 
-    telefone = st.text_input(
-        "Telefone",
-        placeholder="Digite seu telefone"
-    )
+caso = st.text_area(
+    "Caso jurídico",
+    placeholder="Explique sua situação jurídica...",
+    height=180
+)
 
-    caso = st.text_area(
-        "Caso jurídico",
-        placeholder="Explique sua situação jurídica...",
-        height=180
-    )
+# =========================================
+# SALVAR
+# =========================================
+def salvar(nome, email, telefone, caso):
 
-    # =========================================
-    # SALVAR
-    # =========================================
-    def salvar(nome, email, telefone, caso):
+    data = datetime.now(
+        ZoneInfo("America/Sao_Paulo")
+    ).strftime("%d/%m/%Y %H:%M")
 
-        data = datetime.now(
-            ZoneInfo("America/Sao_Paulo")
-        ).strftime("%d/%m/%Y %H:%M")
+    planilha.append_row([
+        nome,
+        email,
+        telefone,
+        caso,
+        data
+    ])
 
-        planilha.append_row([
-            nome,
-            email,
-            telefone,
-            caso,
-            data
-        ])
+# =========================================
+# BOTÃO ENVIAR
+# =========================================
+if st.button("✈️ Enviar Dados"):
 
-    # =========================================
-    # BOTÃO
-    # =========================================
-    if st.button("✈️ Enviar Dados"):
+    if nome and email and caso:
 
-        if nome and email and caso:
+        salvar(nome, email, telefone, caso)
 
-            salvar(nome, email, telefone, caso)
+        link = (
+            f"https://wa.me/5583991241249"
+            f"?text=Olá, sou {nome} e desejo análise jurídica."
+        )
 
-            link = (
-                f"https://wa.me/5583991241249"
-                f"?text=Olá, sou {nome} e desejo análise jurídica."
-            )
+        st.success("✅ Dados enviados com sucesso!")
 
-            st.success("✅ Dados enviados com sucesso!")
+        st.link_button(
+            "💬 Falar no WhatsApp",
+            link
+        )
 
-            st.link_button(
-                "💬 Falar no WhatsApp",
-                link
-            )
+    else:
+        st.error("⚠️ Preencha os campos obrigatórios.")
 
-            st.rerun()
+# =========================================
+# ACESSO ADMIN
+# =========================================
+st.divider()
 
-        else:
-            st.error("⚠️ Preencha os campos obrigatórios.")
+st.markdown("""
+<div class="titulo-admin">
+🔐 Acesso Painel Jurídico
+</div>
+""", unsafe_allow_html=True)
+
+usuario_input = st.text_input(
+    "Usuário"
+)
+
+senha_input = st.text_input(
+    "Senha",
+    type="password"
+)
+
+if st.button("🚪 Entrar no Painel"):
+
+    if (
+        usuario_input == USUARIO
+        and senha_input == SENHA
+    ):
+
+        st.session_state.logado = True
+        st.success("✅ Login realizado!")
+        st.rerun()
+
+    else:
+        st.error("❌ Usuário ou senha inválidos.")
 
 # =========================================
 # PAINEL ADMIN
 # =========================================
-with col2:
+if st.session_state.logado:
+
+    st.divider()
 
     st.markdown("""
     <div class="titulo-admin">
     ⚖️ Painel Jurídico
     </div>
     """, unsafe_allow_html=True)
+
+    if st.button("🚪 Sair do Painel"):
+
+        st.session_state.logado = False
+        st.rerun()
 
     dados = planilha.get_all_records()
 
@@ -385,9 +417,6 @@ with col2:
                 "💬 Abrir WhatsApp",
                 whatsapp
             )
-
-    else:
-        st.warning("Nenhum cliente encontrado.")
 
 # =========================================
 # FOOTER
