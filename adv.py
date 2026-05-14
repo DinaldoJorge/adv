@@ -64,9 +64,9 @@ html, body, [class*="css"] {
 /* LOGO */
 .logo {
     display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    justify-content: flex-end;
+    padding-right: 120px;
+    
 }
 
 /* FRASE */
