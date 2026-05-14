@@ -302,7 +302,7 @@ margin-bottom:20px;
 
 st.image(
     "logomza.png",
-    width=280
+    width=480
 )
 
 st.markdown("</div>", unsafe_allow_html=True)
