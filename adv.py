@@ -1,3 +1,6 @@
+# Código Completo Streamlit MZA Premium
+
+```python
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -29,14 +32,24 @@ if "logado" not in st.session_state:
 st.markdown("""
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 .stApp {
     background-color: #050505;
 }
 
 /* REMOVE MENU */
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
 
 /* FONTE */
 html, body, [class*="css"] {
@@ -62,55 +75,95 @@ html, body, [class*="css"] {
 /* FRASE */
 .frase {
     text-align: center;
-    font-size: 32px;
-    font-weight: 500;
-    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    color: #FFFFFF;
     margin-top: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    text-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
 
 .frase span {
     color: #00ffd0;
-    font-weight: 800;
+    font-weight: 900;
+}
+
+/* SUBHEADER */
+.stSubheader {
+    color: white !important;
+}
+
+/* LABELS */
+label,
+.stTextInput label,
+.stTextArea label {
+    color: #FFFFFF !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.10);
 }
 
 /* INPUTS */
 .stTextInput input {
 
-    background: rgba(12,12,12,0.96) !important;
+    background: rgba(12,12,12,0.98) !important;
 
-    border: 1.8px solid rgba(0,224,184,0.65) !important;
+    border: 2px solid rgba(0,255,208,0.75) !important;
 
-    border-radius: 14px !important;
+    border-radius: 16px !important;
 
-    color: white !important;
+    color: #FFFFFF !important;
 
-    font-size: 18px !important;
+    font-size: 24px !important;
 
-    height: 54px !important;
+    font-weight: 700 !important;
 
-    padding-left: 20px !important;
+    height: 68px !important;
+
+    padding-left: 22px !important;
 
     box-shadow:
-        0 0 10px rgba(0,255,208,0.05);
+        0 0 18px rgba(0,255,208,0.08);
+}
+
+/* PLACEHOLDER */
+.stTextInput input::placeholder {
+    color: #FFFFFF !important;
+    opacity: 0.78 !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }
 
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: rgba(12,12,12,0.96) !important;
+    background: rgba(12,12,12,0.98) !important;
 
-    border: 1.8px solid rgba(0,224,184,0.65) !important;
+    border: 2px solid rgba(0,255,208,0.75) !important;
 
-    border-radius: 16px !important;
+    border-radius: 18px !important;
 
-    color: white !important;
+    color: #FFFFFF !important;
 
-    font-size: 18px !important;
+    font-size: 24px !important;
 
-    padding: 22px !important;
+    font-weight: 700 !important;
 
-    line-height: 1.8 !important;
+    padding: 24px !important;
+
+    line-height: 1.9 !important;
+
+    box-shadow:
+        0 0 18px rgba(0,255,208,0.08);
+}
+
+/* PLACEHOLDER TEXTAREA */
+.stTextArea textarea::placeholder {
+    color: #FFFFFF !important;
+    opacity: 0.78 !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
 }
 
 /* FOCO */
@@ -120,7 +173,7 @@ html, body, [class*="css"] {
     border: 2px solid #00ffd0 !important;
 
     box-shadow:
-        0 0 20px rgba(0,255,208,0.25);
+        0 0 25px rgba(0,255,208,0.30);
 }
 
 /* BOTÕES */
@@ -132,26 +185,26 @@ html, body, [class*="css"] {
         #00ffd0
     );
 
-    color: black !important;
+    color: #000000 !important;
 
-    font-size: 22px !important;
+    font-size: 26px !important;
 
-    font-weight: 800 !important;
+    font-weight: 900 !important;
 
-    border-radius: 16px !important;
+    border-radius: 18px !important;
 
-    height: 56px !important;
+    height: 64px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 18px;
+    margin-top: 20px;
 
     transition: 0.3s ease;
 
     box-shadow:
-        0 0 20px rgba(0,255,208,0.18);
+        0 0 24px rgba(0,255,208,0.20);
 }
 
 .stButton > button:hover {
@@ -159,24 +212,44 @@ html, body, [class*="css"] {
     transform: translateY(-2px);
 
     box-shadow:
-        0 0 35px rgba(0,255,208,0.35);
+        0 0 38px rgba(0,255,208,0.40);
 }
 
-/* TITULO */
+/* TÍTULO ADMIN */
 .titulo-admin {
-    font-size: 42px;
-    font-weight: 800;
+    font-size: 48px;
+    font-weight: 900;
     text-align: center;
     margin-top: 35px;
     margin-bottom: 35px;
+    color: white;
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
-    color: #8d8d8d;
-    font-size: 13px;
+    color: #d9d9d9;
+    font-size: 18px;
+    font-weight: 600;
     margin-top: 35px;
+}
+
+/* SUCESSO */
+.stSuccess {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+/* ERROR */
+.stError {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+/* WARNING */
+.stWarning {
+    font-size: 22px !important;
+    font-weight: 700 !important;
 }
 
 </style>
@@ -243,7 +316,7 @@ telefone = st.text_input(
 caso = st.text_area(
     "Caso jurídico",
     placeholder="Explique sua situação jurídica...",
-    height=200
+    height=230
 )
 
 # =========================================
@@ -360,7 +433,17 @@ if st.session_state.logado:
                 ).any(axis=1)
             ]
 
-        st.write(f"📊 Total de clientes: {len(df)}")
+        st.markdown(f"""
+        <div style="
+        font-size:28px;
+        font-weight:900;
+        color:white;
+        margin-bottom:30px;
+        text-shadow:0 0 10px rgba(255,255,255,0.12);
+        ">
+        📊 Total de clientes: {len(df)}
+        </div>
+        """, unsafe_allow_html=True)
 
         df = df.iloc[::-1]
 
@@ -383,32 +466,33 @@ if st.session_state.logado:
             st.markdown(f"""
             <div style="
             background: linear-gradient(145deg,#0f0f0f,#161616);
-            padding:35px;
-            border-radius:28px;
-            margin-bottom:35px;
-            border:1px solid rgba(0,255,208,0.25);
+            padding:38px;
+            border-radius:30px;
+            margin-bottom:38px;
+            border:2px solid rgba(0,255,208,0.25);
             box-shadow:
-            0 0 30px rgba(0,255,208,0.08);
+            0 0 34px rgba(0,255,208,0.08);
             ">
 
             <div style="
             display:flex;
             align-items:center;
-            gap:18px;
-            margin-bottom:28px;
+            gap:20px;
+            margin-bottom:32px;
             ">
 
             <div style="
-            font-size:52px;
+            font-size:58px;
             ">
             👤
             </div>
 
             <div style="
-            font-size:52px;
+            font-size:56px;
             font-weight:900;
             color:#00ffd0;
             line-height:1;
+            text-shadow:0 0 18px rgba(0,255,208,0.22);
             ">
             {nome_cliente}
             </div>
@@ -417,26 +501,27 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:22px;
-            border-radius:20px;
-            margin-bottom:18px;
-            border-left:6px solid #00ffd0;
+            padding:26px;
+            border-radius:22px;
+            margin-bottom:22px;
+            border-left:7px solid #00ffd0;
             ">
 
             <div style="
-            font-size:24px;
-            font-weight:800;
-            color:white;
-            margin-bottom:12px;
+            font-size:28px;
+            font-weight:900;
+            color:#FFFFFF;
+            margin-bottom:14px;
             ">
             📞 Telefone:
             </div>
 
             <div style="
-            font-size:48px;
+            font-size:52px;
             font-weight:900;
-            color:white;
+            color:#FFFFFF;
             letter-spacing:1px;
+            text-shadow:0 0 14px rgba(255,255,255,0.12);
             ">
             {telefone_cliente}
             </div>
@@ -445,25 +530,26 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:22px;
-            border-radius:20px;
-            margin-bottom:18px;
-            border-left:6px solid #00ffd0;
+            padding:26px;
+            border-radius:22px;
+            margin-bottom:22px;
+            border-left:7px solid #00ffd0;
             ">
 
             <div style="
-            font-size:24px;
-            font-weight:800;
-            color:white;
-            margin-bottom:12px;
+            font-size:28px;
+            font-weight:900;
+            color:#FFFFFF;
+            margin-bottom:14px;
             ">
             ✉️ Email:
             </div>
 
             <div style="
-            font-size:42px;
-            font-weight:800;
-            color:white;
+            font-size:44px;
+            font-weight:900;
+            color:#FFFFFF;
+            text-shadow:0 0 14px rgba(255,255,255,0.12);
             ">
             {email_cliente}
             </div>
@@ -472,27 +558,28 @@ if st.session_state.logado:
 
             <div style="
             background:#050505;
-            padding:25px;
-            border-radius:20px;
+            padding:28px;
+            border-radius:22px;
             margin-top:18px;
-            margin-bottom:22px;
-            border-left:6px solid #00ffd0;
+            margin-bottom:24px;
+            border-left:7px solid #00ffd0;
             ">
 
             <div style="
-            font-size:24px;
-            font-weight:800;
-            color:white;
-            margin-bottom:18px;
+            font-size:30px;
+            font-weight:900;
+            color:#FFFFFF;
+            margin-bottom:20px;
             ">
             ⚖️ Caso Jurídico
             </div>
 
             <div style="
-            font-size:46px;
-            font-weight:700;
-            color:white;
-            line-height:1.5;
+            font-size:34px;
+            font-weight:800;
+            color:#FFFFFF;
+            line-height:1.7;
+            text-shadow:0 0 12px rgba(255,255,255,0.10);
             ">
             {caso_cliente}
             </div>
@@ -500,10 +587,11 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            color:#d0d0d0;
+            color:#FFFFFF;
             font-size:24px;
-            font-weight:700;
-            margin-top:12px;
+            font-weight:800;
+            margin-top:14px;
+            opacity:0.92;
             ">
             🕒 {data_cliente}
             </div>
@@ -527,3 +615,5 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
+
+```
