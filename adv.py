@@ -24,7 +24,7 @@ if "logado" not in st.session_state:
     st.session_state.logado = False
 
 # =========================================
-# CSS
+# CSS PREMIUM
 # =========================================
 st.markdown("""
 <style>
@@ -33,18 +33,22 @@ st.markdown("""
     background-color: #050505;
 }
 
+/* REMOVE MENU */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
+/* FONTE */
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
     color: white;
 }
 
+/* CONTAINER */
 .block-container {
     padding-top: 1rem;
     padding-bottom: 2rem;
+    max-width: 1350px;
 }
 
 /* LOGO */
@@ -106,7 +110,7 @@ html, body, [class*="css"] {
     line-height: 1.7 !important;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 .stButton > button {
 
     background: linear-gradient(
@@ -123,70 +127,44 @@ html, body, [class*="css"] {
 
     border-radius: 14px !important;
 
-    height: 50px !important;
+    height: 52px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 22px;
-}
-
-/* CARD */
-.card {
-
-    background: linear-gradient(
-        145deg,
-        #111111,
-        #1b1b1b
-    );
-
-    border: 1px solid rgba(0,255,208,0.20);
-
-    border-radius: 22px;
-
-    padding: 25px;
-
-    margin-bottom: 22px;
+    margin-top: 18px;
 
     box-shadow:
-        0 0 18px rgba(0,255,208,0.08);
+        0 0 18px rgba(0,245,196,0.20);
+
+    transition: 0.3s ease;
 }
 
-.nome {
-    font-size: 28px;
-    font-weight: 700;
-    color: #00ffd0;
-    margin-bottom: 15px;
+.stButton > button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 30px rgba(0,255,208,0.35);
 }
 
-.info {
-    font-size: 17px;
-    color: white;
-    margin-bottom: 10px;
-    line-height: 1.7;
-}
-
-.data {
-    color: #8d8d8d;
-    font-size: 14px;
-    margin-top: 18px;
-}
-
+/* TITULOS */
 .titulo-admin {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 800;
     color: white;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 30px;
     text-align: center;
 }
 
+/* FOOTER */
 .footer {
     text-align: center;
     color: #7f7f7f;
     font-size: 13px;
-    margin-top: 25px;
+    margin-top: 35px;
 }
 
 </style>
@@ -298,7 +276,7 @@ if st.button("✈️ Enviar Dados"):
         st.error("⚠️ Preencha os campos obrigatórios.")
 
 # =========================================
-# ACESSO ADMIN
+# LOGIN ADMIN
 # =========================================
 st.divider()
 
@@ -340,7 +318,7 @@ if st.session_state.logado:
 
     st.markdown("""
     <div class="titulo-admin">
-    ⚖️ Painel Jurídico
+    ⚖️ Painel Jurídico Premium
     </div>
     """, unsafe_allow_html=True)
 
@@ -378,37 +356,82 @@ if st.session_state.logado:
 
             nome_cliente = row.iloc[0]
             email_cliente = row.iloc[1]
-            telefone_cliente = row.iloc[2]
+            telefone_cliente = str(row.iloc[2])
             caso_cliente = row.iloc[3]
             data_cliente = row.iloc[4]
 
+            telefone_limpo = ''.join(
+                filter(str.isdigit, telefone_cliente)
+            )
+
             whatsapp = (
-                f"https://wa.me/55"
-                f"{telefone_cliente}"
+                f"https://wa.me/55{telefone_limpo}"
             )
 
             st.markdown(f"""
-            <div class="card">
+            <div style="
+            background: linear-gradient(145deg,#111,#1c1c1c);
+            padding:28px;
+            border-radius:24px;
+            margin-bottom:25px;
+            border:1px solid rgba(0,255,208,0.18);
+            box-shadow:0 0 25px rgba(0,255,208,0.08);
+            ">
 
-                <div class="nome">
-                👤 {nome_cliente}
-                </div>
+            <div style="
+            font-size:30px;
+            font-weight:800;
+            color:#00ffd0;
+            margin-bottom:22px;
+            ">
+            👤 {nome_cliente}
+            </div>
 
-                <div class="info">
-                📞 {telefone_cliente}
-                </div>
+            <div style="
+            background:#0d0d0d;
+            padding:14px;
+            border-radius:14px;
+            margin-bottom:12px;
+            font-size:18px;
+            border-left:4px solid #00ffd0;
+            ">
+            📞 <b>Telefone:</b><br>
+            {telefone_cliente}
+            </div>
 
-                <div class="info">
-                ✉️ {email_cliente}
-                </div>
+            <div style="
+            background:#0d0d0d;
+            padding:14px;
+            border-radius:14px;
+            margin-bottom:12px;
+            font-size:18px;
+            border-left:4px solid #00ffd0;
+            ">
+            ✉️ <b>Email:</b><br>
+            {email_cliente}
+            </div>
 
-                <div class="info">
-                ⚖️ {caso_cliente}
-                </div>
+            <div style="
+            background:#0d0d0d;
+            padding:18px;
+            border-radius:14px;
+            margin-top:18px;
+            margin-bottom:18px;
+            font-size:17px;
+            line-height:1.8;
+            border-left:4px solid #00ffd0;
+            ">
+            ⚖️ <b>Caso Jurídico</b><br><br>
+            {caso_cliente}
+            </div>
 
-                <div class="data">
-                🕒 {data_cliente}
-                </div>
+            <div style="
+            color:#9d9d9d;
+            font-size:14px;
+            margin-top:10px;
+            ">
+            🕒 {data_cliente}
+            </div>
 
             </div>
             """, unsafe_allow_html=True)
@@ -417,6 +440,9 @@ if st.session_state.logado:
                 "💬 Abrir WhatsApp",
                 whatsapp
             )
+
+    else:
+        st.warning("Nenhum cliente encontrado.")
 
 # =========================================
 # FOOTER
