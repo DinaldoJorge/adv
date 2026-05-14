@@ -65,7 +65,7 @@ html, body, [class*="css"] {
 .logo {
     display: center;
     justify-content: center;
-    padding-right: 120px;
+    padding-right: 10px;
     
 }
 
