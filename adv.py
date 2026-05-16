@@ -24,19 +24,6 @@ SENHA = "mza2026"
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
-if "limpar_login" not in st.session_state:
-    st.session_state.limpar_login = False
-
-# =========================================
-# LIMPA LOGIN
-# =========================================
-if st.session_state.limpar_login:
-
-    st.session_state["usuario"] = ""
-    st.session_state["senha"] = ""
-
-    st.session_state.limpar_login = False
-
 # =========================================
 # CSS
 # =========================================
@@ -49,7 +36,6 @@ st.markdown("""
     background-color: #050505;
 }
 
-/* REMOVE MENU */
 #MainMenu {
     visibility: hidden;
 }
@@ -62,7 +48,6 @@ header {
     visibility: hidden;
 }
 
-/* FONTE */
 html, body, [class*="css"] {
 
     font-family: 'Inter', sans-serif;
@@ -70,7 +55,6 @@ html, body, [class*="css"] {
     color: white;
 }
 
-/* CONTAINER */
 .block-container {
 
     max-width: 1200px;
@@ -89,7 +73,7 @@ html, body, [class*="css"] {
 
     font-weight: 900;
 
-    color: #FFFFFF;
+    color: white;
 
     margin-top: 5px;
 
@@ -102,11 +86,9 @@ html, body, [class*="css"] {
 }
 
 /* LABELS */
-label,
-.stTextInput label,
-.stTextArea label {
+label {
 
-    color: #FFFFFF !important;
+    color: white !important;
 
     font-size: 20px !important;
 
@@ -122,7 +104,7 @@ label,
 
     border-radius: 16px !important;
 
-    color: #FFFFFF !important;
+    color: white !important;
 
     font-size: 20px !important;
 
@@ -130,19 +112,9 @@ label,
 
     height: 45px !important;
 
-    padding-left: 22px !important;
+    padding-left: 20px !important;
 
     box-shadow: none !important;
-
-    outline: none !important;
-}
-
-/* PLACEHOLDER INPUT */
-.stTextInput input::placeholder {
-
-    color: rgba(255,255,255,0.82) !important;
-
-    opacity: 1 !important;
 }
 
 /* TEXTAREA */
@@ -154,28 +126,18 @@ label,
 
     border-radius: 16px !important;
 
-    color: #FFFFFF !important;
+    color: white !important;
 
-    font-size: 24px !important;
+    font-size: 22px !important;
 
-    font-weight: 800 !important;
+    font-weight: 700 !important;
 
     padding: 24px !important;
-
-    line-height: 1.7 !important;
 
     box-shadow: none !important;
 }
 
-/* PLACEHOLDER TEXTAREA */
-.stTextArea textarea::placeholder {
-
-    color: rgba(255,255,255,0.82) !important;
-
-    opacity: 1 !important;
-}
-
-/* FILE UPLOADER */
+/* FILE */
 [data-testid="stFileUploader"] {
 
     background: #0b0b0b !important;
@@ -185,21 +147,9 @@ label,
     border-radius: 16px !important;
 
     padding: 18px !important;
-
-    box-shadow: none !important;
-
-    margin-top: 14px !important;
 }
 
-/* REMOVE BORDA INTERNA */
-[data-testid="stFileUploader"] section {
-
-    border: none !important;
-
-    background: transparent !important;
-}
-
-/* BOTÕES */
+/* BUTTON */
 .stButton > button {
 
     background: linear-gradient(
@@ -208,23 +158,19 @@ label,
         #00ffd0
     );
 
-    color: #000000 !important;
+    color: black !important;
+
+    border-radius: 16px !important;
+
+    border: none !important;
 
     font-size: 18px !important;
 
     font-weight: 900 !important;
 
-    border-radius: 14px !important;
-
-    height: 48px !important;
+    height: 50px !important;
 
     width: 100%;
-
-    border: none !important;
-
-    margin-top: 22px;
-
-    box-shadow: none !important;
 }
 
 /* CARD */
@@ -236,11 +182,11 @@ label,
         #111111 100%
     );
 
-    padding: 42px;
+    padding: 40px;
 
     border-radius: 22px;
 
-    margin-bottom: 42px;
+    margin-bottom: 40px;
 
     border: 1px solid rgba(0,255,208,0.40);
 }
@@ -315,7 +261,7 @@ Vamos <span>analisar</span> seus dados
 """, unsafe_allow_html=True)
 
 # =========================================
-# FORMULÁRIO
+# FORM
 # =========================================
 with st.form("formulario_cliente", clear_on_submit=True):
 
@@ -341,19 +287,20 @@ with st.form("formulario_cliente", clear_on_submit=True):
     )
 
     arquivo = st.file_uploader(
-        "📎 Anexar documentos (máx. 5MB)",
+        "📎 Anexar documentos",
         type=[
             "pdf",
             "doc",
             "docx",
-            "txt",
             "png",
             "jpg",
             "jpeg"
         ]
     )
 
-    enviar = st.form_submit_button("Enviar Dados")
+    enviar = st.form_submit_button(
+        "Enviar Dados"
+    )
 
 # =========================================
 # SALVAR
@@ -374,7 +321,7 @@ def salvar(nome, email, telefone, caso, nome_arquivo):
     ])
 
 # =========================================
-# ENVIO
+# ENVIAR
 # =========================================
 if enviar:
 
@@ -383,14 +330,6 @@ if enviar:
         nome_arquivo = "Nenhum arquivo"
 
         if arquivo is not None:
-
-            tamanho_mb = arquivo.size / (1024 * 1024)
-
-            if tamanho_mb > 5:
-
-                st.error("O arquivo excede 5MB.")
-
-                st.stop()
 
             os.makedirs(
                 "documentos",
@@ -402,7 +341,10 @@ if enviar:
                 arquivo.name
             )
 
-            with open(caminho, "wb") as f:
+            with open(
+                caminho,
+                "wb"
+            ) as f:
 
                 f.write(
                     arquivo.getbuffer()
@@ -429,7 +371,7 @@ if enviar:
         )
 
 # =========================================
-# LOGIN ADMIN
+# LOGIN PAINEL
 # =========================================
 st.divider()
 
@@ -439,44 +381,32 @@ Acesso Painel Jurídico
 </div>
 """, unsafe_allow_html=True)
 
-st.text_input(
-    "Usuário",
-    key="usuario"
+usuario = st.text_input(
+    "Usuário"
 )
 
-st.text_input(
+senha = st.text_input(
     "Senha",
-    type="password",
-    key="senha"
+    type="password"
 )
 
 # =========================================
-# LOGIN
+# BOTÃO LOGIN
 # =========================================
 if st.button("Entrar no Painel"):
 
-    usuario_digitado = st.session_state.usuario
-
-    senha_digitada = st.session_state.senha
-
-    st.session_state.limpar_login = True
-
     if (
-        usuario_digitado == USUARIO
-        and senha_digitada == SENHA
+        usuario == USUARIO
+        and senha == SENHA
     ):
 
         st.session_state.logado = True
-
-        st.rerun()
 
     else:
 
         st.error(
             "Usuário ou senha inválidos."
         )
-
-        st.rerun()
 
 # =========================================
 # PAINEL
@@ -502,21 +432,6 @@ if st.session_state.logado:
     if dados:
 
         df = pd.DataFrame(dados)
-
-        busca = st.text_input(
-            "Pesquisar cliente"
-        )
-
-        if busca:
-
-            df = df[
-                df.astype(str).apply(
-                    lambda x: x.str.contains(
-                        busca,
-                        case=False
-                    )
-                ).any(axis=1)
-            ]
 
         df = df.iloc[::-1]
 
@@ -570,7 +485,7 @@ if st.session_state.logado:
             """, unsafe_allow_html=True)
 
             # =========================================
-            # ANEXO DENTRO DO CARD
+            # ANEXO
             # =========================================
             if arquivo_cliente != "Nenhum arquivo":
 
@@ -592,11 +507,12 @@ if st.session_state.logado:
 
                 if os.path.exists(caminho_arquivo):
 
-                    # =========================================
-                    # IMAGEM
-                    # =========================================
                     if arquivo_cliente.lower().endswith(
-                        (".png", ".jpg", ".jpeg")
+                        (
+                            ".png",
+                            ".jpg",
+                            ".jpeg"
+                        )
                     ):
 
                         st.image(
@@ -604,9 +520,6 @@ if st.session_state.logado:
                             width=450
                         )
 
-                    # =========================================
-                    # DOWNLOAD
-                    # =========================================
                     with open(
                         caminho_arquivo,
                         "rb"
@@ -618,7 +531,10 @@ if st.session_state.logado:
                             file_name=arquivo_cliente
                         )
 
-            st.markdown("</div>", unsafe_allow_html=True)
+            st.markdown(
+                "</div>",
+                unsafe_allow_html=True
+            )
 
             st.divider()
 
