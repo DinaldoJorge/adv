@@ -73,7 +73,7 @@ html, body, [class*="css"] {
 
     font-weight: 900;
 
-    color: white;
+    color: #00d9ff;
 
     margin-top: 5px;
 
@@ -104,7 +104,7 @@ label {
 
     border-radius: 0px !important;
 
-    color: #00d9ff !important;
+    color: black !important;
 
     font-size: 20px !important;
 
