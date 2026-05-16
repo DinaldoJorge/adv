@@ -120,7 +120,7 @@ label,
 
     border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 16px !important;
+    border-radius: 2px !important;
 
     color: #FFFFFF !important;
 
@@ -128,7 +128,7 @@ label,
 
     font-weight: 700 !important;
 
-    height: 47px !important;
+    height: 45px !important;
 
     padding-left: 22px !important;
 
