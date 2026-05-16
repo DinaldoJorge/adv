@@ -139,9 +139,9 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: green !important;
+    background: white !important;
 
-    border: 4px solid white !important;
+    border: 4px solid green !important;
 
     color: black !important;
 
