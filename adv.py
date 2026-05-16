@@ -135,29 +135,66 @@ label{
     padding:15px !important;
     background: black !important;
 }
-
-/* BOTÕES */
+/* BOTÕES PREMIUM */
 
 .stButton > button{
+
     width:100%;
-    height:52px;
-    border-radius:16px #00d9ff!important;
-    border-radius:16px #00d9ff!important;
+    height:58px;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
     background:linear-gradient(
-        90deg,
-        #00aaff,
+        135deg,
+        #00c6ff,
         #00ff88
-    );
-    color:black;
-    font-size:20px;
-    font-weight:900;
-    transition:0.3s;
+    ) !important;
+
+    color:#000000 !important;
+
+    font-size:20px !important;
+
+    font-weight:800 !important;
+
+    letter-spacing:0.5px;
+
+    box-shadow:
+    0 0 12px rgba(0,255,136,0.35),
+    0 0 20px rgba(0,170,255,0.25);
+
+    transition:all 0.25s ease-in-out !important;
 }
+
+
+/* HOVER */
 
 .stButton > button:hover{
-    transform:scale(1.02);
+
+    transform:translateY(-2px) scale(1.01);
+
+    background:linear-gradient(
+        135deg,
+        #00ff88,
+        #00c6ff
+    ) !important;
+
+    color:black !important;
+
+    box-shadow:
+    0 0 18px rgba(0,255,136,0.55),
+    0 0 28px rgba(0,170,255,0.45);
 }
 
+
+/* CLICK */
+
+.stButton > button:active{
+
+    transform:scale(0.98);
+
+}
 /* CARD */
 
 .card{
