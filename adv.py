@@ -102,11 +102,11 @@ label {
 
     border: 5px solid  #00ffd0 !important;
 
-    #border-radius: 2px blue !important;
+    border-radius: 5px #00ffd0 !important;
 
     color: blue !important;
 
-    font-size: 25px !important;
+    font-size: 22px !important;
 
     font-weight: 700 !important;
 
@@ -122,13 +122,13 @@ label {
 
     background: white !important;
 
-    border: 2px solid  #00ffd0 !important;
+    border: 2px solid  green !important;
 
-    border-radius: 5px !important;
+    border-radius: 5px green !important;
 
     color: blue !important;
 
-    font-size: 26px !important;
+    font-size: 22px !important;
 
     font-weight: 700 !important;
 
@@ -160,11 +160,11 @@ label {
 
     color: black !important;
 
-    border-radius: 5px !important;
+    border-radius: 5px green !important;
 
-    border: none !important;
+    border: 5px green !important;
 
-    font-size: 18px !important;
+    font-size: 22px !important;
 
     font-weight: 900 !important;
 
@@ -214,7 +214,7 @@ label {
 
     color: #d0d0d0;
 
-    font-size: 12px;
+    font-size: 22px;
 
     margin-top: 40px;
 }
@@ -437,7 +437,7 @@ if st.session_state.logado:
 
         st.markdown(f"""
         <div style="
-        font-size:24px;
+        font-size:22px;
         font-weight:900;
         margin-bottom:25px;
         ">
@@ -458,7 +458,7 @@ if st.session_state.logado:
             <div class="card">
 
             <div style="
-            font-size:30px;
+            font-size:22px;
             font-weight:900;
             color:#00ffd0;
             margin-bottom:28px;
@@ -467,7 +467,7 @@ if st.session_state.logado:
             </div>
 
             <div style="
-            font-size:24px;
+            font-size:22px;
             line-height:2.3;
             font-weight:700;
             color:white;
@@ -497,7 +497,7 @@ if st.session_state.logado:
                 st.markdown(f"""
                 <div style="
                 margin-top:25px;
-                font-size:20px;
+                font-size:22px;
                 font-weight:800;
                 color:#00ffd0;
                 ">
