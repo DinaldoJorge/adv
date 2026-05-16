@@ -146,7 +146,7 @@ label {
 
     border-radius: 5px !important;
 
-    padding: 18px !important;
+    padding: 26px !important;
 }
 
 /* BUTTON */
