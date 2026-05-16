@@ -40,7 +40,7 @@ html, body, [class*="css"]{
 }
 
 .stApp{
-    background:#000000;
+    background:black;
     color:white;
 }
 
