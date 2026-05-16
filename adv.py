@@ -506,6 +506,7 @@ if st.session_state.logado:
             email_cliente = row.iloc[1]
             telefone_cliente = str(row.iloc[2])
             caso_cliente = row.iloc[3]
+            arquivo_cliente = row.iloc[4]
             data_cliente = row.iloc[5]
 
             st.markdown(f"""
@@ -536,9 +537,65 @@ if st.session_state.logado:
             🕒 {data_cliente}
 
             </div>
-
-            </div>
             """, unsafe_allow_html=True)
+
+            # =========================================
+            # ANEXO
+            # =========================================
+            if arquivo_cliente != "Nenhum arquivo":
+
+                caminho_arquivo = os.path.join(
+                    "documentos",
+                    arquivo_cliente
+                )
+
+                st.markdown(f"""
+                <div style="
+                margin-top:25px;
+                margin-bottom:15px;
+                font-size:20px;
+                font-weight:800;
+                color:#00ff88;
+                ">
+                📎 {arquivo_cliente}
+                </div>
+                """, unsafe_allow_html=True)
+
+                if os.path.exists(caminho_arquivo):
+
+                    # MOSTRAR IMAGEM
+                    if arquivo_cliente.lower().endswith(
+                        (
+                            ".png",
+                            ".jpg",
+                            ".jpeg"
+                        )
+                    ):
+
+                        st.image(
+                            caminho_arquivo,
+                            width=450
+                        )
+
+                    # DOWNLOAD
+                    with open(
+                        caminho_arquivo,
+                        "rb"
+                    ) as file:
+
+                        st.download_button(
+                            label="⬇️ Baixar Anexo",
+                            data=file,
+                            file_name=arquivo_cliente,
+                            key=f"download_{i}"
+                        )
+
+            st.markdown(
+                "</div>",
+                unsafe_allow_html=True
+            )
+
+            st.divider()
 
 # =========================================
 # FOOTER
