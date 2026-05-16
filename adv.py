@@ -179,7 +179,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"]{
 
-    background: green !important;
+    background: black !important;
 
     border:2px solid #00d9ff !important;
 
@@ -190,7 +190,7 @@ FILE UPLOADER PREMIUM MZA
     margin-top:10px !important;
 
     box-shadow:
-    0 0 12px green,
+    0 0 12px white,
     0 0 22px green;
 
     transition:0.3s ease-in-out !important;
@@ -200,11 +200,11 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] section{
 
-    background:#101010 !important;
+    background:white !important;
 
-    border-radius:20px !important;
+    border-radius: 5px !important;
 
-    border:1px solid rgba(255,255,255,0.08) !important;
+    border: 2px solid green !important;
 
     padding:18px !important;
 
