@@ -167,9 +167,9 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color:green !important;
+    color: white !important;
 
-    opacity:2 !important;
+    opacity:1 !important;
 
 }
 
@@ -179,7 +179,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"]{
 
-    background:#050505 !important;
+    background: green !important;
 
     border:2px solid #00d9ff !important;
 
@@ -190,8 +190,8 @@ FILE UPLOADER PREMIUM MZA
     margin-top:10px !important;
 
     box-shadow:
-    0 0 12px rgba(0,217,255,0.12),
-    0 0 22px rgba(0,255,136,0.08);
+    0 0 12px green,
+    0 0 22px green;
 
     transition:0.3s ease-in-out !important;
 }
