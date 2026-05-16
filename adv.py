@@ -108,16 +108,16 @@ label{
 .stTextArea textarea{
     background:#ffffff !important;
     color:black !important;
-    border:4px solid #00aaff !important;
-    border-radius: 2px !important;
+    border:4px solid #00d9ff !important;
+    border-radius: 2px #00d9ff !important;
     font-size:19px !important;
     font-weight:700 !important;
     padding:18px !important;
 }
 
 .stTextArea textarea:focus{
-    border:4px solid #00ff88 !important;
-    box-shadow:0 0 10px rgba(0,255,136,0.25) !important;
+    border:4px solid #00d9ff !important;
+    box-shadow:0 0 10px #00d9ff !important;
 }
 
 /* PLACEHOLDER */
@@ -130,8 +130,8 @@ label{
 /* FILE UPLOADER */
 
 [data-testid="stFileUploader"]{
-    border:2px solid #00d9ff !important;
-    border-radius:16px !important;
+    border:4px solid #00d9ff !important;
+    border-radius:16px #00d9ff!important;
     padding:15px !important;
     background:#0c0c0c !important;
 }
