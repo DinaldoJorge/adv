@@ -100,11 +100,11 @@ label {
 
     background: white !important;
 
-  #  border: 0px solid blue !important;
+    border: 5px solid blue !important;
 
-   # border-radius: 2px !important;
+    border-radius: 5px !important;
 
-    color: black !important;
+    color: blue !important;
 
     font-size: 25px !important;
 
