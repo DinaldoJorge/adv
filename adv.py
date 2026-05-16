@@ -320,7 +320,7 @@ label,
 
     padding: 35px;
 
-    border-radius: 2px;
+    border-radius: 10px;
 
     margin-bottom: 35px;
 
