@@ -109,7 +109,7 @@ label{
     background:#ffffff !important;
     color:black !important;
     border:4px solid #00aaff !important;
-    border-radius:14px !important;
+    border-radius: 2px !important;
     font-size:19px !important;
     font-weight:700 !important;
     padding:18px !important;
