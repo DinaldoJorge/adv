@@ -90,7 +90,7 @@ label{
     background:black !important;
     color:white !important;
     border: 4px solid #00aaff !important;
-    #border-radius:1px !important;
+    border-radius:2px black !important;
     height:45px !important;
     font-size:18px !important;
     font-weight:700 !important;
