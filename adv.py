@@ -135,18 +135,6 @@ label,
     box-shadow: none !important;
 
     outline: none !important;
-
-    transition: 0.2s ease !important;
-}
-
-/* INPUT FOCUS */
-.stTextInput input:focus {
-
-    border: 1px solid rgba(0,255,208,0.55) !important;
-
-    box-shadow: none !important;
-
-    outline: none !important;
 }
 
 /* PLACEHOLDER INPUT */
@@ -155,10 +143,6 @@ label,
     color: rgba(255,255,255,0.82) !important;
 
     opacity: 1 !important;
-
-    font-size: 20px !important;
-
-    font-weight: 700 !important;
 }
 
 /* TEXTAREA */
@@ -181,20 +165,6 @@ label,
     line-height: 1.7 !important;
 
     box-shadow: none !important;
-
-    outline: none !important;
-
-    transition: 0.2s ease !important;
-}
-
-/* TEXTAREA FOCUS */
-.stTextArea textarea:focus {
-
-    border: 1px solid rgba(0,255,208,0.55) !important;
-
-    box-shadow: none !important;
-
-    outline: none !important;
 }
 
 /* PLACEHOLDER TEXTAREA */
@@ -203,10 +173,6 @@ label,
     color: rgba(255,255,255,0.82) !important;
 
     opacity: 1 !important;
-
-    font-size: 24px !important;
-
-    font-weight: 800 !important;
 }
 
 /* FILE UPLOADER */
@@ -223,18 +189,14 @@ label,
     box-shadow: none !important;
 
     margin-top: 14px !important;
-
-    transition: 0.2s ease !important;
 }
 
-/* FILE UPLOADER INTERNO */
+/* REMOVE BORDA INTERNA */
 [data-testid="stFileUploader"] section {
 
     border: none !important;
 
     background: transparent !important;
-
-    box-shadow: none !important;
 }
 
 /* BOTÕES */
@@ -248,47 +210,21 @@ label,
 
     color: #000000 !important;
 
-    font-size: 20px !important;
+    font-size: 18px !important;
 
     font-weight: 900 !important;
 
-    border-radius: 16px !important;
+    border-radius: 14px !important;
 
-    height: 52px !important;
+    height: 48px !important;
 
     width: 100%;
 
     border: none !important;
 
-    margin-top: 24px;
-
-    transition: 0.2s ease;
+    margin-top: 22px;
 
     box-shadow: none !important;
-}
-
-/* BOTÃO HOVER */
-.stButton > button:hover {
-
-    transform: translateY(-1px);
-
-    box-shadow: none !important;
-}
-
-/* TITULO */
-.titulo-admin {
-
-    font-size: 24px;
-
-    font-weight: 900;
-
-    text-align: center;
-
-    margin-top: 20px;
-
-    margin-bottom: 25px;
-
-    color: white;
 }
 
 /* CARD */
@@ -307,22 +243,22 @@ label,
     margin-bottom: 42px;
 
     border: 1px solid rgba(0,255,208,0.40);
-
-    transition: all 0.25s ease;
 }
 
-/* CARD HOVER */
-.card:hover {
+/* TITULO */
+.titulo-admin {
 
-    transform: translateY(-2px);
+    font-size: 24px;
 
-    border: 1px solid rgba(0,255,208,0.65);
+    font-weight: 900;
 
-    background: linear-gradient(
-        180deg,
-        #101010 0%,
-        #161616 100%
-    );
+    text-align: center;
+
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+
+    color: white;
 }
 
 /* FOOTER */
@@ -603,25 +539,6 @@ if st.session_state.logado:
             arquivo_cliente = row.iloc[4]
             data_cliente = row.iloc[5]
 
-            # =========================================
-            # ANEXO DENTRO DO CARD
-            # =========================================
-            anexo_html = ""
-
-            if arquivo_cliente != "Nenhum arquivo":
-
-                anexo_html = f"""
-                <br><br>
-
-                <div style="
-                font-size:20px;
-                font-weight:800;
-                color:#00ffd0;
-                ">
-                📎 {arquivo_cliente}
-                </div>
-                """
-
             st.markdown(f"""
             <div class="card">
 
@@ -630,14 +547,13 @@ if st.session_state.logado:
             font-weight:900;
             color:#00ffd0;
             margin-bottom:28px;
-            letter-spacing:0.3px;
             ">
             {nome_cliente}
             </div>
 
             <div style="
             font-size:24px;
-            line-height:2.4;
+            line-height:2.3;
             font-weight:700;
             color:white;
             ">
@@ -650,15 +566,11 @@ if st.session_state.logado:
 
             🕒 {data_cliente}
 
-            {anexo_html}
-
-            </div>
-
             </div>
             """, unsafe_allow_html=True)
 
             # =========================================
-            # DOWNLOAD ANEXO
+            # ANEXO DENTRO DO CARD
             # =========================================
             if arquivo_cliente != "Nenhum arquivo":
 
@@ -667,8 +579,34 @@ if st.session_state.logado:
                     arquivo_cliente
                 )
 
+                st.markdown(f"""
+                <div style="
+                margin-top:25px;
+                font-size:20px;
+                font-weight:800;
+                color:#00ffd0;
+                ">
+                📎 {arquivo_cliente}
+                </div>
+                """, unsafe_allow_html=True)
+
                 if os.path.exists(caminho_arquivo):
 
+                    # =========================================
+                    # IMAGEM
+                    # =========================================
+                    if arquivo_cliente.lower().endswith(
+                        (".png", ".jpg", ".jpeg")
+                    ):
+
+                        st.image(
+                            caminho_arquivo,
+                            width=450
+                        )
+
+                    # =========================================
+                    # DOWNLOAD
+                    # =========================================
                     with open(
                         caminho_arquivo,
                         "rb"
@@ -679,6 +617,8 @@ if st.session_state.logado:
                             data=file,
                             file_name=arquivo_cliente
                         )
+
+            st.markdown("</div>", unsafe_allow_html=True)
 
             st.divider()
 
