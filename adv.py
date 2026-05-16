@@ -92,7 +92,7 @@ label {
 
     font-size: 26px !important;
 
-    font-weight: 800 !important;
+    font-weight: 999 !important;
 }
 
 /* INPUTS */
