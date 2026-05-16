@@ -133,42 +133,46 @@ label,
         0 0 26px rgba(0,255,208,0.12);
 }
 
-/* PLACEHOLDER */
-.stTextInput input::placeholder {
-
-    color: #FFFFFF !important;
-
-    opacity: 3 !important;
-
-    font-size: 20px !important;
-
-    font-weight: 700 !important;
-}
-
 /* TEXTAREA */
 .stTextArea textarea {
 
     background: rgba(12,12,12,0.98) !important;
 
-    border: 2px solid rgba(0,255,208,0.75) !important;
+    border: 2px solid rgba(0,255,208,0.85) !important;
 
     border-radius: 22px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 22px !important;
+    font-size: 30px !important;
 
-    font-weight: 700 !important;
+    font-weight: 900 !important;
 
     padding: 30px !important;
 
     line-height: 1.9 !important;
 
     box-shadow:
-        0 0 26px rgba(0,255,208,0.12);
+        0 0 30px rgba(0,255,208,0.18);
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.18);
 }
 
-/* FILE UPLOADER */
+/* PLACEHOLDER TEXTAREA */
+.stTextArea textarea::placeholder {
+
+    color: #FFFFFF !important;
+
+    opacity: 1 !important;
+
+    font-size: 30px !important;
+
+    font-weight: 900 !important;
+
+    text-shadow:
+        0 0 22px rgba(255,255,255,0.45);
+}/* FILE UPLOADER */
 [data-testid="stFileUploader"] {
 
     background: rgba(12,12,12,0.98);
