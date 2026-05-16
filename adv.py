@@ -104,11 +104,11 @@ label {
 
     border-radius: 5px black !important;
 
-    color: blue !important;
+    color: green !important;
 
-    font-size: 25px !important;
+    font-size: 22px !important;
 
-    font-weight: 700 !important;
+    font-weight: 500 !important;
 
     height: 30px !important;
 
