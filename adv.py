@@ -38,7 +38,7 @@ if st.session_state.limpar_login:
     st.session_state.limpar_login = False
 
 # =========================================
-# CSS PREMIUM CLEAN
+# CSS
 # =========================================
 st.markdown("""
 <style>
@@ -85,7 +85,7 @@ html, body, [class*="css"] {
 
     text-align: center;
 
-    font-size: 22px;
+    font-size: 26px;
 
     font-weight: 900;
 
@@ -118,19 +118,17 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 2px solid rgba(0,255,208,0.45) !important;
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    #borda inicial nome email
-    
-    border-radius: 2px !important;
+    border-radius: 16px !important;
 
     color: #FFFFFF !important;
 
     font-size: 20px !important;
 
     font-weight: 700 !important;
-#ajuste da altura do nome dentro da caixa
-    height: 47px !important;
+
+    height: 52px !important;
 
     padding-left: 22px !important;
 
@@ -144,7 +142,7 @@ label,
 /* INPUT FOCUS */
 .stTextInput input:focus {
 
-    border: 2px solid rgba(0,255,208,0.45) !important;
+    border: 1px solid rgba(0,255,208,0.55) !important;
 
     box-shadow: none !important;
 
@@ -168,9 +166,9 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 2px solid rgba(0,255,208,0.45) !important;
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 2px !important;
+    border-radius: 16px !important;
 
     color: #FFFFFF !important;
 
@@ -216,9 +214,9 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 2px solid rgba(0,255,208,0.45) !important;
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 2px !important;
+    border-radius: 16px !important;
 
     padding: 18px !important;
 
@@ -239,14 +237,6 @@ label,
     box-shadow: none !important;
 }
 
-/* REMOVE QUALQUER BRILHO */
-.stTextInput,
-.stTextArea,
-[data-testid="stFileUploader"] {
-
-    box-shadow: none !important;
-}
-
 /* BOTÕES */
 .stButton > button {
 
@@ -262,9 +252,9 @@ label,
 
     font-weight: 900 !important;
 
-    border-radius: 2px !important;
+    border-radius: 16px !important;
 
-    height: 47px !important;
+    height: 52px !important;
 
     width: 100%;
 
@@ -285,10 +275,10 @@ label,
     box-shadow: none !important;
 }
 
-/* TÍTULO ADMIN */
+/* TITULO */
 .titulo-admin {
 
-    font-size: 22px;
+    font-size: 24px;
 
     font-weight: 900;
 
@@ -296,21 +286,9 @@ label,
 
     margin-top: 20px;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
     color: white;
-}
-
-/* FOOTER */
-.footer {
-
-    text-align: center;
-
-    color: #f0f0f0;
-
-    font-size: 16px;
-
-    margin-top: 30px;
 }
 
 /* CARD */
@@ -333,9 +311,6 @@ label,
     backdrop-filter: blur(10px);
 
     transition: all 0.25s ease;
-
-    box-shadow:
-        0 0 0 rgba(0,0,0,0);
 }
 
 /* CARD HOVER */
@@ -351,6 +326,21 @@ label,
         #161616 100%
     );
 }
+
+/* FOOTER */
+.footer {
+
+    text-align: center;
+
+    color: #d0d0d0;
+
+    font-size: 12px;
+
+    margin-top: 40px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # =========================================
 # GOOGLE SHEETS
@@ -378,7 +368,7 @@ with col2:
 
     st.image(
         "logomza.png",
-        width=300
+        width=320
     )
 
 # =========================================
@@ -386,7 +376,7 @@ with col2:
 # =========================================
 st.markdown("""
 <div class="frase">
-🛡️ Vamos <span>analisar</span> seus dados
+Vamos <span>analisar</span> seus dados
 </div>
 """, unsafe_allow_html=True)
 
@@ -429,7 +419,7 @@ with st.form("formulario_cliente", clear_on_submit=True):
         ]
     )
 
-    enviar = st.form_submit_button("✈️ Enviar Dados")
+    enviar = st.form_submit_button("Enviar Dados")
 
 # =========================================
 # SALVAR
@@ -464,7 +454,7 @@ if enviar:
 
             if tamanho_mb > 5:
 
-                st.error("❌ O arquivo excede 5MB.")
+                st.error("O arquivo excede 5MB.")
 
                 st.stop()
 
@@ -494,24 +484,14 @@ if enviar:
             nome_arquivo
         )
 
-        link = (
-            f"https://wa.me/5583991241249"
-            f"?text=Olá, sou {nome} e desejo análise jurídica."
-        )
-
         st.success(
-            "✅ Dados enviados com sucesso!"
-        )
-
-        st.link_button(
-            "💬 Falar no WhatsApp",
-            link
+            "Dados enviados com sucesso!"
         )
 
     else:
 
         st.error(
-            "⚠️ Preencha os campos obrigatórios."
+            "Preencha os campos obrigatórios."
         )
 
 # =========================================
@@ -521,7 +501,7 @@ st.divider()
 
 st.markdown("""
 <div class="titulo-admin">
-🔐 Acesso Painel Jurídico
+Acesso Painel Jurídico
 </div>
 """, unsafe_allow_html=True)
 
@@ -537,9 +517,9 @@ senha_input = st.text_input(
 )
 
 # =========================================
-# BOTÃO LOGIN
+# LOGIN
 # =========================================
-if st.button("🚪 Entrar no Painel"):
+if st.button("Entrar no Painel"):
 
     usuario_digitado = st.session_state.usuario
 
@@ -554,20 +534,18 @@ if st.button("🚪 Entrar no Painel"):
 
         st.session_state.logado = True
 
-        st.success("✅ Login realizado!")
-
         st.rerun()
 
     else:
 
         st.error(
-            "❌ Usuário ou senha inválidos."
+            "Usuário ou senha inválidos."
         )
 
         st.rerun()
 
 # =========================================
-# PAINEL JURÍDICO
+# PAINEL
 # =========================================
 if st.session_state.logado:
 
@@ -575,11 +553,11 @@ if st.session_state.logado:
 
     st.markdown("""
     <div class="titulo-admin">
-    ⚖️ Painel Jurídico Premium
+    Painel Jurídico Premium
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("🚪 Sair do Painel"):
+    if st.button("Sair do Painel"):
 
         st.session_state.logado = False
 
@@ -592,7 +570,7 @@ if st.session_state.logado:
         df = pd.DataFrame(dados)
 
         busca = st.text_input(
-            "🔍 Pesquisar cliente"
+            "Pesquisar cliente"
         )
 
         if busca:
@@ -610,11 +588,11 @@ if st.session_state.logado:
 
         st.markdown(f"""
         <div style="
-        font-size:22px;
+        font-size:24px;
         font-weight:900;
         margin-bottom:25px;
         ">
-        📊 Total de clientes: {len(df)}
+        Total de clientes: {len(df)}
         </div>
         """, unsafe_allow_html=True)
 
@@ -632,33 +610,24 @@ if st.session_state.logado:
 
             data_cliente = row.iloc[5]
 
-            telefone_limpo = ''.join(
-                filter(
-                    str.isdigit,
-                    telefone_cliente
-                )
-            )
-
-            whatsapp = (
-                f"https://wa.me/55{telefone_limpo}"
-            )
-
             st.markdown(f"""
             <div class="card">
 
             <div style="
-            font-size:24px;
+            font-size:30px;
             font-weight:900;
             color:#00ffd0;
-            margin-bottom:20px;
+            margin-bottom:28px;
+            letter-spacing:0.3px;
             ">
-            👤 {nome_cliente}
+            {nome_cliente}
             </div>
 
             <div style="
-            font-size:21px;
-            line-height:2;
+            font-size:24px;
+            line-height:2.4;
             font-weight:700;
+            color:white;
             ">
 
             📞 {telefone_cliente}<br><br>
@@ -683,7 +652,7 @@ if st.session_state.logado:
 
                 st.markdown(f"""
                 <div style="
-                font-size:18px;
+                font-size:20px;
                 font-weight:800;
                 color:#00ffd0;
                 margin-bottom:15px;
@@ -694,83 +663,24 @@ if st.session_state.logado:
 
                 if os.path.exists(caminho_arquivo):
 
-                    if arquivo_cliente.lower().endswith(".pdf"):
+                    with open(
+                        caminho_arquivo,
+                        "rb"
+                    ) as file:
 
-                        with open(
-                            caminho_arquivo,
-                            "rb"
-                        ) as pdf_file:
-
-                            pdf_bytes = pdf_file.read()
-
-                            st.download_button(
-                                "⬇️ Baixar PDF",
-                                data=pdf_bytes,
-                                file_name=arquivo_cliente,
-                                mime="application/pdf"
-                            )
-
-                    elif arquivo_cliente.lower().endswith(
-                        (
-                            ".png",
-                            ".jpg",
-                            ".jpeg"
+                        st.download_button(
+                            "Baixar Documento",
+                            data=file,
+                            file_name=arquivo_cliente
                         )
-                    ):
-
-                        st.image(
-                            caminho_arquivo,
-                            width=500
-                        )
-
-                        with open(
-                            caminho_arquivo,
-                            "rb"
-                        ) as file:
-
-                            st.download_button(
-                                "⬇️ Baixar Imagem",
-                                data=file,
-                                file_name=arquivo_cliente
-                            )
-
-                    else:
-
-                        with open(
-                            caminho_arquivo,
-                            "rb"
-                        ) as file:
-
-                            st.download_button(
-                                "⬇️ Baixar Documento",
-                                data=file,
-                                file_name=arquivo_cliente
-                            )
-
-                else:
-
-                    st.warning(
-                        "Arquivo não encontrado."
-                    )
-
-            st.link_button(
-                "💬 Abrir WhatsApp",
-                whatsapp
-            )
 
             st.divider()
-
-    else:
-
-        st.warning(
-            "Nenhum cliente encontrado."
-        )
 
 # =========================================
 # FOOTER
 # =========================================
 st.markdown("""
 <div class="footer">
-🔒 Seus dados estão protegidos e não serão compartilhados.
+Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
