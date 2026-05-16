@@ -167,9 +167,9 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color:#8f8f8f !important;
+    color:green !important;
 
-    opacity:1 !important;
+    opacity:2 !important;
 
 }
 
