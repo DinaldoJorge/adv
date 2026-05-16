@@ -125,7 +125,7 @@ label {
     border: 4px solid green !important;
 
     box-shadow:
-        0 0 12px rgba(0,255,136,0.25) !important;
+        0 0 12px green !important;
 
     outline: none !important;
 }
