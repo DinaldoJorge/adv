@@ -100,9 +100,9 @@ label {
 
     background: white !important;
 
-    border: 3px solid white !important;
+    border: 4px solid red !important;
 
-    border-radius: 2px !important;
+    border-radius: 4px gren !important;
 
     color: black !important;
 
@@ -132,9 +132,9 @@ label {
 
     background: white !important;
 
-    border: 6px solid blue !important;
+    border: 4px solid green !important;
 
-    border-radius: 6px !important;
+    border-radius: 4px red !important;
 
     color: black !important;
 
