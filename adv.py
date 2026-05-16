@@ -88,11 +88,11 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
 
-    color: black !important;
+    color: white !important;
 
     font-size: 26px !important;
 
-    font-weight: 999 !important;
+    #font-weight: 999 !important;
 }
 
 /* INPUTS */
