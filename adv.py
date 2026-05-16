@@ -120,7 +120,7 @@ label,
 
     border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 2px !important;
+    border-radius: 16px !important;
 
     color: #FFFFFF !important;
 
@@ -307,8 +307,6 @@ label,
     margin-bottom: 42px;
 
     border: 1px solid rgba(0,255,208,0.40);
-
-    backdrop-filter: blur(10px);
 
     transition: all 0.25s ease;
 }
@@ -505,12 +503,12 @@ Acesso Painel Jurídico
 </div>
 """, unsafe_allow_html=True)
 
-usuario_input = st.text_input(
+st.text_input(
     "Usuário",
     key="usuario"
 )
 
-senha_input = st.text_input(
+st.text_input(
     "Senha",
     type="password",
     key="senha"
@@ -599,16 +597,30 @@ if st.session_state.logado:
         for i, row in df.iterrows():
 
             nome_cliente = row.iloc[0]
-
             email_cliente = row.iloc[1]
-
             telefone_cliente = str(row.iloc[2])
-
             caso_cliente = row.iloc[3]
-
             arquivo_cliente = row.iloc[4]
-
             data_cliente = row.iloc[5]
+
+            # =========================================
+            # ANEXO DENTRO DO CARD
+            # =========================================
+            anexo_html = ""
+
+            if arquivo_cliente != "Nenhum arquivo":
+
+                anexo_html = f"""
+                <br><br>
+
+                <div style="
+                font-size:20px;
+                font-weight:800;
+                color:#00ffd0;
+                ">
+                📎 {arquivo_cliente}
+                </div>
+                """
 
             st.markdown(f"""
             <div class="card">
@@ -638,28 +650,22 @@ if st.session_state.logado:
 
             🕒 {data_cliente}
 
+            {anexo_html}
+
             </div>
 
             </div>
             """, unsafe_allow_html=True)
 
+            # =========================================
+            # DOWNLOAD ANEXO
+            # =========================================
             if arquivo_cliente != "Nenhum arquivo":
 
                 caminho_arquivo = os.path.join(
                     "documentos",
                     arquivo_cliente
                 )
-
-                st.markdown(f"""
-                <div style="
-                font-size:20px;
-                font-weight:800;
-                color:#00ffd0;
-                margin-bottom:15px;
-                ">
-                📎 {arquivo_cliente}
-                </div>
-                """, unsafe_allow_html=True)
 
                 if os.path.exists(caminho_arquivo):
 
