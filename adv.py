@@ -87,8 +87,8 @@ label{
 /* INPUTS */
 
 .stTextInput input{
-    background:#ffffff !important;
-    color:black !important;
+    background:black !important;
+    color:white !important;
     border: 4px solid #00aaff !important;
     #border-radius:1px !important;
     height:45px !important;
