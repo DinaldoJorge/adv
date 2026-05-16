@@ -194,7 +194,7 @@ label{
 
 .footer{
     text-align:center;
-    color:#cccccc;
+    color:green;
     margin-top:40px;
     font-size:13px;
 }
