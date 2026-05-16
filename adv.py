@@ -534,7 +534,12 @@ if st.session_state.logado:
                     <hr style="
                     border: none;
                     height: 5px;
-                    background: rgba(0,255,208,0.18);
+                    background: linear-gradient(
+                    90deg,
+                    rgba(0,140,255,1),
+                    rgba(0,255,255,1),
+                    rgba(0,140,255,1)
+                    );
                     margin-top: 35px;
                     margin-bottom: 10px;
                     ">
