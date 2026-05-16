@@ -24,6 +24,12 @@ SENHA = "mza2026"
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
+if "usuario_login" not in st.session_state:
+    st.session_state.usuario_login = ""
+
+if "senha_login" not in st.session_state:
+    st.session_state.senha_login = ""
+
 # =========================================
 # CSS
 # =========================================
@@ -98,11 +104,11 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 4px solid white !important;
+    border: 4px solid #00aaff !important;
 
-    border-radius: 4px white !important;
+    border-radius: 0px !important;
 
     color: #000000 !important;
 
@@ -124,9 +130,9 @@ label {
 /* INPUT AO CLICAR */
 .stTextInput input:focus {
 
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 4px solid green !important;
+    border: 4px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
@@ -137,7 +143,7 @@ label {
 /* INPUT COM TEXTO */
 .stTextInput input:not(:placeholder-shown) {
 
-    border: 4px solid white !important;
+    border: 4px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.20) !important;
@@ -146,7 +152,7 @@ label {
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
 
-    color: green !important;
+    color: #7d7d7d !important;
 
     opacity: 1 !important;
 
@@ -158,11 +164,11 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 4px solid green !important;
+    border: 2px solid #00aaff !important;
 
-    #border-radius: 1px !important;
+    border-radius: 1px !important;
 
     color: #000000 !important;
 
@@ -456,12 +462,14 @@ Acesso Painel Jurídico
 """, unsafe_allow_html=True)
 
 usuario = st.text_input(
-    "Usuário"
+    "Usuário",
+    key="usuario_login"
 )
 
 senha = st.text_input(
     "Senha",
-    type="password"
+    type="password",
+    key="senha_login"
 )
 
 if st.button("Entrar no Painel"):
@@ -472,6 +480,12 @@ if st.button("Entrar no Painel"):
     ):
 
         st.session_state.logado = True
+
+        # LIMPA LOGIN
+        st.session_state.usuario_login = ""
+        st.session_state.senha_login = ""
+
+        st.rerun()
 
     else:
 
@@ -491,6 +505,15 @@ if st.session_state.logado:
     Painel Jurídico Premium
     </div>
     """, unsafe_allow_html=True)
+
+    # =========================================
+    # BOTÃO SAIR
+    # =========================================
+    if st.button("Sair do Painel"):
+
+        st.session_state.logado = False
+
+        st.rerun()
 
     dados = planilha.get_all_records()
 
