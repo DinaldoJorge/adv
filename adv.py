@@ -102,7 +102,7 @@ label {
 
     border: 2px solid blue !important;
 
-    border-radius: 2px blue !important;
+    #border-radius: 2px blue !important;
 
     color: blue !important;
 
