@@ -166,7 +166,7 @@ label {
 /* FILE */
 [data-testid="stFileUploader"] {
 
-    background: white !important;
+    background: black !important;
 
     border: 4px solid green !important;
 
