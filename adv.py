@@ -16,26 +16,13 @@ st.set_page_config(
 )
 
 # =========================================
-# BOTÃO LOGIN
+# LOGIN
 # =========================================
-if st.button("Entrar no Painel"):
+USUARIO = "admin"
+SENHA = "mza2026"
 
-    if (
-        usuario == USUARIO
-        and senha == SENHA
-    ):
-
-        st.session_state.logado = True
-
-        st.success("Login realizado!")
-
-        st.rerun()
-
-    else:
-
-        st.error(
-            "Usuário ou senha inválidos."
-        )
+if "logado" not in st.session_state:
+    st.session_state["logado"] = False
 
 # =========================================
 # CSS
@@ -129,15 +116,11 @@ label {
 
     box-sizing: border-box !important;
 
-    box-shadow: none !important;
-
     transition: all 0.25s ease !important;
 }
 
 /* INPUT AO CLICAR */
 .stTextInput input:focus {
-
-    background: #ffffff !important;
 
     border: 4px solid #00ff88 !important;
 
@@ -151,43 +134,22 @@ label {
 .stTextInput input:not(:placeholder-shown) {
 
     border: 4px solid #00ff88 !important;
-
-    box-shadow:
-        0 0 12px rgba(0,255,136,0.20) !important;
-}
-
-/* PLACEHOLDER */
-.stTextInput input::placeholder {
-
-    color: #7d7d7d !important;
-
-    opacity: 1 !important;
-
-    font-size: 20px !important;
-
-    font-weight: 700 !important;
 }
 
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: #ffffff !important;
+    background: white !important;
 
     border: 2px solid #00aaff !important;
 
-    border-radius: 1px !important;
-
-    color: #000000 !important;
+    color: black !important;
 
     font-size: 22px !important;
 
     font-weight: 700 !important;
 
     padding: 24px !important;
-
-    box-sizing: border-box !important;
-
-    box-shadow: none !important;
 
     transition: all 0.25s ease !important;
 }
@@ -199,29 +161,6 @@ label {
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
-
-    outline: none !important;
-}
-
-/* TEXTAREA COM TEXTO */
-.stTextArea textarea:not(:placeholder-shown) {
-
-    border: 2px solid #00ff88 !important;
-
-    box-shadow:
-        0 0 12px rgba(0,255,136,0.20) !important;
-}
-
-/* PLACEHOLDER TEXTAREA */
-.stTextArea textarea::placeholder {
-
-    color: #7d7d7d !important;
-
-    opacity: 1 !important;
-
-    font-size: 22px !important;
-
-    font-weight: 700 !important;
 }
 
 /* FILE */
@@ -230,8 +169,6 @@ label {
     background: #0b0b0b !important;
 
     border: 2px solid #00d9ff !important;
-
-    border-radius: 1px !important;
 
     padding: 18px !important;
 }
@@ -247,13 +184,11 @@ label {
 
     color: black !important;
 
-    border-radius: 12px !important;
-
     border: none !important;
 
     font-size: 22px !important;
 
-    font-weight: 1000 !important;
+    font-weight: 900 !important;
 
     height: 45px !important;
 
@@ -270,8 +205,6 @@ label {
     );
 
     padding: 40px;
-
-    border-radius: 22px;
 
     margin-bottom: 40px;
 
@@ -353,23 +286,19 @@ Vamos <span>analisar</span> seus dados
 with st.form("formulario_cliente", clear_on_submit=True):
 
     nome = st.text_input(
-        "Nome completo",
-        placeholder="Digite seu nome completo"
+        "Nome completo"
     )
 
     email = st.text_input(
-        "Email",
-        placeholder="Digite seu melhor e-mail"
+        "Email"
     )
 
     telefone = st.text_input(
-        "Telefone",
-        placeholder="Digite seu telefone"
+        "Telefone"
     )
 
     caso = st.text_area(
         "Caso jurídico",
-        placeholder="Explique sua situação jurídica...",
         height=260
     )
 
@@ -469,16 +398,17 @@ Acesso Painel Jurídico
 """, unsafe_allow_html=True)
 
 usuario = st.text_input(
-    "Usuário",
-    key="usuario_login"
+    "Usuário"
 )
 
 senha = st.text_input(
     "Senha",
-    type="password",
-    key="senha_login"
+    type="password"
 )
 
+# =========================================
+# BOTÃO LOGIN
+# =========================================
 if st.button("Entrar no Painel"):
 
     if (
@@ -486,11 +416,7 @@ if st.button("Entrar no Painel"):
         and senha == SENHA
     ):
 
-        st.session_state.logado = True
-
-        # LIMPA LOGIN
-        st.session_state.usuario_login = ""
-        st.session_state.senha_login = ""
+        st.session_state["logado"] = True
 
         st.rerun()
 
@@ -503,7 +429,7 @@ if st.button("Entrar no Painel"):
 # =========================================
 # PAINEL
 # =========================================
-if st.session_state.logado:
+if st.session_state["logado"]:
 
     st.divider()
 
@@ -518,7 +444,7 @@ if st.session_state.logado:
     # =========================================
     if st.button("Sair do Painel"):
 
-        st.session_state.logado = False
+        st.session_state["logado"] = False
 
         st.rerun()
 
@@ -593,7 +519,6 @@ if st.session_state.logado:
 
                 if os.path.exists(caminho_arquivo):
 
-                    # MOSTRAR IMAGEM
                     if arquivo_cliente.lower().endswith(
                         (
                             ".png",
@@ -607,7 +532,6 @@ if st.session_state.logado:
                             width=450
                         )
 
-                    # DOWNLOAD
                     with open(
                         caminho_arquivo,
                         "rb"
