@@ -90,11 +90,11 @@ label{
     background:black !important;
     color:white !important;
     border: 4px solid #00aaff !important;
-    border-radius:2px black !important;
-    height:45px !important;
+    border-radius:0px black !important;
+    height:40px !important;
     font-size:18px !important;
-    font-weight:700 !important;
-    padding-left:18px !important;
+    font-weight:600 !important;
+    padding-left:15px !important;
     transition:0.3s !important;
 }
 
