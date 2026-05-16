@@ -137,7 +137,7 @@ label {
 /* INPUT COM TEXTO */
 .stTextInput input:not(:placeholder-shown) {
 
-    border: 2px solid #00ff88 !important;
+    border: 4px solid white !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.20) !important;
@@ -146,7 +146,7 @@ label {
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
 
-    color: #7d7d7d !important;
+    color: green !important;
 
     opacity: 1 !important;
 
@@ -158,11 +158,11 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: #ffffff !important;
+    background: white !important;
 
-    border: 2px solid #00aaff !important;
+    border: 4px solid green !important;
 
-    border-radius: 1px !important;
+    #border-radius: 1px !important;
 
     color: #000000 !important;
 
