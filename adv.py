@@ -89,8 +89,8 @@ label{
 .stTextInput input{
     background:black !important;
     color: white !important;
-    border: 4px solid #00d9ff !important;
-    border-radius: 10px #00d9ff !important;
+    border: 4px solid white !important;
+    border-radius: 10px white !important;
     height:40px !important;
     font-size:18px !important;
     font-weight:600 !important;
@@ -108,16 +108,16 @@ label{
 .stTextArea textarea{
     background:black !important;
     color:white !important;
-    border: 8px solid green !important;
-    border-radius: 4px green !important;
+    border: 4px solid white !important;
+    border-radius: 4px white !important;
     font-size:19px !important;
     font-weight:700 !important;
     padding:18px !important;
 }
 
 .stTextArea textarea:focus{
-    border:4px solid #00d9ff !important;
-    box-shadow:0 0 10px #00d9ff !important;
+    border:4px solid green !important;
+    box-shadow:0 0 10px green !important;
 }
 
 /* PLACEHOLDER */
