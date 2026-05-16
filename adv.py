@@ -138,7 +138,7 @@ label,
 
     color: #FFFFFF !important;
 
-    opacity: 0.88 !important;
+    opacity: 3 !important;
 
     font-size: 20px !important;
 
