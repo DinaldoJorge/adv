@@ -100,9 +100,9 @@ label {
 
     background: white !important;
 
-    border: 5px solid  #00ffd0 !important;
+    border: 2px solid  #00ffd0 !important;
 
-    border-radius: 5px #00ffd0 !important;
+    #border-radius: 5px #00ffd0 !important;
 
     color: blue !important;
 
