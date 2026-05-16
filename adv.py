@@ -98,9 +98,9 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: #ffffff !important;
+    background: white !important;
 
-    border: 4px solid #00aaff !important;
+    border: 4px solid white !important;
 
     border-radius: 0px !important;
 
@@ -122,7 +122,7 @@ label {
 /* INPUT AO CLICAR */
 .stTextInput input:focus {
 
-    border: 4px solid #00ff88 !important;
+    border: 4px solid green !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
@@ -133,7 +133,7 @@ label {
 /* INPUT COM TEXTO */
 .stTextInput input:not(:placeholder-shown) {
 
-    border: 4px solid #00ff88 !important;
+    border: 4px solid green !important;
 }
 
 /* TEXTAREA */
@@ -141,7 +141,7 @@ label {
 
     background: white !important;
 
-    border: 2px solid #00aaff !important;
+    border: 4px solid white !important;
 
     color: black !important;
 
@@ -157,7 +157,7 @@ label {
 /* TEXTAREA FOCUS */
 .stTextArea textarea:focus {
 
-    border: 2px solid #00ff88 !important;
+    border: 4px solid green !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
@@ -166,9 +166,9 @@ label {
 /* FILE */
 [data-testid="stFileUploader"] {
 
-    background: #0b0b0b !important;
+    background: white !important;
 
-    border: 2px solid #00d9ff !important;
+    border: 4px solid white !important;
 
     padding: 18px !important;
 }
