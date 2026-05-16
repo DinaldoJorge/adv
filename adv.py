@@ -6,245 +6,305 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 import os
 
-# =========================================
-# CONFIGURAÇÃO
-# =========================================
+# =====================================================
+# CONFIGURAÇÃO DA PÁGINA
+# =====================================================
 st.set_page_config(
     page_title="MZA",
     page_icon="⚖️",
     layout="wide"
 )
 
-# =========================================
+# =====================================================
 # LOGIN
-# =========================================
+# =====================================================
 USUARIO = "admin"
 SENHA = "mza2026"
 
 if "logado" not in st.session_state:
     st.session_state["logado"] = False
 
-# =========================================
-# CSS
-# =========================================
+# =====================================================
+# CSS PREMIUM
+# =====================================================
 st.markdown("""
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-.stApp {
-    background-color: black;
+.stApp{
+    background-color:black;
 }
 
-#MainMenu {
-    visibility: hidden;
+#MainMenu{
+    visibility:hidden;
 }
 
-footer {
-    visibility: hidden;
+footer{
+    visibility:hidden;
 }
 
-header {
-    visibility: hidden;
+header{
+    visibility:hidden;
 }
 
-html, body, [class*="css"] {
-
-    font-family: 'Inter', sans-serif;
-
-    color: #00d9ff;
+html, body, [class*="css"]{
+    font-family:'Inter',sans-serif;
+    color:white;
 }
 
-.block-container {
-
-    max-width: 1200px;
-
-    padding-top: 1rem;
-
-    padding-bottom: 2rem;
+.block-container{
+    max-width:1200px;
+    padding-top:1rem;
+    padding-bottom:2rem;
 }
 
-/* FRASE */
-.frase {
+/* =====================================================
+FRASE
+===================================================== */
 
-    text-align: center;
+.frase{
 
-    font-size: 26px;
+    text-align:center;
 
-    font-weight: 900;
+    font-size:26px;
 
-    color: white;
+    font-weight:900;
 
-    margin-top: 5px;
+    color:white;
 
-    margin-bottom: 45px;
+    margin-top:5px;
+
+    margin-bottom:45px;
 }
 
-.frase span {
+.frase span{
 
-    color: #00d9ff;
+    color:#00d9ff;
 }
 
-/* LABELS */
-label {
+/* =====================================================
+LABELS
+===================================================== */
 
-    color: white !important;
+label{
 
-    font-size: 26px !important;
+    color:white !important;
 
-    #font-weight: 999 !important;
+    font-size:24px !important;
+
+    font-weight:900 !important;
 }
 
-/* INPUTS */
-.stTextInput input {
+/* =====================================================
+INPUTS
+===================================================== */
 
-    background: white !important;
+.stTextInput input{
 
-    border: 4px solid white !important;
+    background:white !important;
 
-    border-radius: 0px !important;
+    border:4px solid #00aaff !important;
 
-    color: black !important;
+    border-radius:0px !important;
 
-    font-size: 20px !important;
+    color:black !important;
 
-    font-weight: 700 !important;
+    font-size:20px !important;
 
-    height: 45px !important;
+    font-weight:700 !important;
 
-    padding: 0 22px !important;
+    height:48px !important;
 
-    box-sizing: border-box !important;
+    padding:0 22px !important;
 
-    transition: all 0.25s ease !important;
+    box-sizing:border-box !important;
+
+    transition:all 0.25s ease !important;
 }
 
 /* INPUT AO CLICAR */
-.stTextInput input:focus {
 
-    border: 4px solid green !important;
+.stTextInput input:focus{
 
-    box-shadow:
-        0 0 12px green !important;
-
-    outline: green !important;
-}
-
-/* INPUT COM TEXTO */
-.stTextInput input:not(:placeholder-shown) {
-
-    border: 4px solid green !important;
-}
-
-/* TEXTAREA */
-.stTextArea textarea {
-
-    background: white !important;
-
-    border: 4px solid green !important;
-
-    color: black !important;
-
-    font-size: 22px !important;
-
-    font-weight: 700 !important;
-
-    padding: 24px !important;
-
-    transition: all 0.25s ease !important;
-}
-
-/* TEXTAREA FOCUS */
-.stTextArea textarea:focus {
-
-    border: 4px solid green !important;
+    border:4px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
+
+    outline:none !important;
 }
 
-/* FILE */
-[data-testid="stFileUploader"] {
+/* INPUT COM TEXTO */
 
-    background: black !important;
+.stTextInput input:not(:placeholder-shown){
 
-    border: 4px solid green !important;
-
-    padding: 18px !important;
+    border:4px solid #00ff88 !important;
 }
 
-/* BOTÃO */
-.stButton > button {
+/* PLACEHOLDER */
 
-    background: linear-gradient(
+.stTextInput input::placeholder{
+
+    color:#7d7d7d !important;
+
+    opacity:1 !important;
+
+    font-size:18px !important;
+
+    font-weight:700 !important;
+}
+
+/* =====================================================
+TEXTAREA
+===================================================== */
+
+.stTextArea textarea{
+
+    background:white !important;
+
+    border:4px solid #00aaff !important;
+
+    color:black !important;
+
+    font-size:22px !important;
+
+    font-weight:700 !important;
+
+    padding:24px !important;
+
+    transition:all 0.25s ease !important;
+}
+
+/* TEXTAREA AO CLICAR */
+
+.stTextArea textarea:focus{
+
+    border:4px solid #00ff88 !important;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.25) !important;
+
+    outline:none !important;
+}
+
+/* TEXTAREA COM TEXTO */
+
+.stTextArea textarea:not(:placeholder-shown){
+
+    border:4px solid #00ff88 !important;
+}
+
+/* PLACEHOLDER TEXTAREA */
+
+.stTextArea textarea::placeholder{
+
+    color:#7d7d7d !important;
+
+    opacity:1 !important;
+
+    font-size:20px !important;
+
+    font-weight:700 !important;
+}
+
+/* =====================================================
+UPLOAD
+===================================================== */
+
+[data-testid="stFileUploader"]{
+
+    background:black !important;
+
+    border:4px solid #00d9ff !important;
+
+    padding:18px !important;
+}
+
+/* =====================================================
+BOTÃO
+===================================================== */
+
+.stButton > button{
+
+    background:linear-gradient(
         90deg,
         #00aaff,
         #00d9ff
     );
 
-    color: black !important;
+    color:black !important;
 
-    border: green !important;
+    border:none !important;
 
-    font-size: 22px !important;
+    font-size:22px !important;
 
-    font-weight: 900 !important;
+    font-weight:900 !important;
 
-    height: 45px !important;
+    height:50px !important;
 
-    width: 100%;
+    width:100%;
 }
 
-/* CARD */
-.card {
+/* =====================================================
+CARD
+===================================================== */
 
-    background: linear-gradient(
+.card{
+
+    background:linear-gradient(
         180deg,
         #0b0b0b 0%,
         #111111 100%
     );
 
-    padding: 40px;
+    padding:40px;
 
-    margin-bottom: 40px;
+    margin-bottom:40px;
 
-    border: 1px solid #00d9ff;
+    border:1px solid #00d9ff;
 }
 
-/* TITULO */
-.titulo-admin {
+/* =====================================================
+TÍTULOS
+===================================================== */
 
-    font-size: 24px;
+.titulo-admin{
 
-    font-weight: 900;
+    font-size:24px;
 
-    text-align: center;
+    font-weight:900;
 
-    margin-top: 20px;
+    text-align:center;
 
-    margin-bottom: 25px;
+    margin-top:20px;
 
-    color: white;
+    margin-bottom:25px;
+
+    color:white;
 }
 
-/* FOOTER */
-.footer {
+/* =====================================================
+FOOTER
+===================================================== */
 
-    text-align: center;
+.footer{
 
-    color: #d0d0d0;
+    text-align:center;
 
-    font-size: 12px;
+    color:#d0d0d0;
 
-    margin-top: 40px;
+    font-size:12px;
+
+    margin-top:40px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =========================================
-# GOOGLE SHEETS
-# =========================================
+# =====================================================
+GOOGLE SHEETS
+# =====================================================
 scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
@@ -257,11 +317,13 @@ creds = Credentials.from_service_account_info(
 
 client = gspread.authorize(creds)
 
-planilha = client.open("leads_professores").sheet1
+planilha = client.open(
+    "leads_professores"
+).sheet1
 
-# =========================================
-# LOGO
-# =========================================
+# =====================================================
+LOGO
+# =====================================================
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
@@ -271,34 +333,41 @@ with col2:
         width=320
     )
 
-# =========================================
-# FRASE
-# =========================================
+# =====================================================
+FRASE
+# =====================================================
 st.markdown("""
 <div class="frase">
 Vamos <span>analisar</span> seus dados
 </div>
 """, unsafe_allow_html=True)
 
-# =========================================
-# FORM
-# =========================================
-with st.form("formulario_cliente", clear_on_submit=True):
+# =====================================================
+FORMULÁRIO
+# =====================================================
+with st.form(
+    "formulario_cliente",
+    clear_on_submit=True
+):
 
     nome = st.text_input(
-        "Nome completo"
+        "Nome completo",
+        placeholder="Digite seu nome completo"
     )
 
     email = st.text_input(
-        "Email"
+        "Email",
+        placeholder="Digite seu melhor e-mail"
     )
 
     telefone = st.text_input(
-        "Telefone"
+        "Telefone",
+        placeholder="Digite seu telefone"
     )
 
     caso = st.text_area(
         "Caso jurídico",
+        placeholder="Explique sua situação jurídica...",
         height=260
     )
 
@@ -318,14 +387,24 @@ with st.form("formulario_cliente", clear_on_submit=True):
         "Enviar Dados"
     )
 
-# =========================================
-# SALVAR
-# =========================================
-def salvar(nome, email, telefone, caso, nome_arquivo):
+# =====================================================
+SALVAR
+# =====================================================
+def salvar(
+    nome,
+    email,
+    telefone,
+    caso,
+    nome_arquivo
+):
 
     data = datetime.now(
-        ZoneInfo("America/Sao_Paulo")
-    ).strftime("%d/%m/%Y %H:%M")
+        ZoneInfo(
+            "America/Sao_Paulo"
+        )
+    ).strftime(
+        "%d/%m/%Y %H:%M"
+    )
 
     planilha.append_row([
         nome,
@@ -336,9 +415,9 @@ def salvar(nome, email, telefone, caso, nome_arquivo):
         data
     ])
 
-# =========================================
-# ENVIAR
-# =========================================
+# =====================================================
+ENVIAR
+# =====================================================
 if enviar:
 
     if nome and email and caso:
@@ -386,9 +465,9 @@ if enviar:
             "Preencha os campos obrigatórios."
         )
 
-# =========================================
-# LOGIN
-# =========================================
+# =====================================================
+LOGIN
+# =====================================================
 st.divider()
 
 st.markdown("""
@@ -398,25 +477,31 @@ Acesso Painel Jurídico
 """, unsafe_allow_html=True)
 
 usuario = st.text_input(
-    "Usuário"
+    "Usuário",
+    placeholder="Digite o usuário"
 )
 
 senha = st.text_input(
     "Senha",
-    type="password"
+    type="password",
+    placeholder="Digite a senha"
 )
 
-# =========================================
-# BOTÃO LOGIN
-# =========================================
-if st.button("Entrar no Painel"):
+# =====================================================
+BOTÃO LOGIN
+# =====================================================
+if st.button(
+    "Entrar no Painel"
+):
 
     if (
         usuario == USUARIO
         and senha == SENHA
     ):
 
-        st.session_state["logado"] = True
+        st.session_state[
+            "logado"
+        ] = True
 
         st.rerun()
 
@@ -426,9 +511,9 @@ if st.button("Entrar no Painel"):
             "Usuário ou senha inválidos."
         )
 
-# =========================================
-# PAINEL
-# =========================================
+# =====================================================
+PAINEL
+# =====================================================
 if st.session_state["logado"]:
 
     st.divider()
@@ -439,12 +524,16 @@ if st.session_state["logado"]:
     </div>
     """, unsafe_allow_html=True)
 
-    # =========================================
+    # =================================================
     # BOTÃO SAIR
-    # =========================================
-    if st.button("Sair do Painel"):
+    # =================================================
+    if st.button(
+        "Sair do Painel"
+    ):
 
-        st.session_state["logado"] = False
+        st.session_state[
+            "logado"
+        ] = False
 
         st.rerun()
 
@@ -452,15 +541,53 @@ if st.session_state["logado"]:
 
     if dados:
 
-        df = pd.DataFrame(dados)
+        df = pd.DataFrame(
+            dados
+        )
 
+        # INVERTE
         df = df.iloc[::-1]
 
+        # PESQUISA
+        busca = st.text_input(
+            "Pesquisar cliente",
+            placeholder="Digite nome, email ou telefone"
+        )
+
+        if busca:
+
+            df = df[
+                df.astype(str).apply(
+                    lambda x:
+                    x.str.contains(
+                        busca,
+                        case=False
+                    )
+                ).any(axis=1)
+            ]
+
+        st.markdown(f"""
+        <div style="
+        font-size:24px;
+        font-weight:900;
+        margin-bottom:30px;
+        color:white;
+        ">
+        Total de clientes:
+        {len(df)}
+        </div>
+        """, unsafe_allow_html=True)
+
+        # =================================================
+        # CARDS
+        # =================================================
         for i, row in df.iterrows():
 
             nome_cliente = row.iloc[0]
             email_cliente = row.iloc[1]
-            telefone_cliente = str(row.iloc[2])
+            telefone_cliente = str(
+                row.iloc[2]
+            )
             caso_cliente = row.iloc[3]
             arquivo_cliente = row.iloc[4]
             data_cliente = row.iloc[5]
@@ -493,11 +620,13 @@ if st.session_state["logado"]:
             🕒 {data_cliente}
 
             </div>
+
+            </div>
             """, unsafe_allow_html=True)
 
-            # =========================================
+            # =================================================
             # ANEXO
-            # =========================================
+            # =================================================
             if arquivo_cliente != "Nenhum arquivo":
 
                 caminho_arquivo = os.path.join(
@@ -517,8 +646,11 @@ if st.session_state["logado"]:
                 </div>
                 """, unsafe_allow_html=True)
 
-                if os.path.exists(caminho_arquivo):
+                if os.path.exists(
+                    caminho_arquivo
+                ):
 
+                    # IMAGEM
                     if arquivo_cliente.lower().endswith(
                         (
                             ".png",
@@ -532,6 +664,7 @@ if st.session_state["logado"]:
                             width=450
                         )
 
+                    # DOWNLOAD
                     with open(
                         caminho_arquivo,
                         "rb"
@@ -544,16 +677,19 @@ if st.session_state["logado"]:
                             key=f"download_{i}"
                         )
 
-            st.markdown(
-                "</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown("""
+            <hr style="
+            border:none;
+            height:1px;
+            background:rgba(0,217,255,0.25);
+            margin-top:35px;
+            margin-bottom:10px;
+            ">
+            """, unsafe_allow_html=True)
 
-            st.divider()
-
-# =========================================
-# FOOTER
-# =========================================
+# =====================================================
+FOOTER
+# =====================================================
 st.markdown("""
 <div class="footer">
 Seus dados estão protegidos e não serão compartilhados.
