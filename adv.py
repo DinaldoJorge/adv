@@ -133,7 +133,7 @@ label{
     border:4px solid #00d9ff !important;
     border-radius:16px #00d9ff!important;
     padding:15px !important;
-    background:#0c0c0c !important;
+    background: green !important;
 }
 
 /* BOTÕES */
