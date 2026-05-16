@@ -110,7 +110,7 @@ label {
 
     font-weight: 700 !important;
 
-    height: 58px !important;
+    height: 45px !important;
 
     padding: 0 22px !important;
 
@@ -126,7 +126,7 @@ label {
 
     background: #ffffff !important;
 
-    border: 2px solid #00ff88 !important;
+    border: 4px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
