@@ -69,7 +69,7 @@ html, body, [class*="css"] {
 
     text-align: center;
 
-    font-size: 35px;
+    font-size: 26px;
 
     font-weight: 900;
 
@@ -82,7 +82,7 @@ html, body, [class*="css"] {
 
 .frase span {
 
-    color: #00ffd0;
+    color: #00d9ff;
 }
 
 /* LABELS */
@@ -90,7 +90,7 @@ label {
 
     color: white !important;
 
-    font-size: 25px !important;
+    font-size: 20px !important;
 
     font-weight: 800 !important;
 }
@@ -100,21 +100,31 @@ label {
 
     background: white !important;
 
-    border: 5px solid  black !important;
+    border: 1px solid #00d9ff !important;
 
-    border-radius: 5px black !important;
+    border-radius: 16px !important;
 
-    color: green !important;
+    color: black !important;
 
-    font-size: 22px !important;
+    font-size: 20px !important;
 
-    font-weight: 500 !important;
+    font-weight: 700 !important;
 
-    height: 30px !important;
+    height: 58px !important;
 
-    padding-left: 10px !important;
+    padding: 0 22px !important;
+
+    box-sizing: border-box !important;
 
     box-shadow: none !important;
+}
+
+/* PLACEHOLDER */
+.stTextInput input::placeholder {
+
+    color: #777777 !important;
+
+    opacity: 1 !important;
 }
 
 /* TEXTAREA */
@@ -122,19 +132,29 @@ label {
 
     background: white !important;
 
-    border: 5px solid  green !important;
+    border: 1px solid #00d9ff !important;
 
-    border-radius: 5px !important;
+    border-radius: 16px !important;
 
-    color: blue !important;
+    color: black !important;
 
     font-size: 22px !important;
 
-    font-weight: 500 !important;
+    font-weight: 700 !important;
 
     padding: 24px !important;
 
+    box-sizing: border-box !important;
+
     box-shadow: none !important;
+}
+
+/* TEXTAREA PLACEHOLDER */
+.stTextArea textarea::placeholder {
+
+    color: #777777 !important;
+
+    opacity: 1 !important;
 }
 
 /* FILE */
@@ -142,33 +162,33 @@ label {
 
     background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.45) !important;
+    border: 1px solid #00d9ff !important;
 
-    border-radius: 5px !important;
+    border-radius: 16px !important;
 
-    padding: 26px !important;
+    padding: 18px !important;
 }
 
-/* BUTTON */
+/* BOTÃO */
 .stButton > button {
 
     background: linear-gradient(
         90deg,
-        #00e0b8,
-        #00ffd0
+        #00aaff,
+        #00d9ff
     );
 
     color: black !important;
 
-    border-radius: 5px green !important;
+    border-radius: 16px !important;
 
-    border: 5px green !important;
+    border: none !important;
 
-    font-size: 22px !important;
+    font-size: 18px !important;
 
     font-weight: 900 !important;
 
-    height: 50px !important;
+    height: 52px !important;
 
     width: 100%;
 }
@@ -188,7 +208,7 @@ label {
 
     margin-bottom: 40px;
 
-    border: 1px solid rgba(0,255,208,0.40);
+    border: 1px solid #00d9ff;
 }
 
 /* TITULO */
@@ -214,7 +234,7 @@ label {
 
     color: #d0d0d0;
 
-    font-size: 22px;
+    font-size: 12px;
 
     margin-top: 40px;
 }
@@ -371,7 +391,7 @@ if enviar:
         )
 
 # =========================================
-# LOGIN PAINEL
+# LOGIN
 # =========================================
 st.divider()
 
@@ -390,9 +410,6 @@ senha = st.text_input(
     type="password"
 )
 
-# =========================================
-# BOTÃO LOGIN
-# =========================================
 if st.button("Entrar no Painel"):
 
     if (
@@ -421,12 +438,6 @@ if st.session_state.logado:
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("Sair do Painel"):
-
-        st.session_state.logado = False
-
-        st.rerun()
-
     dados = planilha.get_all_records()
 
     if dados:
@@ -434,16 +445,6 @@ if st.session_state.logado:
         df = pd.DataFrame(dados)
 
         df = df.iloc[::-1]
-
-        st.markdown(f"""
-        <div style="
-        font-size:22px;
-        font-weight:900;
-        margin-bottom:25px;
-        ">
-        Total de clientes: {len(df)}
-        </div>
-        """, unsafe_allow_html=True)
 
         for i, row in df.iterrows():
 
@@ -458,16 +459,16 @@ if st.session_state.logado:
             <div class="card">
 
             <div style="
-            font-size:22px;
+            font-size:30px;
             font-weight:900;
-            color:#00ffd0;
+            color:#00d9ff;
             margin-bottom:28px;
             ">
             {nome_cliente}
             </div>
 
             <div style="
-            font-size:22px;
+            font-size:24px;
             line-height:2.3;
             font-weight:700;
             color:white;
@@ -482,70 +483,10 @@ if st.session_state.logado:
             🕒 {data_cliente}
 
             </div>
+
+            </div>
             """, unsafe_allow_html=True)
 
-            # =========================================
-            # ANEXO
-            # =========================================
-            if arquivo_cliente != "Nenhum arquivo":
-
-                caminho_arquivo = os.path.join(
-                    "documentos",
-                    arquivo_cliente
-                )
-
-                st.markdown(f"""
-                <div style="
-                margin-top:25px;
-                font-size:22px;
-                font-weight:800;
-                color:#00ffd0;
-                ">
-                📎 {arquivo_cliente}
-                </div>
-                """, unsafe_allow_html=True)
-                if os.path.exists(caminho_arquivo):
-
-                    if arquivo_cliente.lower().endswith(
-                        (
-                            ".png",
-                            ".jpg",
-                            ".jpeg"
-                        )
-                    ):
-
-                        st.image(
-                            caminho_arquivo,
-                            width=250
-                        )
-
-                    with open(
-                        caminho_arquivo,
-                        "rb"
-                    ) as file:
-
-                        st.download_button(
-                            "Baixar Documento",
-                            data=file,
-                            file_name=arquivo_cliente
-                        )
-
-                    st.markdown("""
-                    <hr style="
-                    border: none;
-                    height: 5px;
-                    background: linear-gradient(
-                    90deg,
-                    rgba(0,140,255,1),
-                    rgba(0,255,255,1),
-                    rgba(0,140,255,1)
-                    );
-                    margin-top: 35px;
-                    margin-bottom: 10px;
-                    ">
-                    """, unsafe_allow_html=True)
-
-            st.divider()
 # =========================================
 # FOOTER
 # =========================================
