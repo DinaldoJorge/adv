@@ -520,7 +520,7 @@ if st.session_state.logado:
                             width=450
                         )
 
-                    with open(
+                                       with open(
                         caminho_arquivo,
                         "rb"
                     ) as file:
@@ -531,18 +531,17 @@ if st.session_state.logado:
                             file_name=arquivo_cliente
                         )
 
-          st.markdown("""
-<hr style="
-border: none;
-height: 1px;
-background: rgba(0,255,208,0.18);
-margin-top: 35px;
-margin-bottom: 10px;
-">
-""", unsafe_allow_html=True)
+                    st.markdown("""
+                    <hr style="
+                    border: none;
+                    height: 1px;
+                    background: rgba(0,255,208,0.18);
+                    margin-top: 35px;
+                    margin-bottom: 10px;
+                    ">
+                    """, unsafe_allow_html=True)
 
             st.divider()
-
 # =========================================
 # FOOTER
 # =========================================
