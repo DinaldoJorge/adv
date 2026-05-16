@@ -57,7 +57,7 @@ header{
 }
 
 .block-container{
-    padding-top:1rem;
+    padding-top:2rem;
     max-width:1200px;
 }
 
