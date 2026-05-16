@@ -9,8 +9,9 @@ import os
 # =====================================================
 # CONFIGURAÇÃO DA PÁGINA
 # =====================================================
+
 st.set_page_config(
-    page_title="MZA",
+    page_title="MZA Advogados",
     page_icon="⚖️",
     layout="wide"
 )
@@ -18,6 +19,7 @@ st.set_page_config(
 # =====================================================
 # LOGIN
 # =====================================================
+
 USUARIO = "admin"
 SENHA = "mza2026"
 
@@ -27,13 +29,19 @@ if "logado" not in st.session_state:
 # =====================================================
 # CSS PREMIUM
 # =====================================================
+
 st.markdown("""
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+html, body, [class*="css"]{
+    font-family:'Inter',sans-serif;
+}
+
 .stApp{
-    background-color:black;
+    background:#000000;
+    color:white;
 }
 
 #MainMenu{
@@ -48,294 +56,200 @@ header{
     visibility:hidden;
 }
 
-html, body, [class*="css"]{
-    font-family:'Inter',sans-serif;
-    color:white;
-}
-
 .block-container{
-    max-width:1200px;
     padding-top:1rem;
-    padding-bottom:2rem;
+    max-width:1200px;
 }
 
-/* =====================================================
-#FRASE
-===================================================== */
+/* FRASE */
 
 .frase{
-
     text-align:center;
-
-    font-size:26px;
-
+    font-size:28px;
     font-weight:900;
-
     color:white;
-
-    margin-top:5px;
-
+    margin-top:10px;
     margin-bottom:45px;
 }
 
 .frase span{
-
     color:#00d9ff;
 }
 
-/* =====================================================
-#LABELS
-===================================================== */
+/* LABELS */
 
 label{
-
     color:white !important;
-
-    font-size:24px !important;
-
-    font-weight:900 !important;
+    font-size:21px !important;
+    font-weight:800 !important;
 }
 
-/* =====================================================
-#INPUTS
-===================================================== */
+/* INPUTS */
 
 .stTextInput input{
-
-    background:white !important;
-
-    border:4px solid #00aaff !important;
-
-    border-radius:0px !important;
-
+    background:#ffffff !important;
     color:black !important;
-
-    font-size:20px !important;
-
+    border:2px solid #00aaff !important;
+    border-radius:14px !important;
+    height:52px !important;
+    font-size:18px !important;
     font-weight:700 !important;
-
-    height:48px !important;
-
-    padding:0 22px !important;
-
-    box-sizing:border-box !important;
-
-    transition:all 0.25s ease !important;
+    padding-left:18px !important;
+    transition:0.3s !important;
 }
-
-/* INPUT AO CLICAR */
 
 .stTextInput input:focus{
-
-    border:4px solid #00ff88 !important;
-
-    box-shadow:
-        0 0 12px rgba(0,255,136,0.25) !important;
-
-    outline:none !important;
+    border:2px solid #00ff88 !important;
+    box-shadow:0 0 10px rgba(0,255,136,0.25) !important;
 }
 
-/* INPUT COM TEXTO */
+/* TEXTAREA */
 
-.stTextInput input:not(:placeholder-shown){
+.stTextArea textarea{
+    background:#ffffff !important;
+    color:black !important;
+    border:2px solid #00aaff !important;
+    border-radius:14px !important;
+    font-size:19px !important;
+    font-weight:700 !important;
+    padding:18px !important;
+}
 
-    border:4px solid #00ff88 !important;
+.stTextArea textarea:focus{
+    border:2px solid #00ff88 !important;
+    box-shadow:0 0 10px rgba(0,255,136,0.25) !important;
 }
 
 /* PLACEHOLDER */
 
-.stTextInput input::placeholder{
-
-    color:#7d7d7d !important;
-
+::placeholder{
+    color:#666666 !important;
     opacity:1 !important;
-
-    font-size:18px !important;
-
-    font-weight:700 !important;
 }
 
-/* =====================================================
-#TEXTAREA
-===================================================== */
-
-.stTextArea textarea{
-
-    background:white !important;
-
-    border:4px solid #00aaff !important;
-
-    color:black !important;
-
-    font-size:22px !important;
-
-    font-weight:700 !important;
-
-    padding:24px !important;
-
-    transition:all 0.25s ease !important;
-}
-
-/* TEXTAREA AO CLICAR */
-
-.stTextArea textarea:focus{
-
-    border:4px solid #00ff88 !important;
-
-    box-shadow:
-        0 0 12px rgba(0,255,136,0.25) !important;
-
-    outline:none !important;
-}
-
-/* TEXTAREA COM TEXTO */
-
-.stTextArea textarea:not(:placeholder-shown){
-
-    border:4px solid #00ff88 !important;
-}
-
-/* PLACEHOLDER TEXTAREA */
-
-.stTextArea textarea::placeholder{
-
-    color:#7d7d7d !important;
-
-    opacity:1 !important;
-
-    font-size:20px !important;
-
-    font-weight:700 !important;
-}
-
-/* =====================================================
-#UPLOAD
-===================================================== */
+/* FILE UPLOADER */
 
 [data-testid="stFileUploader"]{
-
-    background:black !important;
-
-    border:4px solid #00d9ff !important;
-
-    padding:18px !important;
+    border:2px solid #00d9ff !important;
+    border-radius:16px !important;
+    padding:15px !important;
+    background:#0c0c0c !important;
 }
 
-/* =====================================================
-#BOTÃO
-===================================================== */
+/* BOTÕES */
 
 .stButton > button{
-
+    width:100%;
+    height:52px;
+    border:none;
+    border-radius:14px;
     background:linear-gradient(
         90deg,
         #00aaff,
-        #00d9ff
+        #00ff88
     );
-
-    color:black !important;
-
-    border:none !important;
-
-    font-size:22px !important;
-
-    font-weight:900 !important;
-
-    height:50px !important;
-
-    width:100%;
+    color:black;
+    font-size:20px;
+    font-weight:900;
+    transition:0.3s;
 }
 
-/* =====================================================
-#CARD
-===================================================== */
+.stButton > button:hover{
+    transform:scale(1.02);
+}
+
+/* CARD */
 
 .card{
-
     background:linear-gradient(
         180deg,
-        #0b0b0b 0%,
-        #111111 100%
+        #0b0b0b,
+        #131313
     );
 
-    padding:40px;
+    border:1px solid rgba(0,217,255,0.35);
 
-    margin-bottom:40px;
+    border-radius:24px;
 
-    border:1px solid #00d9ff;
+    padding:35px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 0 18px rgba(0,217,255,0.08);
 }
 
-/* =====================================================
-#TÍTULOS
-===================================================== */
+/* TÍTULOS */
 
 .titulo-admin{
-
-    font-size:24px;
-
-    font-weight:900;
-
     text-align:center;
-
+    font-size:28px;
+    font-weight:900;
     margin-top:20px;
-
     margin-bottom:25px;
-
     color:white;
 }
 
-/* =====================================================
-#FOOTER
-===================================================== */
+/* FOOTER */
 
 .footer{
-
     text-align:center;
-
-    color:#d0d0d0;
-
-    font-size:12px;
-
+    color:#cccccc;
     margin-top:40px;
+    font-size:13px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
 # =====================================================
-#GOOGLE SHEETS
+# GOOGLE SHEETS
 # =====================================================
-scope = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive"
-]
 
-creds = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=scope
-)
+planilha = None
 
-client = gspread.authorize(creds)
+try:
 
-planilha = client.open(
-    "leads_professores"
-).sheet1
+    scope = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive"
+    ]
+
+    creds = Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"],
+        scopes=scope
+    )
+
+    client = gspread.authorize(creds)
+
+    planilha = client.open(
+        "leads_professores"
+    ).sheet1
+
+except Exception as e:
+
+    st.error("Erro ao conectar com Google Sheets.")
+    st.stop()
 
 # =====================================================
-LOGO
+# LOGO
 # =====================================================
+
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
 
-    st.image(
-        "logomza.png",
-        width=320
-    )
+    if os.path.exists("logomza.png"):
+
+        st.image(
+            "logomza.png",
+            width=420
+        )
 
 # =====================================================
-#FRASE
+# FRASE
 # =====================================================
+
 st.markdown("""
 <div class="frase">
 Vamos <span>analisar</span> seus dados
@@ -343,21 +257,19 @@ Vamos <span>analisar</span> seus dados
 """, unsafe_allow_html=True)
 
 # =====================================================
-#FORMULÁRIO
+# FORMULÁRIO
 # =====================================================
-with st.form(
-    "formulario_cliente",
-    clear_on_submit=True
-):
+
+with st.form("formulario", clear_on_submit=True):
 
     nome = st.text_input(
         "Nome completo",
-        placeholder="Digite seu nome completo"
+        placeholder="Digite seu nome"
     )
 
     email = st.text_input(
         "Email",
-        placeholder="Digite seu melhor e-mail"
+        placeholder="Digite seu melhor email"
     )
 
     telefone = st.text_input(
@@ -368,19 +280,12 @@ with st.form(
     caso = st.text_area(
         "Caso jurídico",
         placeholder="Explique sua situação jurídica...",
-        height=260
+        height=220
     )
 
     arquivo = st.file_uploader(
-        "📎 Anexar documentos",
-        type=[
-            "pdf",
-            "doc",
-            "docx",
-            "png",
-            "jpg",
-            "jpeg"
-        ]
+        "📎 Anexar documento",
+        type=["pdf","png","jpg","jpeg","doc","docx"]
     )
 
     enviar = st.form_submit_button(
@@ -388,23 +293,33 @@ with st.form(
     )
 
 # =====================================================
-#SALVAR
+# FUNÇÃO SALVAR
 # =====================================================
-def salvar(
-    nome,
-    email,
-    telefone,
-    caso,
-    nome_arquivo
-):
+
+def salvar_dados():
+
+    nome_arquivo = "Nenhum arquivo"
+
+    if arquivo is not None:
+
+        os.makedirs(
+            "documentos",
+            exist_ok=True
+        )
+
+        caminho = os.path.join(
+            "documentos",
+            arquivo.name
+        )
+
+        with open(caminho, "wb") as f:
+            f.write(arquivo.getbuffer())
+
+        nome_arquivo = arquivo.name
 
     data = datetime.now(
-        ZoneInfo(
-            "America/Sao_Paulo"
-        )
-    ).strftime(
-        "%d/%m/%Y %H:%M"
-    )
+        ZoneInfo("America/Sao_Paulo")
+    ).strftime("%d/%m/%Y %H:%M")
 
     planilha.append_row([
         nome,
@@ -416,58 +331,37 @@ def salvar(
     ])
 
 # =====================================================
-#ENVIAR
+# ENVIAR
 # =====================================================
+
 if enviar:
 
     if nome and email and caso:
 
-        nome_arquivo = "Nenhum arquivo"
+        try:
 
-        if arquivo is not None:
+            salvar_dados()
 
-            os.makedirs(
-                "documentos",
-                exist_ok=True
+            st.success(
+                "Dados enviados com sucesso!"
             )
 
-            caminho = os.path.join(
-                "documentos",
-                arquivo.name
+        except Exception as e:
+
+            st.error(
+                "Erro ao salvar informações."
             )
-
-            with open(
-                caminho,
-                "wb"
-            ) as f:
-
-                f.write(
-                    arquivo.getbuffer()
-                )
-
-            nome_arquivo = arquivo.name
-
-        salvar(
-            nome,
-            email,
-            telefone,
-            caso,
-            nome_arquivo
-        )
-
-        st.success(
-            "Dados enviados com sucesso!"
-        )
 
     else:
 
-        st.error(
+        st.warning(
             "Preencha os campos obrigatórios."
         )
 
 # =====================================================
-#LOGIN
+# LOGIN
 # =====================================================
+
 st.divider()
 
 st.markdown("""
@@ -487,22 +381,11 @@ senha = st.text_input(
     placeholder="Digite a senha"
 )
 
-# =====================================================
-#BOTÃO LOGIN
-# =====================================================
-if st.button(
-    "Entrar no Painel"
-):
+if st.button("Entrar no Painel"):
 
-    if (
-        usuario == USUARIO
-        and senha == SENHA
-    ):
+    if usuario == USUARIO and senha == SENHA:
 
-        st.session_state[
-            "logado"
-        ] = True
-
+        st.session_state["logado"] = True
         st.rerun()
 
     else:
@@ -512,8 +395,9 @@ if st.button(
         )
 
 # =====================================================
-PAINEL
+# PAINEL ADMIN
 # =====================================================
+
 if st.session_state["logado"]:
 
     st.divider()
@@ -524,31 +408,19 @@ if st.session_state["logado"]:
     </div>
     """, unsafe_allow_html=True)
 
-    # =================================================
-    # BOTÃO SAIR
-    # =================================================
-    if st.button(
-        "Sair do Painel"
-    ):
+    if st.button("Sair do Painel"):
 
-        st.session_state[
-            "logado"
-        ] = False
-
+        st.session_state["logado"] = False
         st.rerun()
 
     dados = planilha.get_all_records()
 
     if dados:
 
-        df = pd.DataFrame(
-            dados
-        )
+        df = pd.DataFrame(dados)
 
-        # INVERTE
         df = df.iloc[::-1]
 
-        # PESQUISA
         busca = st.text_input(
             "Pesquisar cliente",
             placeholder="Digite nome, email ou telefone"
@@ -557,13 +429,15 @@ if st.session_state["logado"]:
         if busca:
 
             df = df[
-                df.astype(str).apply(
+                df.astype(str)
+                .apply(
                     lambda x:
                     x.str.contains(
                         busca,
                         case=False
                     )
-                ).any(axis=1)
+                )
+                .any(axis=1)
             ]
 
         st.markdown(f"""
@@ -573,21 +447,15 @@ if st.session_state["logado"]:
         margin-bottom:30px;
         color:white;
         ">
-        Total de clientes:
-        {len(df)}
+        Total de clientes: {len(df)}
         </div>
         """, unsafe_allow_html=True)
 
-        # =================================================
-        # CARDS
-        # =================================================
         for i, row in df.iterrows():
 
             nome_cliente = row.iloc[0]
             email_cliente = row.iloc[1]
-            telefone_cliente = str(
-                row.iloc[2]
-            )
+            telefone_cliente = row.iloc[2]
             caso_cliente = row.iloc[3]
             arquivo_cliente = row.iloc[4]
             data_cliente = row.iloc[5]
@@ -599,16 +467,16 @@ if st.session_state["logado"]:
             font-size:30px;
             font-weight:900;
             color:#00d9ff;
-            margin-bottom:28px;
+            margin-bottom:25px;
             ">
             {nome_cliente}
             </div>
 
             <div style="
-            font-size:24px;
-            line-height:2.3;
-            font-weight:700;
+            font-size:22px;
+            line-height:2.1;
             color:white;
+            font-weight:700;
             ">
 
             📞 {telefone_cliente}<br><br>
@@ -624,9 +492,6 @@ if st.session_state["logado"]:
             </div>
             """, unsafe_allow_html=True)
 
-            # =================================================
-            # ANEXO
-            # =================================================
             if arquivo_cliente != "Nenhum arquivo":
 
                 caminho_arquivo = os.path.join(
@@ -634,29 +499,10 @@ if st.session_state["logado"]:
                     arquivo_cliente
                 )
 
-                st.markdown(f"""
-                <div style="
-                margin-top:25px;
-                margin-bottom:15px;
-                font-size:20px;
-                font-weight:800;
-                color:#00ff88;
-                ">
-                📎 {arquivo_cliente}
-                </div>
-                """, unsafe_allow_html=True)
+                if os.path.exists(caminho_arquivo):
 
-                if os.path.exists(
-                    caminho_arquivo
-                ):
-
-                    # IMAGEM
                     if arquivo_cliente.lower().endswith(
-                        (
-                            ".png",
-                            ".jpg",
-                            ".jpeg"
-                        )
+                        (".png",".jpg",".jpeg")
                     ):
 
                         st.image(
@@ -664,7 +510,6 @@ if st.session_state["logado"]:
                             width=450
                         )
 
-                    # DOWNLOAD
                     with open(
                         caminho_arquivo,
                         "rb"
@@ -677,21 +522,12 @@ if st.session_state["logado"]:
                             key=f"download_{i}"
                         )
 
-            st.markdown("""
-            <hr style="
-            border:none;
-            height:1px;
-            background:rgba(0,217,255,0.25);
-            margin-top:35px;
-            margin-bottom:10px;
-            ">
-            """, unsafe_allow_html=True)
+# =====================================================
+# FOOTER
+# =====================================================
 
-# =====================================================
-#FOOTER
-# =====================================================
 st.markdown("""
 <div class="footer">
-Seus dados estão protegidos e não serão compartilhados.
+🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
