@@ -90,7 +90,7 @@ label {
 
     color: white !important;
 
-    font-size: 20px !important;
+    font-size: 25px !important;
 
     font-weight: 800 !important;
 }
