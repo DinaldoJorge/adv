@@ -52,7 +52,7 @@ html, body, [class*="css"] {
 
     font-family: 'Inter', sans-serif;
 
-    color: white;
+    color: #00d9ff;
 }
 
 .block-container {
@@ -73,7 +73,7 @@ html, body, [class*="css"] {
 
     font-weight: 900;
 
-    color: #00d9ff;
+    color: white;
 
     margin-top: 5px;
 
