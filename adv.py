@@ -106,10 +106,10 @@ label{
 /* TEXTAREA */
 
 .stTextArea textarea{
-    background:#ffffff !important;
-    color:black !important;
-    border:4px solid green !important;
-    border-radius: 2px #00d9ff !important;
+    background:black !important;
+    color:white !important;
+    border: 8px solid green !important;
+    border-radius: 4px green !important;
     font-size:19px !important;
     font-weight:700 !important;
     padding:18px !important;
