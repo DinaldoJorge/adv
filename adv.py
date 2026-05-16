@@ -127,7 +127,7 @@ label {
     box-shadow:
         0 0 12px green !important;
 
-    outline: none !important;
+    outline: green !important;
 }
 
 /* INPUT COM TEXTO */
