@@ -112,7 +112,7 @@ label {
 
     height: 30px !important;
 
-    padding-left: 30px !important;
+    padding-left: 10px !important;
 
     box-shadow: none !important;
 }
@@ -122,7 +122,7 @@ label {
 
     background: white !important;
 
-    border: 2px solid  green !important;
+    border: 5px solid  green !important;
 
     border-radius: 5px !important;
 
@@ -130,7 +130,7 @@ label {
 
     font-size: 22px !important;
 
-    font-weight: 700 !important;
+    font-weight: 500 !important;
 
     padding: 24px !important;
 
