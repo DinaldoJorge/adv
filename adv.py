@@ -73,7 +73,7 @@ html, body, [class*="css"] {
 
     font-weight: 900;
 
-    color: white;
+    color: green;
 
     margin-top: 5px;
 
