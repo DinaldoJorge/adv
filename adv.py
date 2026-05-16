@@ -104,7 +104,7 @@ label {
 
     border-radius: 0px !important;
 
-    color: #000000 !important;
+    color: #00d9ff !important;
 
     font-size: 20px !important;
 
