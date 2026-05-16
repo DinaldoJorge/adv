@@ -88,7 +88,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
 
-    color: green !important;
+    color: white !important;
 
     font-size: 26px !important;
 
@@ -98,7 +98,7 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: white !important;
+    background: green !important;
 
     border: 4px solid white !important;
 
