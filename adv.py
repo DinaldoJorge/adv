@@ -137,7 +137,7 @@ label {
 /* INPUT COM TEXTO */
 .stTextInput input:not(:placeholder-shown) {
 
-    border: 2px solid #00ff88 !important;
+    border: 4px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.20) !important;
@@ -160,9 +160,9 @@ label {
 
     background: #ffffff !important;
 
-    border: 1px solid #00aaff !important;
+    border: 2px solid #00aaff !important;
 
-    border-radius: 16px !important;
+    border-radius: 1px !important;
 
     color: #000000 !important;
 
@@ -216,9 +216,9 @@ label {
 
     background: #0b0b0b !important;
 
-    border: 1px solid #00d9ff !important;
+    border: 2px solid #00d9ff !important;
 
-    border-radius: 16px !important;
+    border-radius: 1px !important;
 
     padding: 18px !important;
 }
@@ -234,7 +234,7 @@ label {
 
     color: black !important;
 
-    border-radius: 16px !important;
+    border-radius: 1px !important;
 
     border: none !important;
 
