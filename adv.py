@@ -132,9 +132,9 @@ label {
 
     background: white !important;
 
-    border: 3px solid blue !important;
+    border: 6px solid blue !important;
 
-    border-radius: 3px !important;
+    border-radius: 6px !important;
 
     color: black !important;
 
