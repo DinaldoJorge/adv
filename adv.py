@@ -168,18 +168,6 @@ label,
         0 0 26px rgba(0,255,208,0.12);
 }
 
-/* PLACEHOLDER TEXTAREA */
-.stTextArea textarea::placeholder {
-
-    color: #FFFFFF !important;
-
-    opacity: 0.88 !important;
-
-    font-size: 22px !important;
-
-    font-weight: 700 !important;
-}
-
 /* FILE UPLOADER */
 [data-testid="stFileUploader"] {
 
@@ -195,25 +183,6 @@ label,
         0 0 26px rgba(0,255,208,0.12);
 
     margin-top: 15px;
-}
-
-[data-testid="stFileUploader"] label {
-
-    color: white !important;
-
-    font-size: 22px !important;
-
-    font-weight: 900 !important;
-}
-
-/* FOCO */
-.stTextInput input:focus,
-.stTextArea textarea:focus {
-
-    border: 2px solid #00ffd0 !important;
-
-    box-shadow:
-        0 0 34px rgba(0,255,208,0.38);
 }
 
 /* BOTÕES */
@@ -287,14 +256,20 @@ label,
     margin-top: 30px;
 }
 
-/* ALERTAS */
-.stSuccess,
-.stError,
-.stWarning {
+.card {
 
-    font-size: 22px !important;
+    background: linear-gradient(145deg,#0f0f0f,#161616);
 
-    font-weight: 600 !important;
+    padding:42px;
+
+    border-radius:32px;
+
+    margin-bottom:42px;
+
+    border:2px solid rgba(0,255,208,0.25);
+
+    box-shadow:
+    0 0 38px rgba(0,255,208,0.10);
 }
 
 </style>
@@ -365,7 +340,7 @@ with st.form("formulario_cliente", clear_on_submit=True):
     )
 
     # =========================================
-    # ANEXAR DOCUMENTOS
+    # ANEXO
     # =========================================
     arquivo = st.file_uploader(
         "📎 Anexar documentos (máx. 5MB)",
@@ -401,7 +376,7 @@ def salvar(nome, email, telefone, caso, nome_arquivo):
     ])
 
 # =========================================
-# ENVIAR
+# ENVIO
 # =========================================
 if enviar:
 
@@ -409,9 +384,6 @@ if enviar:
 
         nome_arquivo = "Nenhum arquivo"
 
-        # =========================================
-        # VALIDA TAMANHO
-        # =========================================
         if arquivo is not None:
 
             tamanho_mb = arquivo.size / (1024 * 1024)
@@ -419,12 +391,8 @@ if enviar:
             if tamanho_mb > 5:
 
                 st.error("❌ O arquivo excede 5MB.")
-
                 st.stop()
 
-            # =========================================
-            # CRIA PASTA
-            # =========================================
             os.makedirs("documentos", exist_ok=True)
 
             caminho = os.path.join(
@@ -432,9 +400,6 @@ if enviar:
                 arquivo.name
             )
 
-            # =========================================
-            # SALVA ARQUIVO
-            # =========================================
             with open(caminho, "wb") as f:
                 f.write(arquivo.getbuffer())
 
@@ -487,7 +452,7 @@ senha_input = st.text_input(
 )
 
 # =========================================
-# BOTÃO LOGIN
+# LOGIN BOTÃO
 # =========================================
 if st.button("🚪 Entrar no Painel"):
 
@@ -514,7 +479,7 @@ if st.button("🚪 Entrar no Painel"):
         st.rerun()
 
 # =========================================
-# PAINEL JURÍDICO
+# PAINEL
 # =========================================
 if st.session_state.logado:
 
@@ -583,15 +548,7 @@ if st.session_state.logado:
             )
 
             st.markdown(f"""
-            <div style="
-            background: linear-gradient(145deg,#0f0f0f,#161616);
-            padding:42px;
-            border-radius:32px;
-            margin-bottom:42px;
-            border:2px solid rgba(0,255,208,0.25);
-            box-shadow:
-            0 0 38px rgba(0,255,208,0.10);
-            ">
+            <div class="card">
 
             <div style="
             font-size:24px;
@@ -613,8 +570,6 @@ if st.session_state.logado:
 
             ✉️ {email_cliente}<br><br>
 
-            📎 {arquivo_cliente}<br><br>
-
             ⚖️ {caso_cliente}<br><br>
 
             🕒 {data_cliente}
@@ -624,10 +579,100 @@ if st.session_state.logado:
             </div>
             """, unsafe_allow_html=True)
 
+            # =========================================
+            # ANEXO
+            # =========================================
+            if arquivo_cliente != "Nenhum arquivo":
+
+                caminho_arquivo = os.path.join(
+                    "documentos",
+                    arquivo_cliente
+                )
+
+                st.markdown(f"""
+                <div style="
+                font-size:20px;
+                font-weight:800;
+                color:#00ffd0;
+                margin-bottom:15px;
+                ">
+                📎 Arquivo anexado:
+                {arquivo_cliente}
+                </div>
+                """, unsafe_allow_html=True)
+
+                if os.path.exists(caminho_arquivo):
+
+                    # =========================================
+                    # VISUALIZAR PDF
+                    # =========================================
+                    if arquivo_cliente.lower().endswith(".pdf"):
+
+                        with open(caminho_arquivo, "rb") as pdf_file:
+
+                            st.download_button(
+                                label="⬇️ Baixar PDF",
+                                data=pdf_file,
+                                file_name=arquivo_cliente,
+                                mime="application/pdf"
+                            )
+
+                        st.markdown("### 👁️ Visualização do PDF")
+
+                        with open(caminho_arquivo, "rb") as f:
+                            pdf_bytes = f.read()
+
+                        st.download_button(
+                            "📄 Baixar Documento",
+                            data=pdf_bytes,
+                            file_name=arquivo_cliente
+                        )
+
+                    # =========================================
+                    # IMAGENS
+                    # =========================================
+                    elif arquivo_cliente.lower().endswith(
+                        (".png", ".jpg", ".jpeg")
+                    ):
+
+                        st.image(
+                            caminho_arquivo,
+                            width=600
+                        )
+
+                        with open(caminho_arquivo, "rb") as file:
+
+                            st.download_button(
+                                "⬇️ Baixar Imagem",
+                                data=file,
+                                file_name=arquivo_cliente
+                            )
+
+                    # =========================================
+                    # OUTROS ARQUIVOS
+                    # =========================================
+                    else:
+
+                        with open(caminho_arquivo, "rb") as file:
+
+                            st.download_button(
+                                "⬇️ Baixar Documento",
+                                data=file,
+                                file_name=arquivo_cliente
+                            )
+
+                else:
+
+                    st.warning(
+                        "Arquivo não encontrado na pasta."
+                    )
+
             st.link_button(
                 "💬 Abrir WhatsApp",
                 whatsapp
             )
+
+            st.divider()
 
     else:
 
