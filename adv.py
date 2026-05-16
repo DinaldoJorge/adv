@@ -98,11 +98,11 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: red !important;
+    background: white !important;
 
-    border: 4px solid green !important;
+    border: 4px solid white !important;
 
-    #border-radius: 2px !important;
+    border-radius: 4px white !important;
 
     color: #000000 !important;
 
