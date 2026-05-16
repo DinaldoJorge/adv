@@ -16,19 +16,26 @@ st.set_page_config(
 )
 
 # =========================================
-# LOGIN
+# BOTÃO LOGIN
 # =========================================
-USUARIO = "admin"
-SENHA = "mza2026"
+if st.button("Entrar no Painel"):
 
-if "logado" not in st.session_state:
-    st.session_state.logado = False
+    if (
+        usuario == USUARIO
+        and senha == SENHA
+    ):
 
-if "usuario_login" not in st.session_state:
-    st.session_state.usuario_login = ""
+        st.session_state.logado = True
 
-if "senha_login" not in st.session_state:
-    st.session_state.senha_login = ""
+        st.success("Login realizado!")
+
+        st.rerun()
+
+    else:
+
+        st.error(
+            "Usuário ou senha inválidos."
+        )
 
 # =========================================
 # CSS
