@@ -516,7 +516,7 @@ if st.session_state.logado:
 
                         st.image(
                             caminho_arquivo,
-                            width=450
+                            width=250
                         )
 
                     with open(
@@ -533,7 +533,7 @@ if st.session_state.logado:
                     st.markdown("""
                     <hr style="
                     border: none;
-                    height: 1px;
+                    height: 5px;
                     background: rgba(0,255,208,0.18);
                     margin-top: 35px;
                     margin-bottom: 10px;
