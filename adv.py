@@ -133,7 +133,7 @@ label{
     border:4px solid #00d9ff !important;
     border-radius:16px #00d9ff!important;
     padding:15px !important;
-    background: green !important;
+    background: black !important;
 }
 
 /* BOTÕES */
@@ -141,8 +141,8 @@ label{
 .stButton > button{
     width:100%;
     height:52px;
-    border:none;
-    border-radius:14px;
+    border-radius:16px #00d9ff!important;
+    border-radius:16px #00d9ff!important;
     background:linear-gradient(
         90deg,
         #00aaff,
