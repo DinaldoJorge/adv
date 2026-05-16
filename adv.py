@@ -73,7 +73,7 @@ html, body, [class*="css"] {
 
     font-weight: 900;
 
-    color: green;
+    color: white;
 
     margin-top: 5px;
 
@@ -88,7 +88,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
 
-    color: white !important;
+    color: green !important;
 
     font-size: 26px !important;
 
