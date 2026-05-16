@@ -262,9 +262,9 @@ label,
 
     font-weight: 900 !important;
 
-    border-radius: 16px !important;
+    border-radius: 2px !important;
 
-    height: 52px !important;
+    height: 47px !important;
 
     width: 100%;
 
@@ -308,7 +308,7 @@ label,
 
     color: #f0f0f0;
 
-    font-size: 12px;
+    font-size: 16px;
 
     margin-top: 30px;
 }
@@ -320,11 +320,11 @@ label,
 
     padding: 35px;
 
-    border-radius: 16px;
+    border-radius: 2px;
 
     margin-bottom: 35px;
 
-    border: 1px solid rgba(0,255,208,0.45);
+    border: 2px solid rgba(0,255,208,0.45);
 }
 
 </style>
