@@ -126,7 +126,7 @@ label {
 
     background: #ffffff !important;
 
-    border: 4px solid #00ff88 !important;
+    border: 2px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
@@ -137,7 +137,7 @@ label {
 /* INPUT COM TEXTO */
 .stTextInput input:not(:placeholder-shown) {
 
-    border: 4px solid #00ff88 !important;
+    border: 2px solid #00ff88 !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.20) !important;
