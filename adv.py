@@ -240,15 +240,15 @@ label {
 
     color: black !important;
 
-    border-radius: 1px !important;
+    border-radius: 12px !important;
 
     border: none !important;
 
-    font-size: 18px !important;
+    font-size: 22px !important;
 
-    font-weight: 900 !important;
+    font-weight: 1000 !important;
 
-    height: 52px !important;
+    height: 45px !important;
 
     width: 100%;
 }
