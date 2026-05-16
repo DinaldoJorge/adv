@@ -88,9 +88,9 @@ label{
 
 .stTextInput input{
     background:black !important;
-    color:white !important;
-    border: 4px solid blue !important;
-    border-radius:0px blue !important;
+    color: #00d9ff !important;
+    border: 4px solid #00d9ff !important;
+    #border-radius:0px #00d9ff !important;
     height:40px !important;
     font-size:18px !important;
     font-weight:600 !important;
@@ -108,7 +108,7 @@ label{
 .stTextArea textarea{
     background:#ffffff !important;
     color:black !important;
-    border:4px solid #00d9ff !important;
+    border:4px solid green !important;
     border-radius: 2px #00d9ff !important;
     font-size:19px !important;
     font-weight:700 !important;
