@@ -168,7 +168,7 @@ label {
 
     background: white !important;
 
-    border: 4px solid white !important;
+    border: 4px solid green !important;
 
     padding: 18px !important;
 }
