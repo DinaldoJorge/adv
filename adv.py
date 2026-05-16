@@ -118,7 +118,7 @@ label,
 
     background: rgba(12,12,12,0.98) !important;
 
-    border: 1px solid #00ffd0 !important;
+    border: 1px solid rgba(0,255,208,0.55) !important;
 
     border-radius: 18px !important;
 
@@ -126,7 +126,7 @@ label,
 
     font-size: 20px !important;
 
-    font-weight: 800 !important;
+    font-weight: 700 !important;
 
     height: 52px !important;
 
@@ -140,7 +140,7 @@ label,
 /* INPUT FOCUS */
 .stTextInput input:focus {
 
-    border: 1px solid #00ffd0 !important;
+    border: 1px solid rgba(0,255,208,0.75) !important;
 
     box-shadow: none !important;
 }
@@ -148,7 +148,7 @@ label,
 /* PLACEHOLDER INPUT */
 .stTextInput input::placeholder {
 
-    color: #FFFFFF !important;
+    color: rgba(255,255,255,0.85) !important;
 
     opacity: 1 !important;
 
@@ -162,19 +162,19 @@ label,
 
     background: rgba(12,12,12,0.98) !important;
 
-    border: 1px solid #00ffd0 !important;
+    border: 1px solid rgba(0,255,208,0.55) !important;
 
     border-radius: 18px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 30px !important;
+    font-size: 26px !important;
 
-    font-weight: 900 !important;
+    font-weight: 800 !important;
 
     padding: 30px !important;
 
-    line-height: 1.9 !important;
+    line-height: 1.8 !important;
 
     box-shadow: none !important;
 
@@ -184,7 +184,7 @@ label,
 /* TEXTAREA FOCUS */
 .stTextArea textarea:focus {
 
-    border: 1px solid #00ffd0 !important;
+    border: 1px solid rgba(0,255,208,0.75) !important;
 
     box-shadow: none !important;
 }
@@ -192,13 +192,13 @@ label,
 /* PLACEHOLDER TEXTAREA */
 .stTextArea textarea::placeholder {
 
-    color: #FFFFFF !important;
+    color: rgba(255,255,255,0.88) !important;
 
     opacity: 1 !important;
 
-    font-size: 30px !important;
+    font-size: 26px !important;
 
-    font-weight: 900 !important;
+    font-weight: 800 !important;
 }
 
 /* FILE UPLOADER */
@@ -206,7 +206,7 @@ label,
 
     background: rgba(12,12,12,0.98);
 
-    border: 1px solid #00ffd0;
+    border: 1px solid rgba(0,255,208,0.55);
 
     border-radius: 18px;
 
@@ -304,7 +304,7 @@ label,
 
     margin-bottom: 35px;
 
-    border: 1px solid #00ffd0;
+    border: 1px solid rgba(0,255,208,0.55);
 }
 
 </style>
@@ -655,7 +655,6 @@ if st.session_state.logado:
 
                 if os.path.exists(caminho_arquivo):
 
-                    # PDF
                     if arquivo_cliente.lower().endswith(".pdf"):
 
                         with open(
@@ -672,7 +671,6 @@ if st.session_state.logado:
                                 mime="application/pdf"
                             )
 
-                    # IMAGENS
                     elif arquivo_cliente.lower().endswith(
                         (
                             ".png",
@@ -697,7 +695,6 @@ if st.session_state.logado:
                                 file_name=arquivo_cliente
                             )
 
-                    # OUTROS
                     else:
 
                         with open(
