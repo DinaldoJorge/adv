@@ -128,7 +128,7 @@ label {
 
     color: white !important;
 
-    font-size: 22px !important;
+    font-size: 26px !important;
 
     font-weight: 700 !important;
 
