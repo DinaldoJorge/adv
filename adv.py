@@ -116,11 +116,11 @@ label,
 /* INPUTS */
 .stTextInput input {
 
-    background: rgba(12,12,12,0.98) !important;
+    background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.55) !important;
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 18px !important;
+    border-radius: 16px !important;
 
     color: #FFFFFF !important;
 
@@ -130,25 +130,29 @@ label,
 
     height: 52px !important;
 
-    padding-left: 24px !important;
+    padding-left: 22px !important;
 
     box-shadow: none !important;
 
-    transition: 0.2s ease;
+    outline: none !important;
+
+    transition: 0.2s ease !important;
 }
 
 /* INPUT FOCUS */
 .stTextInput input:focus {
 
-    border: 1px solid rgba(0,255,208,0.75) !important;
+    border: 1px solid rgba(0,255,208,0.55) !important;
 
     box-shadow: none !important;
+
+    outline: none !important;
 }
 
 /* PLACEHOLDER INPUT */
 .stTextInput input::placeholder {
 
-    color: rgba(255,255,255,0.85) !important;
+    color: rgba(255,255,255,0.82) !important;
 
     opacity: 1 !important;
 
@@ -160,43 +164,47 @@ label,
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: rgba(12,12,12,0.98) !important;
+    background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.55) !important;
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 18px !important;
+    border-radius: 16px !important;
 
     color: #FFFFFF !important;
 
-    font-size: 26px !important;
+    font-size: 24px !important;
 
     font-weight: 800 !important;
 
-    padding: 30px !important;
+    padding: 24px !important;
 
-    line-height: 1.8 !important;
+    line-height: 1.7 !important;
 
     box-shadow: none !important;
 
-    transition: 0.2s ease;
+    outline: none !important;
+
+    transition: 0.2s ease !important;
 }
 
 /* TEXTAREA FOCUS */
 .stTextArea textarea:focus {
 
-    border: 1px solid rgba(0,255,208,0.75) !important;
+    border: 1px solid rgba(0,255,208,0.55) !important;
 
     box-shadow: none !important;
+
+    outline: none !important;
 }
 
 /* PLACEHOLDER TEXTAREA */
 .stTextArea textarea::placeholder {
 
-    color: rgba(255,255,255,0.88) !important;
+    color: rgba(255,255,255,0.82) !important;
 
     opacity: 1 !important;
 
-    font-size: 26px !important;
+    font-size: 24px !important;
 
     font-weight: 800 !important;
 }
@@ -204,27 +212,37 @@ label,
 /* FILE UPLOADER */
 [data-testid="stFileUploader"] {
 
-    background: rgba(12,12,12,0.98);
+    background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.55);
+    border: 1px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 18px;
+    border-radius: 16px !important;
 
-    padding: 20px;
+    padding: 18px !important;
 
     box-shadow: none !important;
 
-    margin-top: 15px;
+    margin-top: 14px !important;
 
-    transition: 0.2s ease;
+    transition: 0.2s ease !important;
 }
 
-/* REMOVE BORDA INTERNA */
+/* FILE UPLOADER INTERNO */
 [data-testid="stFileUploader"] section {
 
     border: none !important;
 
     background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+/* REMOVE QUALQUER BRILHO */
+.stTextInput,
+.stTextArea,
+[data-testid="stFileUploader"] {
+
+    box-shadow: none !important;
 }
 
 /* BOTÕES */
@@ -242,7 +260,7 @@ label,
 
     font-weight: 900 !important;
 
-    border-radius: 18px !important;
+    border-radius: 16px !important;
 
     height: 52px !important;
 
@@ -300,11 +318,11 @@ label,
 
     padding: 35px;
 
-    border-radius: 18px;
+    border-radius: 16px;
 
     margin-bottom: 35px;
 
-    border: 1px solid rgba(0,255,208,0.55);
+    border: 1px solid rgba(0,255,208,0.45);
 }
 
 </style>
@@ -632,9 +650,6 @@ if st.session_state.logado:
             </div>
             """, unsafe_allow_html=True)
 
-            # =========================================
-            # ANEXOS
-            # =========================================
             if arquivo_cliente != "Nenhum arquivo":
 
                 caminho_arquivo = os.path.join(
