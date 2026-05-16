@@ -120,9 +120,9 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: #0b0b0b !important;
+    background: #f8f9fb !important;
 
-    border: 1px solid #00aaff !important;
+    border: 2px solid #00aaff !important;
 
     border-radius: 5px !important;
 
