@@ -89,9 +89,9 @@ label{
 .stTextInput input{
     background:#ffffff !important;
     color:black !important;
-    border:2px solid #00aaff !important;
+    border:4px solid #00aaff !important;
     border-radius:14px !important;
-    height:52px !important;
+    height:45px !important;
     font-size:18px !important;
     font-weight:700 !important;
     padding-left:18px !important;
@@ -108,7 +108,7 @@ label{
 .stTextArea textarea{
     background:#ffffff !important;
     color:black !important;
-    border:2px solid #00aaff !important;
+    border:4px solid #00aaff !important;
     border-radius:14px !important;
     font-size:19px !important;
     font-weight:700 !important;
@@ -116,7 +116,7 @@ label{
 }
 
 .stTextArea textarea:focus{
-    border:2px solid #00ff88 !important;
+    border:4px solid #00ff88 !important;
     box-shadow:0 0 10px rgba(0,255,136,0.25) !important;
 }
 
