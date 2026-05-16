@@ -4,6 +4,7 @@ from zoneinfo import ZoneInfo
 import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
+import os
 
 # =========================================
 # CONFIGURAÇÃO
@@ -179,6 +180,32 @@ label,
     font-weight: 700 !important;
 }
 
+/* FILE UPLOADER */
+[data-testid="stFileUploader"] {
+
+    background: rgba(12,12,12,0.98);
+
+    border: 2px solid rgba(0,255,208,0.75);
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 0 26px rgba(0,255,208,0.12);
+
+    margin-top: 15px;
+}
+
+[data-testid="stFileUploader"] label {
+
+    color: white !important;
+
+    font-size: 22px !important;
+
+    font-weight: 900 !important;
+}
+
 /* FOCO */
 .stTextInput input:focus,
 .stTextArea textarea:focus {
@@ -337,12 +364,28 @@ with st.form("formulario_cliente", clear_on_submit=True):
         height=260
     )
 
+    # =========================================
+    # ANEXAR DOCUMENTOS
+    # =========================================
+    arquivo = st.file_uploader(
+        "📎 Anexar documentos (máx. 5MB)",
+        type=[
+            "pdf",
+            "doc",
+            "docx",
+            "txt",
+            "png",
+            "jpg",
+            "jpeg"
+        ]
+    )
+
     enviar = st.form_submit_button("✈️ Enviar Dados")
 
 # =========================================
 # SALVAR
 # =========================================
-def salvar(nome, email, telefone, caso):
+def salvar(nome, email, telefone, caso, nome_arquivo):
 
     data = datetime.now(
         ZoneInfo("America/Sao_Paulo")
@@ -353,6 +396,7 @@ def salvar(nome, email, telefone, caso):
         email,
         telefone,
         caso,
+        nome_arquivo,
         data
     ])
 
@@ -363,7 +407,46 @@ if enviar:
 
     if nome and email and caso:
 
-        salvar(nome, email, telefone, caso)
+        nome_arquivo = "Nenhum arquivo"
+
+        # =========================================
+        # VALIDA TAMANHO
+        # =========================================
+        if arquivo is not None:
+
+            tamanho_mb = arquivo.size / (1024 * 1024)
+
+            if tamanho_mb > 5:
+
+                st.error("❌ O arquivo excede 5MB.")
+
+                st.stop()
+
+            # =========================================
+            # CRIA PASTA
+            # =========================================
+            os.makedirs("documentos", exist_ok=True)
+
+            caminho = os.path.join(
+                "documentos",
+                arquivo.name
+            )
+
+            # =========================================
+            # SALVA ARQUIVO
+            # =========================================
+            with open(caminho, "wb") as f:
+                f.write(arquivo.getbuffer())
+
+            nome_arquivo = arquivo.name
+
+        salvar(
+            nome,
+            email,
+            telefone,
+            caso,
+            nome_arquivo
+        )
 
         link = (
             f"https://wa.me/5583991241249"
@@ -411,7 +494,6 @@ if st.button("🚪 Entrar no Painel"):
     usuario_digitado = st.session_state.usuario
     senha_digitada = st.session_state.senha
 
-    # MARCA LIMPEZA
     st.session_state.limpar_login = True
 
     if (
@@ -489,7 +571,8 @@ if st.session_state.logado:
             email_cliente = row.iloc[1]
             telefone_cliente = str(row.iloc[2])
             caso_cliente = row.iloc[3]
-            data_cliente = row.iloc[4]
+            arquivo_cliente = row.iloc[4]
+            data_cliente = row.iloc[5]
 
             telefone_limpo = ''.join(
                 filter(str.isdigit, telefone_cliente)
@@ -529,6 +612,8 @@ if st.session_state.logado:
             📞 {telefone_cliente}<br><br>
 
             ✉️ {email_cliente}<br><br>
+
+            📎 {arquivo_cliente}<br><br>
 
             ⚖️ {caso_cliente}<br><br>
 
