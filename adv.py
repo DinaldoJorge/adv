@@ -98,7 +98,7 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: green !important;
+    background: white !important;
 
     border: 4px solid white !important;
 
@@ -139,7 +139,7 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: white !important;
+    background: green !important;
 
     border: 4px solid white !important;
 
