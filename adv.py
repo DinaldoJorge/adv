@@ -134,7 +134,7 @@ TEXTAREA
 
 .stTextArea textarea{
 
-    background:#050505 !important;
+    background: green !important;
 
     color:white !important;
 
