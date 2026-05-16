@@ -134,7 +134,7 @@ TEXTAREA
 
 .stTextArea textarea{
 
-    background: green !important;
+    background: black !important;
 
     color:white !important;
 
@@ -154,7 +154,7 @@ TEXTAREA
 
 .stTextArea textarea:focus{
 
-    border:2px solid #00ff88 !important;
+    border: 4px solid green !important;
 
     box-shadow:
     0 0 12px rgba(0,255,136,0.25);
