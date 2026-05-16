@@ -102,7 +102,7 @@ INPUTS
 
     border:2px solid rgba(0,217,255,0.35) !important;
 
-    border-radius:16px !important;
+    border-radius:1px !important;
 
     height:52px !important;
 
