@@ -129,8 +129,8 @@ label,
     font-size: 20px !important;
 
     font-weight: 700 !important;
-
-    height: 52px !important;
+#ajuste da altura do nome dentro da caixa
+    height: 47px !important;
 
     padding-left: 22px !important;
 
