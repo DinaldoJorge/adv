@@ -100,9 +100,9 @@ label {
 
     background: white !important;
 
-    border: 4px solid red !important;
+    border: 4px solid white !important;
 
-    border-radius: 4px gren !important;
+    border-radius: 4px green !important;
 
     color: black !important;
 
