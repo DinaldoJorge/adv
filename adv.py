@@ -88,7 +88,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
 
-    color: white !important;
+    color: #00d9ff !important;
 
     font-size: 20px !important;
 
