@@ -100,11 +100,11 @@ INPUTS
 
     color:white !important;
 
-    border:2px solid rgba(0,217,255,0.35) !important;
+    border:4px solid rgba(0,217,255,0.35) !important;
 
     border-radius:1px !important;
 
-    height:52px !important;
+    height:45px !important;
 
     font-size:18px !important;
 
@@ -121,10 +121,10 @@ INPUTS
 
 .stTextInput input:focus{
 
-    border:2px solid #00ff88 !important;
+    border:4px solid #00ff88 !important;
 
     box-shadow:
-    0 0 12px rgba(0,255,136,0.25);
+    0 0 10px rgba(0,255,136,0.25);
 
 }
 
@@ -250,7 +250,7 @@ FILE UPLOADER PREMIUM MZA
 
     border-radius:16px !important;
 
-    font-size:15px !important;
+    font-size:10px !important;
 
     font-weight:900 !important;
 
@@ -303,7 +303,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] p{
 
-    color:#d9d9d9 !important;
+    color: green !important;
 
     font-size:16px !important;
 
