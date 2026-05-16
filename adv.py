@@ -98,11 +98,11 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: #ffffff !important;
+    background: red !important;
 
-    border: 4px solid #00aaff !important;
+    border: 4px solid green !important;
 
-    border-radius: 2px !important;
+    #border-radius: 2px !important;
 
     color: #000000 !important;
 
@@ -124,9 +124,9 @@ label {
 /* INPUT AO CLICAR */
 .stTextInput input:focus {
 
-    background: #ffffff !important;
+    background: red !important;
 
-    border: 2px solid #00ff88 !important;
+    border: 4px solid green !important;
 
     box-shadow:
         0 0 12px rgba(0,255,136,0.25) !important;
