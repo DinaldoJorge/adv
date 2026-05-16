@@ -531,10 +531,15 @@ if st.session_state.logado:
                             file_name=arquivo_cliente
                         )
 
-            st.markdown(
-                "</div>",
-                unsafe_allow_html=True
-            )
+          st.markdown("""
+<hr style="
+border: none;
+height: 1px;
+background: rgba(0,255,208,0.18);
+margin-top: 35px;
+margin-bottom: 10px;
+">
+""", unsafe_allow_html=True)
 
             st.divider()
 
