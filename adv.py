@@ -69,7 +69,7 @@ html, body, [class*="css"] {
 
     text-align: center;
 
-    font-size: 26px;
+    font-size: 35px;
 
     font-weight: 900;
 
