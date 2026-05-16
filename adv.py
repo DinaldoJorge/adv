@@ -124,7 +124,7 @@ label {
 
     border: 2px solid  green !important;
 
-    border-radius: 5px green !important;
+    border-radius: 5px !important;
 
     color: blue !important;
 
