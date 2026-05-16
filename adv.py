@@ -316,19 +316,41 @@ label,
 /* CARD */
 .card {
 
-    background: #0d0d0d;
+    background: linear-gradient(
+        180deg,
+        #0b0b0b 0%,
+        #111111 100%
+    );
 
-    padding: 35px;
+    padding: 42px;
 
-    border-radius: 10px;
+    border-radius: 22px;
 
-    margin-bottom: 35px;
+    margin-bottom: 42px;
 
-    border: 2px solid rgba(0,255,208,0.45);
+    border: 1px solid rgba(0,255,208,0.40);
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 0 0 rgba(0,0,0,0);
 }
 
-</style>
-""", unsafe_allow_html=True)
+/* CARD HOVER */
+.card:hover {
+
+    transform: translateY(-2px);
+
+    border: 1px solid rgba(0,255,208,0.65);
+
+    background: linear-gradient(
+        180deg,
+        #101010 0%,
+        #161616 100%
+    );
+}
 
 # =========================================
 # GOOGLE SHEETS
