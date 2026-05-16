@@ -100,19 +100,19 @@ label {
 
     background: white !important;
 
-    border: 25px solid  black !important;
+    border: 5px solid  black !important;
 
-    #border-radius: 5px #00ffd0 !important;
+    border-radius: 5px black !important;
 
     color: blue !important;
 
-    font-size: 22px !important;
+    font-size: 25px !important;
 
     font-weight: 700 !important;
 
-    height: 45px !important;
+    height: 30px !important;
 
-    padding-left: 20px !important;
+    padding-left: 30px !important;
 
     box-shadow: none !important;
 }
