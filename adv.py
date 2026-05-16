@@ -28,7 +28,7 @@ if "limpar_login" not in st.session_state:
     st.session_state.limpar_login = False
 
 # =========================================
-# LIMPA CAMPOS LOGIN
+# LIMPA LOGIN
 # =========================================
 if st.session_state.limpar_login:
 
@@ -38,7 +38,7 @@ if st.session_state.limpar_login:
     st.session_state.limpar_login = False
 
 # =========================================
-# CSS PREMIUM
+# CSS PREMIUM CLEAN
 # =========================================
 st.markdown("""
 <style>
@@ -64,31 +64,41 @@ header {
 
 /* FONTE */
 html, body, [class*="css"] {
+
     font-family: 'Inter', sans-serif;
+
     color: white;
 }
 
 /* CONTAINER */
 .block-container {
+
     max-width: 1200px;
+
     padding-top: 1rem;
+
     padding-bottom: 2rem;
 }
 
 /* FRASE */
 .frase {
+
     text-align: center;
+
     font-size: 22px;
+
     font-weight: 900;
+
     color: #FFFFFF;
+
     margin-top: 5px;
+
     margin-bottom: 45px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.22);
 }
 
 .frase span {
+
     color: #00ffd0;
-    font-weight: 900;
 }
 
 /* LABELS */
@@ -98,16 +108,9 @@ label,
 
     color: #FFFFFF !important;
 
-    font-size: 22px !important;
+    font-size: 20px !important;
 
-    font-weight: 900 !important;
-
-    opacity: 1 !important;
-
-    letter-spacing: 0.5px;
-
-    text-shadow:
-        0 0 18px rgba(255,255,255,0.22);
+    font-weight: 800 !important;
 }
 
 /* INPUTS */
@@ -115,9 +118,9 @@ label,
 
     background: rgba(12,12,12,0.98) !important;
 
-    border: 2px solid rgba(0,255,208,0.75) !important;
+    border: 1px solid #00ffd0 !important;
 
-    border-radius: 15px !important;
+    border-radius: 18px !important;
 
     color: #FFFFFF !important;
 
@@ -125,12 +128,33 @@ label,
 
     font-weight: 800 !important;
 
-    height: 47px !important;
+    height: 52px !important;
 
-    padding-left: 28px !important;
+    padding-left: 24px !important;
 
-    box-shadow:
-        0 0 26px rgba(0,255,208,0.12);
+    box-shadow: none !important;
+
+    transition: 0.2s ease;
+}
+
+/* INPUT FOCUS */
+.stTextInput input:focus {
+
+    border: 1px solid #00ffd0 !important;
+
+    box-shadow: none !important;
+}
+
+/* PLACEHOLDER INPUT */
+.stTextInput input::placeholder {
+
+    color: #FFFFFF !important;
+
+    opacity: 1 !important;
+
+    font-size: 20px !important;
+
+    font-weight: 700 !important;
 }
 
 /* TEXTAREA */
@@ -138,9 +162,9 @@ label,
 
     background: rgba(12,12,12,0.98) !important;
 
-    border: 2px solid rgba(0,255,208,0.85) !important;
+    border: 1px solid #00ffd0 !important;
 
-    border-radius: 22px !important;
+    border-radius: 18px !important;
 
     color: #FFFFFF !important;
 
@@ -152,11 +176,17 @@ label,
 
     line-height: 1.9 !important;
 
-    box-shadow:
-        0 0 30px rgba(0,255,208,0.18);
+    box-shadow: none !important;
 
-    text-shadow:
-        0 0 12px rgba(255,255,255,0.18);
+    transition: 0.2s ease;
+}
+
+/* TEXTAREA FOCUS */
+.stTextArea textarea:focus {
+
+    border: 1px solid #00ffd0 !important;
+
+    box-shadow: none !important;
 }
 
 /* PLACEHOLDER TEXTAREA */
@@ -169,24 +199,32 @@ label,
     font-size: 30px !important;
 
     font-weight: 900 !important;
+}
 
-    text-shadow:
-        0 0 22px rgba(255,255,255,0.45);
-}/* FILE UPLOADER */
+/* FILE UPLOADER */
 [data-testid="stFileUploader"] {
 
     background: rgba(12,12,12,0.98);
 
-    border: 2px solid rgba(0,255,208,0.75);
+    border: 1px solid #00ffd0;
 
-    border-radius: 22px;
+    border-radius: 18px;
 
     padding: 20px;
 
-    box-shadow:
-        0 0 26px rgba(0,255,208,0.12);
+    box-shadow: none !important;
 
     margin-top: 15px;
+
+    transition: 0.2s ease;
+}
+
+/* REMOVE BORDA INTERNA */
+[data-testid="stFileUploader"] section {
+
+    border: none !important;
+
+    background: transparent !important;
 }
 
 /* BOTÕES */
@@ -204,9 +242,9 @@ label,
 
     font-weight: 900 !important;
 
-    border-radius: 22px !important;
+    border-radius: 18px !important;
 
-    height: 50px !important;
+    height: 52px !important;
 
     width: 100%;
 
@@ -214,21 +252,20 @@ label,
 
     margin-top: 24px;
 
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 
-    box-shadow:
-        0 0 30px rgba(0,255,208,0.24);
+    box-shadow: none !important;
 }
 
+/* BOTÃO HOVER */
 .stButton > button:hover {
 
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 
-    box-shadow:
-        0 0 42px rgba(0,255,208,0.45);
+    box-shadow: none !important;
 }
 
-/* TITULO ADMIN */
+/* TÍTULO ADMIN */
 .titulo-admin {
 
     font-size: 22px;
@@ -242,8 +279,6 @@ label,
     margin-bottom: 20px;
 
     color: white;
-
-    text-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
 
 /* FOOTER */
@@ -255,25 +290,21 @@ label,
 
     font-size: 12px;
 
-    font-weight: 400;
-
     margin-top: 30px;
 }
 
+/* CARD */
 .card {
 
-    background: linear-gradient(145deg,#0f0f0f,#161616);
+    background: #0d0d0d;
 
-    padding:42px;
+    padding: 35px;
 
-    border-radius:32px;
+    border-radius: 18px;
 
-    margin-bottom:42px;
+    margin-bottom: 35px;
 
-    border:2px solid rgba(0,255,208,0.25);
-
-    box-shadow:
-    0 0 38px rgba(0,255,208,0.10);
+    border: 1px solid #00ffd0;
 }
 
 </style>
@@ -343,9 +374,6 @@ with st.form("formulario_cliente", clear_on_submit=True):
         height=260
     )
 
-    # =========================================
-    # ANEXO
-    # =========================================
     arquivo = st.file_uploader(
         "📎 Anexar documentos (máx. 5MB)",
         type=[
@@ -395,9 +423,13 @@ if enviar:
             if tamanho_mb > 5:
 
                 st.error("❌ O arquivo excede 5MB.")
+
                 st.stop()
 
-            os.makedirs("documentos", exist_ok=True)
+            os.makedirs(
+                "documentos",
+                exist_ok=True
+            )
 
             caminho = os.path.join(
                 "documentos",
@@ -405,7 +437,10 @@ if enviar:
             )
 
             with open(caminho, "wb") as f:
-                f.write(arquivo.getbuffer())
+
+                f.write(
+                    arquivo.getbuffer()
+                )
 
             nome_arquivo = arquivo.name
 
@@ -422,7 +457,9 @@ if enviar:
             f"?text=Olá, sou {nome} e desejo análise jurídica."
         )
 
-        st.success("✅ Dados enviados com sucesso!")
+        st.success(
+            "✅ Dados enviados com sucesso!"
+        )
 
         st.link_button(
             "💬 Falar no WhatsApp",
@@ -431,7 +468,9 @@ if enviar:
 
     else:
 
-        st.error("⚠️ Preencha os campos obrigatórios.")
+        st.error(
+            "⚠️ Preencha os campos obrigatórios."
+        )
 
 # =========================================
 # LOGIN ADMIN
@@ -456,11 +495,12 @@ senha_input = st.text_input(
 )
 
 # =========================================
-# LOGIN BOTÃO
+# BOTÃO LOGIN
 # =========================================
 if st.button("🚪 Entrar no Painel"):
 
     usuario_digitado = st.session_state.usuario
+
     senha_digitada = st.session_state.senha
 
     st.session_state.limpar_login = True
@@ -478,12 +518,14 @@ if st.button("🚪 Entrar no Painel"):
 
     else:
 
-        st.error("❌ Usuário ou senha inválidos.")
+        st.error(
+            "❌ Usuário ou senha inválidos."
+        )
 
         st.rerun()
 
 # =========================================
-# PAINEL
+# PAINEL JURÍDICO
 # =========================================
 if st.session_state.logado:
 
@@ -498,6 +540,7 @@ if st.session_state.logado:
     if st.button("🚪 Sair do Painel"):
 
         st.session_state.logado = False
+
         st.rerun()
 
     dados = planilha.get_all_records()
@@ -521,30 +564,37 @@ if st.session_state.logado:
                 ).any(axis=1)
             ]
 
+        df = df.iloc[::-1]
+
         st.markdown(f"""
         <div style="
         font-size:22px;
         font-weight:900;
-        color:white;
-        margin-bottom:34px;
+        margin-bottom:25px;
         ">
         📊 Total de clientes: {len(df)}
         </div>
         """, unsafe_allow_html=True)
 
-        df = df.iloc[::-1]
-
         for i, row in df.iterrows():
 
             nome_cliente = row.iloc[0]
+
             email_cliente = row.iloc[1]
+
             telefone_cliente = str(row.iloc[2])
+
             caso_cliente = row.iloc[3]
+
             arquivo_cliente = row.iloc[4]
+
             data_cliente = row.iloc[5]
 
             telefone_limpo = ''.join(
-                filter(str.isdigit, telefone_cliente)
+                filter(
+                    str.isdigit,
+                    telefone_cliente
+                )
             )
 
             whatsapp = (
@@ -558,16 +608,15 @@ if st.session_state.logado:
             font-size:24px;
             font-weight:900;
             color:#00ffd0;
-            margin-bottom:24px;
+            margin-bottom:20px;
             ">
             👤 {nome_cliente}
             </div>
 
             <div style="
-            font-size:22px;
-            color:white;
+            font-size:21px;
             line-height:2;
-            font-weight:800;
+            font-weight:700;
             ">
 
             📞 {telefone_cliente}<br><br>
@@ -584,7 +633,7 @@ if st.session_state.logado:
             """, unsafe_allow_html=True)
 
             # =========================================
-            # ANEXO
+            # ANEXOS
             # =========================================
             if arquivo_cliente != "Nenhum arquivo":
 
@@ -595,56 +644,52 @@ if st.session_state.logado:
 
                 st.markdown(f"""
                 <div style="
-                font-size:20px;
+                font-size:18px;
                 font-weight:800;
                 color:#00ffd0;
                 margin-bottom:15px;
                 ">
-                📎 Arquivo anexado:
-                {arquivo_cliente}
+                📎 {arquivo_cliente}
                 </div>
                 """, unsafe_allow_html=True)
 
                 if os.path.exists(caminho_arquivo):
 
-                    # =========================================
-                    # VISUALIZAR PDF
-                    # =========================================
+                    # PDF
                     if arquivo_cliente.lower().endswith(".pdf"):
 
-                        with open(caminho_arquivo, "rb") as pdf_file:
+                        with open(
+                            caminho_arquivo,
+                            "rb"
+                        ) as pdf_file:
+
+                            pdf_bytes = pdf_file.read()
 
                             st.download_button(
-                                label="⬇️ Baixar PDF",
-                                data=pdf_file,
+                                "⬇️ Baixar PDF",
+                                data=pdf_bytes,
                                 file_name=arquivo_cliente,
                                 mime="application/pdf"
                             )
 
-                        st.markdown("### 👁️ Visualização do PDF")
-
-                        with open(caminho_arquivo, "rb") as f:
-                            pdf_bytes = f.read()
-
-                        st.download_button(
-                            "📄 Baixar Documento",
-                            data=pdf_bytes,
-                            file_name=arquivo_cliente
-                        )
-
-                    # =========================================
                     # IMAGENS
-                    # =========================================
                     elif arquivo_cliente.lower().endswith(
-                        (".png", ".jpg", ".jpeg")
+                        (
+                            ".png",
+                            ".jpg",
+                            ".jpeg"
+                        )
                     ):
 
                         st.image(
                             caminho_arquivo,
-                            width=600
+                            width=500
                         )
 
-                        with open(caminho_arquivo, "rb") as file:
+                        with open(
+                            caminho_arquivo,
+                            "rb"
+                        ) as file:
 
                             st.download_button(
                                 "⬇️ Baixar Imagem",
@@ -652,12 +697,13 @@ if st.session_state.logado:
                                 file_name=arquivo_cliente
                             )
 
-                    # =========================================
-                    # OUTROS ARQUIVOS
-                    # =========================================
+                    # OUTROS
                     else:
 
-                        with open(caminho_arquivo, "rb") as file:
+                        with open(
+                            caminho_arquivo,
+                            "rb"
+                        ) as file:
 
                             st.download_button(
                                 "⬇️ Baixar Documento",
@@ -668,7 +714,7 @@ if st.session_state.logado:
                 else:
 
                     st.warning(
-                        "Arquivo não encontrado na pasta."
+                        "Arquivo não encontrado."
                     )
 
             st.link_button(
@@ -680,7 +726,9 @@ if st.session_state.logado:
 
     else:
 
-        st.warning("Nenhum cliente encontrado.")
+        st.warning(
+            "Nenhum cliente encontrado."
+        )
 
 # =========================================
 # FOOTER
