@@ -99,8 +99,8 @@ label{
 }
 
 .stTextInput input:focus{
-    border:2px solid red !important;
-    box-shadow:0 0 10px green !important;
+    border: 4px solid green !important;
+    box-shadow:0 0 15px green !important;
 }
 
 /* TEXTAREA */
