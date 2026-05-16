@@ -82,7 +82,7 @@ html, body, [class*="css"] {
 
 .frase span {
 
-    color: red;
+    color: blue;
 }
 
 /* LABELS */
@@ -122,7 +122,7 @@ label {
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
 
-    color: #777777 !important;
+    color: grenn !important;
 
     opacity: 1 !important;
 }
