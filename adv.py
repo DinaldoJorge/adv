@@ -82,7 +82,7 @@ html, body, [class*="css"] {
 
 .frase span {
 
-    color: #00d9ff;
+    color: red;
 }
 
 /* LABELS */
