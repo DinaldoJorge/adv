@@ -118,9 +118,10 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 2px solid rgba(0,255,208,0.55) !important;
+    border: 2px solid rgba(0,255,208,0.45) !important;
 
     #borda inicial nome email
+    
     border-radius: 2px !important;
 
     color: #FFFFFF !important;
@@ -143,7 +144,7 @@ label,
 /* INPUT FOCUS */
 .stTextInput input:focus {
 
-    border: 1px solid rgba(0,255,208,0.55) !important;
+    border: 2px solid rgba(0,255,208,0.45) !important;
 
     box-shadow: none !important;
 
@@ -167,9 +168,9 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.45) !important;
+    border: 2px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 16px !important;
+    border-radius: 2px !important;
 
     color: #FFFFFF !important;
 
@@ -215,9 +216,9 @@ label,
 
     background: #0b0b0b !important;
 
-    border: 1px solid rgba(0,255,208,0.45) !important;
+    border: 2px solid rgba(0,255,208,0.45) !important;
 
-    border-radius: 16px !important;
+    border-radius: 2px !important;
 
     padding: 18px !important;
 
