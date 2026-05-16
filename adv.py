@@ -88,7 +88,7 @@ html, body, [class*="css"] {
 /* LABELS */
 label {
 
-    color: white !important;
+    color: black !important;
 
     font-size: 26px !important;
 
@@ -139,7 +139,7 @@ label {
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: #00d9ff !important;
+    background: white !important;
 
     border: 4px solid white !important;
 
