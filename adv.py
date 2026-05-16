@@ -52,7 +52,7 @@ html, body, [class*="css"] {
 
     font-family: 'Inter', sans-serif;
 
-    color: blue;
+    color: white;
 }
 
 .block-container {
@@ -82,7 +82,7 @@ html, body, [class*="css"] {
 
 .frase span {
 
-    color: blue;
+    color: #00d9ff;
 }
 
 /* LABELS */
@@ -98,45 +98,73 @@ label {
 /* INPUTS */
 .stTextInput input {
 
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 4px solid white !important;
+    border: 1px solid #00aaff !important;
 
-    border-radius: 10px green !important;
+    border-radius: 16px !important;
 
-    color: black !important;
+    color: #000000 !important;
 
     font-size: 20px !important;
 
     font-weight: 700 !important;
 
-    height: 48px !important;
+    height: 58px !important;
 
     padding: 0 22px !important;
 
     box-sizing: border-box !important;
 
     box-shadow: none !important;
+
+    transition: all 0.25s ease !important;
+}
+
+/* INPUT AO CLICAR */
+.stTextInput input:focus {
+
+    background: #ffffff !important;
+
+    border: 2px solid #00ff88 !important;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.25) !important;
+
+    outline: none !important;
+}
+
+/* INPUT COM TEXTO */
+.stTextInput input:not(:placeholder-shown) {
+
+    border: 2px solid #00ff88 !important;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.20) !important;
 }
 
 /* PLACEHOLDER */
 .stTextInput input::placeholder {
 
-    color: grenn !important;
+    color: #7d7d7d !important;
 
     opacity: 1 !important;
+
+    font-size: 20px !important;
+
+    font-weight: 700 !important;
 }
 
 /* TEXTAREA */
 .stTextArea textarea {
 
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 4px solid green !important;
+    border: 1px solid #00aaff !important;
 
-    border-radius: 4px red !important;
+    border-radius: 16px !important;
 
-    color: black !important;
+    color: #000000 !important;
 
     font-size: 22px !important;
 
@@ -147,14 +175,40 @@ label {
     box-sizing: border-box !important;
 
     box-shadow: none !important;
+
+    transition: all 0.25s ease !important;
 }
 
-/* TEXTAREA PLACEHOLDER */
+/* TEXTAREA FOCUS */
+.stTextArea textarea:focus {
+
+    border: 2px solid #00ff88 !important;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.25) !important;
+
+    outline: none !important;
+}
+
+/* TEXTAREA COM TEXTO */
+.stTextArea textarea:not(:placeholder-shown) {
+
+    border: 2px solid #00ff88 !important;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.20) !important;
+}
+
+/* PLACEHOLDER TEXTAREA */
 .stTextArea textarea::placeholder {
 
-    color: #777777 !important;
+    color: #7d7d7d !important;
 
     opacity: 1 !important;
+
+    font-size: 22px !important;
+
+    font-weight: 700 !important;
 }
 
 /* FILE */
@@ -452,7 +506,6 @@ if st.session_state.logado:
             email_cliente = row.iloc[1]
             telefone_cliente = str(row.iloc[2])
             caso_cliente = row.iloc[3]
-            arquivo_cliente = row.iloc[4]
             data_cliente = row.iloc[5]
 
             st.markdown(f"""
