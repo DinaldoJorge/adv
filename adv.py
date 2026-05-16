@@ -100,7 +100,7 @@ label {
 
     background: #ffffff !important;
 
-    border: 2px solid #00aaff !important;
+    border: 4px solid #00aaff !important;
 
     border-radius: 0px !important;
 
