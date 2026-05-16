@@ -504,7 +504,6 @@ if st.session_state.logado:
                 📎 {arquivo_cliente}
                 </div>
                 """, unsafe_allow_html=True)
-
                 if os.path.exists(caminho_arquivo):
 
                     if arquivo_cliente.lower().endswith(
@@ -520,7 +519,7 @@ if st.session_state.logado:
                             width=450
                         )
 
-                                       with open(
+                    with open(
                         caminho_arquivo,
                         "rb"
                     ) as file:
