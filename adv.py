@@ -44,6 +44,8 @@ html, body, [class*="css"]{
     color:white;
 }
 
+/* REMOVE ELEMENTOS STREAMLIT */
+
 #MainMenu{
     visibility:hidden;
 }
@@ -61,7 +63,9 @@ header{
     max-width:1200px;
 }
 
-/* FRASE */
+/* =====================================================
+FRASE
+===================================================== */
 
 .frase{
     text-align:center;
@@ -76,7 +80,9 @@ header{
     color:#00d9ff;
 }
 
-/* LABELS */
+/* =====================================================
+LABELS
+===================================================== */
 
 label{
     color:white !important;
@@ -84,62 +90,234 @@ label{
     font-weight:800 !important;
 }
 
-/* INPUTS */
+/* =====================================================
+INPUTS
+===================================================== */
 
 .stTextInput input{
-    background:black !important;
-    color: white !important;
-    border: 4px solid white !important;
-    border-radius: 10px white !important;
-    height:40px !important;
+
+    background:#050505 !important;
+
+    color:white !important;
+
+    border:2px solid rgba(0,217,255,0.35) !important;
+
+    border-radius:16px !important;
+
+    height:52px !important;
+
     font-size:18px !important;
+
     font-weight:600 !important;
-    padding-left:15px !important;
+
+    padding-left:18px !important;
+
     transition:0.3s !important;
+
+    box-shadow:
+    0 0 10px rgba(0,217,255,0.05);
+
 }
 
 .stTextInput input:focus{
-    border: 4px solid green !important;
-    box-shadow:0 0 15px green !important;
+
+    border:2px solid #00ff88 !important;
+
+    box-shadow:
+    0 0 12px rgba(0,255,136,0.25);
+
 }
 
-/* TEXTAREA */
+/* =====================================================
+TEXTAREA
+===================================================== */
 
 .stTextArea textarea{
-    background:black !important;
+
+    background:#050505 !important;
+
     color:white !important;
-    border: 4px solid white !important;
-    border-radius: 4px white !important;
+
+    border:2px solid rgba(0,217,255,0.35) !important;
+
+    border-radius:18px !important;
+
     font-size:19px !important;
-    font-weight:700 !important;
+
+    font-weight:600 !important;
+
     padding:18px !important;
+
+    transition:0.3s !important;
+
 }
 
 .stTextArea textarea:focus{
-    border:4px solid green !important;
-    box-shadow:0 0 10px green !important;
+
+    border:2px solid #00ff88 !important;
+
+    box-shadow:
+    0 0 12px rgba(0,255,136,0.25);
+
 }
 
-/* PLACEHOLDER */
+/* =====================================================
+PLACEHOLDER
+===================================================== */
 
 ::placeholder{
-    color:#666666 !important;
+
+    color:#8f8f8f !important;
+
     opacity:1 !important;
+
 }
 
-/* FILE UPLOADER */
+/* =====================================================
+FILE UPLOADER PREMIUM MZA
+===================================================== */
 
 [data-testid="stFileUploader"]{
-    border:4px solid #00d9ff !important;
-    border-radius:16px #00d9ff!important;
-    padding:15px !important;
-    background: black !important;
+
+    background:#050505 !important;
+
+    border:2px solid #00d9ff !important;
+
+    border-radius:24px !important;
+
+    padding:20px !important;
+
+    margin-top:10px !important;
+
+    box-shadow:
+    0 0 12px rgba(0,217,255,0.12),
+    0 0 22px rgba(0,255,136,0.08);
+
+    transition:0.3s ease-in-out !important;
 }
-/* BOTÕES PREMIUM */
+
+/* ÁREA INTERNA */
+
+[data-testid="stFileUploader"] section{
+
+    background:#101010 !important;
+
+    border-radius:20px !important;
+
+    border:1px solid rgba(255,255,255,0.08) !important;
+
+    padding:18px !important;
+
+}
+
+/* TEXTO PRINCIPAL */
+
+[data-testid="stFileUploader"] small{
+
+    color:#e6e6e6 !important;
+
+    font-size:15px !important;
+
+    font-weight:600 !important;
+
+    letter-spacing:0.3px !important;
+}
+
+/* LABEL */
+
+[data-testid="stFileUploader"] label{
+
+    color:white !important;
+
+    font-size:18px !important;
+
+    font-weight:800 !important;
+}
+
+/* BOTÃO ESCOLHER ARQUIVO */
+
+[data-testid="stFileUploader"] button{
+
+    background:linear-gradient(
+        135deg,
+        #00c6ff,
+        #00ff88
+    ) !important;
+
+    color:#000000 !important;
+
+    border:none !important;
+
+    border-radius:16px !important;
+
+    font-size:15px !important;
+
+    font-weight:900 !important;
+
+    height:44px !important;
+
+    padding:0 24px !important;
+
+    box-shadow:
+    0 0 10px rgba(0,255,136,0.25),
+    0 0 18px rgba(0,198,255,0.18);
+
+    transition:all 0.25s ease-in-out !important;
+}
+
+/* HOVER */
+
+[data-testid="stFileUploader"] button:hover{
+
+    transform:translateY(-2px) scale(1.02);
+
+    background:linear-gradient(
+        135deg,
+        #00ff88,
+        #00c6ff
+    ) !important;
+
+    color:black !important;
+
+    box-shadow:
+    0 0 18px rgba(0,255,136,0.45),
+    0 0 28px rgba(0,198,255,0.35);
+}
+
+/* CLIQUE */
+
+[data-testid="stFileUploader"] button:active{
+
+    transform:scale(0.98);
+
+}
+
+/* REMOVE FUNDO BRANCO */
+
+[data-testid="stFileUploader"] div{
+
+    background-color:transparent !important;
+}
+
+/* TEXTO DRAG */
+
+[data-testid="stFileUploader"] p{
+
+    color:#d9d9d9 !important;
+
+    font-size:16px !important;
+
+    font-weight:600 !important;
+}
+
+/* =====================================================
+BOTÕES PREMIUM
+===================================================== */
 
 .stButton > button{
 
     width:100%;
+
     height:58px;
 
     border:none !important;
@@ -167,9 +345,6 @@ label{
     transition:all 0.25s ease-in-out !important;
 }
 
-
-/* HOVER */
-
 .stButton > button:hover{
 
     transform:translateY(-2px) scale(1.01);
@@ -187,17 +362,18 @@ label{
     0 0 28px rgba(0,170,255,0.45);
 }
 
-
-/* CLICK */
-
 .stButton > button:active{
 
     transform:scale(0.98);
 
 }
-/* CARD */
+
+/* =====================================================
+CARD
+===================================================== */
 
 .card{
+
     background:linear-gradient(
         180deg,
         #0b0b0b,
@@ -214,26 +390,43 @@ label{
 
     box-shadow:
     0 0 18px rgba(0,217,255,0.08);
+
 }
 
-/* TÍTULOS */
+/* =====================================================
+TÍTULOS
+===================================================== */
 
 .titulo-admin{
+
     text-align:center;
+
     font-size:28px;
+
     font-weight:900;
+
     margin-top:20px;
+
     margin-bottom:25px;
+
     color:white;
+
 }
 
-/* FOOTER */
+/* =====================================================
+FOOTER
+===================================================== */
 
 .footer{
+
     text-align:center;
-    color:green;
+
+    color:#00ff88;
+
     margin-top:40px;
+
     font-size:13px;
+
 }
 
 </style>
@@ -482,7 +675,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color: green;
+        color:#00ff88;
         ">
         Total de clientes: {len(df)}
         </div>
