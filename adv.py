@@ -124,7 +124,7 @@ label {
 /* INPUT AO CLICAR */
 .stTextInput input:focus {
 
-    background: red !important;
+    background: white !important;
 
     border: 4px solid green !important;
 
