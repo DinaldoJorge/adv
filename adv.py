@@ -100,7 +100,7 @@ INPUTS
 
     border:2px solid white !important;
 
-    border-radius:14px !important;
+    border-radius: 2px !important;
 
     height:45px !important;
 
@@ -117,7 +117,7 @@ INPUTS
 
     border:2px solid #00d9ff !important;
 
-    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
+   # box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
