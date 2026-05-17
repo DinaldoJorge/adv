@@ -1,4 +1,7 @@
-# MZA Advogados — Código Final Completo
+# =====================================================
+# MZA ADVOGADOS - CÓDIGO FINAL COMPLETO
+# =====================================================
+
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -308,13 +311,6 @@ BOTÕES PREMIUM GERAIS
     transform:translateY(-2px) scale(1.02);
 }
 
-.stForm button:active,
-.stButton > button:active,
-[data-testid="stDownloadButton"] button:active{
-
-    transform:scale(0.97);
-}
-
 /* =====================================================
 CARD
 ===================================================== */
@@ -337,25 +333,6 @@ CARD
 
     box-shadow:
         0 0 15px rgba(0,217,255,0.15);
-}
-
-/* =====================================================
-TÍTULOS
-===================================================== */
-
-.titulo-admin{
-
-    text-align:center;
-
-    font-size:28px;
-
-    font-weight:900;
-
-    margin-top:20px;
-
-    margin-bottom:25px;
-
-    color:white;
 }
 
 /* =====================================================
@@ -533,8 +510,6 @@ if enviar:
                     font-size:20px;
                     font-weight:900;
                     cursor:pointer;
-                    box-shadow:0 0 15px rgba(0,170,255,0.5);
-                    transition:0.3s;
                 ">
                 📲 Contato direto MZA-Advogados
                 </button>
@@ -552,177 +527,3 @@ if enviar:
         st.warning(
             "Preencha os campos obrigatórios."
         )
-
-# =====================================================
-# LOGIN
-# =====================================================
-
-st.divider()
-
-st.markdown("""
-<div class="titulo-admin">
-Acesso Painel Jurídico
-</div>
-""", unsafe_allow_html=True)
-
-usuario = st.text_input(
-    "Usuário",
-    placeholder="Digite o usuário"
-)
-
-senha = st.text_input(
-    "Senha",
-    type="password",
-    placeholder="Digite a senha"
-)
-
-if st.button("Entrar no Painel"):
-
-    if usuario == USUARIO and senha == SENHA:
-
-        st.session_state["logado"] = True
-        st.rerun()
-
-    else:
-
-        st.error(
-            "Usuário ou senha inválidos."
-        )
-
-# =====================================================
-# PAINEL ADMIN
-# =====================================================
-
-if st.session_state["logado"]:
-
-    st.divider()
-
-    st.markdown("""
-    <div class="titulo-admin">
-    Painel Jurídico Premium
-    </div>
-    """, unsafe_allow_html=True)
-
-    if st.button("Sair do Painel"):
-
-        st.session_state["logado"] = False
-        st.rerun()
-
-    dados = planilha.get_all_records()
-
-    if dados:
-
-        df = pd.DataFrame(dados)
-
-        df = df.iloc[::-1]
-
-        busca = st.text_input(
-            "Pesquisar cliente",
-            placeholder="Digite nome, email ou telefone"
-        )
-
-        if busca:
-
-            df = df[
-                df.astype(str)
-                .apply(
-                    lambda x:
-                    x.str.contains(
-                        busca,
-                        case=False
-                    )
-                )
-                .any(axis=1)
-            ]
-
-        st.markdown(f"""
-        <div style="
-        font-size:24px;
-        font-weight:900;
-        margin-bottom:30px;
-        color:white;
-        ">
-        Total de clientes: {len(df)}
-        </div>
-        """, unsafe_allow_html=True)
-
-        for i, row in df.iterrows():
-
-            nome_cliente = row.iloc[0]
-            email_cliente = row.iloc[1]
-            telefone_cliente = row.iloc[2]
-            caso_cliente = row.iloc[3]
-            arquivo_cliente = row.iloc[4]
-            data_cliente = row.iloc[5]
-
-            st.markdown(f"""
-            <div class="card">
-
-            <div style="
-            font-size:30px;
-            font-weight:900;
-            color:#00d9ff;
-            margin-bottom:25px;
-            ">
-            {nome_cliente}
-            </div>
-
-            <div style="
-            font-size:22px;
-            line-height:2.1;
-            color:white;
-            font-weight:700;
-            ">
-
-            📞 {telefone_cliente}<br><br>
-
-            ✉️ {email_cliente}<br><br>
-
-            ⚖️ {caso_cliente}<br><br>
-
-            🕒 {data_cliente}
-
-            </div>
-
-            </div>
-            """, unsafe_allow_html=True)
-
-            if arquivo_cliente != "Nenhum arquivo":
-
-                caminho_arquivo = os.path.join(
-                    "documentos",
-                    arquivo_cliente
-                )
-
-                if os.path.exists(caminho_arquivo):
-
-                    if arquivo_cliente.lower().endswith(
-                        (".png", ".jpg", ".jpeg")
-                    ):
-
-                        st.image(
-                            caminho_arquivo,
-                            width=450
-                        )
-
-                    with open(
-                        caminho_arquivo,
-                        "rb"
-                    ) as file:
-
-                        st.download_button(
-                            label="⬇️ Baixar Anexo",
-                            data=file,
-                            file_name=arquivo_cliente,
-                            key=f"download_{i}"
-                        )
-
-# =====================================================
-# FOOTER
-# =====================================================
-
-st.markdown("""
-<div class="footer">
-🔒 Seus dados estão protegidos e não serão compartilhados.
-</div>
-""", unsafe_allow_html=True)
