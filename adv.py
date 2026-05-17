@@ -72,8 +72,8 @@ FRASE
     font-size:30px;
     font-weight:600;
     color:white;
-    margin-top:1px;
-    margin-bottom:5px;
+    margin-top:19px;
+    margin-bottom:25px;
 }
 
 .frase span{
