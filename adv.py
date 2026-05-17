@@ -132,7 +132,7 @@ TEXTAREA
 
     border:2px solid white !important;
 
-    border-radius:14px !important;
+    border-radius: 2px !important;
 
     font-size:19px !important;
 
