@@ -303,7 +303,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] p{
 
-    color: green !important;
+    color: black !important;
 
     font-size:16px !important;
 
