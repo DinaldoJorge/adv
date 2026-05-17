@@ -545,7 +545,7 @@ if enviar:
             salvar_dados()
 
             st.success(
-                "Dados enviados com sucesso!\n\nClique no botão abaixo para fazer contato com o advogado."
+                "Dados enviados com sucesso!\n\nClique no botão para fazer contato"
             )
 
             st.markdown("""
