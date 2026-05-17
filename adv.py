@@ -44,7 +44,7 @@ html, body, [class*="css"]{
     color:white;
 }
 
-/* REMOVE ELEMENTOS STREAMLIT */
+/* REMOVE STREAMLIT */
 
 #MainMenu{
     visibility:hidden;
@@ -69,7 +69,7 @@ FRASE
 
 .frase{
     text-align:center;
-    font-size:28px;
+    font-size:30px;
     font-weight:900;
     color:white;
     margin-top:10px;
@@ -121,10 +121,10 @@ INPUTS
 
 .stTextInput input:focus{
 
-    border:2px solid #00ff88 !important;
+    border:2px solid #00d9ff !important;
 
     box-shadow:
-    0 0 12px rgba(0,255,136,0.25);
+    0 0 12px rgba(0,217,255,0.35);
 
 }
 
@@ -154,10 +154,10 @@ TEXTAREA
 
 .stTextArea textarea:focus{
 
-    border:2px solid #00ff88 !important;
+    border:2px solid #00d9ff !important;
 
     box-shadow:
-    0 0 12px rgba(0,255,136,0.25);
+    0 0 12px rgba(0,217,255,0.35);
 
 }
 
@@ -174,7 +174,7 @@ PLACEHOLDER
 }
 
 /* =====================================================
-FILE UPLOADER PREMIUM MZA
+FILE UPLOADER PREMIUM
 ===================================================== */
 
 [data-testid="stFileUploader"]{
@@ -191,9 +191,8 @@ FILE UPLOADER PREMIUM MZA
 
     box-shadow:
     0 0 12px rgba(0,217,255,0.12),
-    0 0 22px rgba(0,255,136,0.08);
+    0 0 22px rgba(0,217,255,0.10);
 
-    transition:0.3s ease-in-out !important;
 }
 
 /* ÁREA INTERNA */
@@ -210,7 +209,7 @@ FILE UPLOADER PREMIUM MZA
 
 }
 
-/* TEXTO PRINCIPAL */
+/* TEXTO */
 
 [data-testid="stFileUploader"] small{
 
@@ -220,31 +219,19 @@ FILE UPLOADER PREMIUM MZA
 
     font-weight:600 !important;
 
-    letter-spacing:0.3px !important;
 }
 
-/* LABEL */
-
-[data-testid="stFileUploader"] label{
-
-    color:white !important;
-
-    font-size:18px !important;
-
-    font-weight:800 !important;
-}
-
-/* BOTÃO ESCOLHER ARQUIVO */
+/* BOTÃO UPLOAD */
 
 [data-testid="stFileUploader"] button{
 
     background:linear-gradient(
         135deg,
-        #00c6ff,
-        #00ff88
+        #00aaff,
+        #00d9ff
     ) !important;
 
-    color:#000000 !important;
+    color:black !important;
 
     border:none !important;
 
@@ -259,59 +246,12 @@ FILE UPLOADER PREMIUM MZA
     padding:0 24px !important;
 
     box-shadow:
-    0 0 10px rgba(0,255,136,0.25),
-    0 0 18px rgba(0,198,255,0.18);
+    0 0 10px rgba(0,217,255,0.35);
 
-    transition:all 0.25s ease-in-out !important;
-}
-
-/* HOVER */
-
-[data-testid="stFileUploader"] button:hover{
-
-    transform:translateY(-2px) scale(1.02);
-
-    background:linear-gradient(
-        135deg,
-        #00ff88,
-        #00c6ff
-    ) !important;
-
-    color:black !important;
-
-    box-shadow:
-    0 0 18px rgba(0,255,136,0.45),
-    0 0 28px rgba(0,198,255,0.35);
-}
-
-/* CLIQUE */
-
-[data-testid="stFileUploader"] button:active{
-
-    transform:scale(0.98);
-
-}
-
-/* REMOVE FUNDO BRANCO */
-
-[data-testid="stFileUploader"] div{
-
-    background-color:transparent !important;
-}
-
-/* TEXTO DRAG */
-
-[data-testid="stFileUploader"] p{
-
-    color:#d9d9d9 !important;
-
-    font-size:16px !important;
-
-    font-weight:600 !important;
 }
 
 /* =====================================================
-BOTÕES PREMIUM
+BOTÕES AZUL NEON
 ===================================================== */
 
 .stButton > button{
@@ -326,21 +266,21 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        #00c6ff,
-        #00ff88
+        #00aaff,
+        #00d9ff
     ) !important;
 
-    color:#000000 !important;
+    color:black !important;
 
     font-size:20px !important;
 
-    font-weight:800 !important;
+    font-weight:900 !important;
 
     letter-spacing:0.5px;
 
     box-shadow:
-    0 0 12px rgba(0,255,136,0.35),
-    0 0 20px rgba(0,170,255,0.25);
+    0 0 12px rgba(0,217,255,0.35),
+    0 0 22px rgba(0,217,255,0.20);
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -351,21 +291,15 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        #00ff88,
-        #00c6ff
+        #00d9ff,
+        #00aaff
     ) !important;
 
     color:black !important;
 
     box-shadow:
-    0 0 18px rgba(0,255,136,0.55),
-    0 0 28px rgba(0,170,255,0.45);
-}
-
-.stButton > button:active{
-
-    transform:scale(0.98);
-
+    0 0 18px rgba(0,217,255,0.55),
+    0 0 30px rgba(0,217,255,0.30);
 }
 
 /* =====================================================
@@ -401,7 +335,7 @@ TÍTULOS
 
     text-align:center;
 
-    font-size:28px;
+    font-size:30px;
 
     font-weight:900;
 
@@ -421,11 +355,13 @@ FOOTER
 
     text-align:center;
 
-    color:#00ff88;
+    color:#00d9ff;
 
     margin-top:40px;
 
-    font-size:13px;
+    font-size:14px;
+
+    font-weight:700;
 
 }
 
@@ -519,7 +455,7 @@ with st.form("formulario", clear_on_submit=True):
     )
 
     enviar = st.form_submit_button(
-        "Enviar Dados"
+        "⚖️ Enviar Dados"
     )
 
 # =====================================================
@@ -574,6 +510,11 @@ if enviar:
 
             st.success(
                 "Dados enviados com sucesso!"
+            )
+
+            st.link_button(
+                "📞 Fazer contato com MZA-ADVOGADOS",
+                "https://wa.me/5583998234415"
             )
 
         except Exception as e:
@@ -675,7 +616,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color:#00ff88;
+        color:#00d9ff;
         ">
         Total de clientes: {len(df)}
         </div>
@@ -722,6 +663,10 @@ if st.session_state["logado"]:
             </div>
             """, unsafe_allow_html=True)
 
+            # =====================================================
+            # ANEXOS
+            # =====================================================
+
             if arquivo_cliente != "Nenhum arquivo":
 
                 caminho_arquivo = os.path.join(
@@ -731,14 +676,45 @@ if st.session_state["logado"]:
 
                 if os.path.exists(caminho_arquivo):
 
+                    st.markdown("""
+                    <div style="
+                    color:#00d9ff;
+                    font-size:20px;
+                    font-weight:900;
+                    margin-bottom:15px;
+                    ">
+                    Pré-visualização do anexo
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                    # IMAGEM
+
                     if arquivo_cliente.lower().endswith(
                         (".png",".jpg",".jpeg")
                     ):
 
                         st.image(
                             caminho_arquivo,
-                            width=450
+                            width=500
                         )
+
+                    # PDF
+
+                    elif arquivo_cliente.lower().endswith(".pdf"):
+
+                        with open(caminho_arquivo, "rb") as pdf_file:
+
+                            PDFbyte = pdf_file.read()
+
+                            st.download_button(
+                                label="📄 Baixar PDF",
+                                data=PDFbyte,
+                                file_name=arquivo_cliente,
+                                mime="application/pdf",
+                                key=f"pdf_{i}"
+                            )
+
+                    # DOWNLOAD GERAL
 
                     with open(
                         caminho_arquivo,
