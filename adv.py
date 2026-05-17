@@ -68,7 +68,7 @@ FRASE
 ===================================================== */
 
 .frase{
-    text-align:center;
+    text-align: left;
     font-size:30px;
     font-weight:600;
     color:white;
@@ -87,7 +87,7 @@ LABELS
 label{
     color:white !important;
     font-size:21px !important;
-    font-weight:800 !important;
+    font-weight:600 !important;
 }
 
 /* =====================================================
