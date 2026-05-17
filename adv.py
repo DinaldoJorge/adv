@@ -295,59 +295,6 @@ BOTÃO ENVIAR DADOS AZUL NEON
     transform:scale(0.98);
 
 }
-
-/* =====================================================
-DOWNLOAD BUTTON AZUL NEON
-===================================================== */
-
-.stDownloadButton > button{
-
-    width:100% !important;
-
-    height:55px !important;
-
-    background:linear-gradient(
-        135deg,
-        #00aaff,
-        #00d9ff
-    ) !important;
-
-    color:black !important;
-
-    border:none !important;
-
-    border-radius:18px !important;
-
-    font-size:18px !important;
-
-    font-weight:900 !important;
-
-    box-shadow:
-    0 0 14px rgba(0,217,255,0.35),
-    0 0 22px rgba(0,217,255,0.20);
-
-    transition:0.3s ease-in-out !important;
-}
-
-
-/* HOVER */
-
-.stDownloadButton > button:hover{
-
-    transform:scale(1.02);
-
-    background:linear-gradient(
-        135deg,
-        #00d9ff,
-        #00aaff
-    ) !important;
-
-    color:black !important;
-
-    box-shadow:
-    0 0 20px rgba(0,217,255,0.55),
-    0 0 30px rgba(0,217,255,0.35);
-}
 /* =====================================================
 CARD
 ===================================================== */
