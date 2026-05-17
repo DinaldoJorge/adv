@@ -73,7 +73,7 @@ FRASE
     font-weight:900;
     color:white;
     margin-top:1px;
-    margin-bottom:45px;
+    margin-bottom:5px;
 }
 
 .frase span{
