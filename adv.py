@@ -385,7 +385,7 @@ TÍTULOS
 
     margin-bottom:25px;
 
-    color:black;
+    color:#00d9ff;
 }
 
 /* =====================================================
@@ -649,7 +649,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color:white;
+        color:#00d9ff;
         ">
         Total de clientes: {len(df)}
         </div>
@@ -669,7 +669,7 @@ if st.session_state["logado"]:
 
             <div style="
             font-size:30px;
-            font-weight:900;
+            font-weight:400;
             color:#00d9ff;
             margin-bottom:25px;
             ">
@@ -711,7 +711,7 @@ if st.session_state["logado"]:
 
                         st.image(
                             caminho_arquivo,
-                            width=450
+                            width=250
                         )
 
                     with open(
