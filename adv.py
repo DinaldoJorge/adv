@@ -233,14 +233,14 @@ FILE UPLOADER PREMIUM
 
 }
 /* =====================================================
-BOTÃO ENVIAR DADOS AZUL NEON
+DOWNLOAD BUTTON AZUL NEON
 ===================================================== */
 
-.stButton > button{
+.stDownloadButton > button{
 
     width:100% !important;
 
-    height:58px !important;
+    height:55px !important;
 
     background:linear-gradient(
         135deg,
@@ -254,15 +254,13 @@ BOTÃO ENVIAR DADOS AZUL NEON
 
     border-radius:18px !important;
 
-    font-size:20px !important;
+    font-size:18px !important;
 
     font-weight:900 !important;
 
-    letter-spacing:0.5px !important;
-
     box-shadow:
     0 0 14px rgba(0,217,255,0.35),
-    0 0 24px rgba(0,217,255,0.20);
+    0 0 22px rgba(0,217,255,0.20);
 
     transition:0.3s ease-in-out !important;
 }
@@ -270,9 +268,9 @@ BOTÃO ENVIAR DADOS AZUL NEON
 
 /* HOVER */
 
-.stButton > button:hover{
+.stDownloadButton > button:hover{
 
-    transform:translateY(-2px) scale(1.01);
+    transform:scale(1.02);
 
     background:linear-gradient(
         135deg,
@@ -283,19 +281,9 @@ BOTÃO ENVIAR DADOS AZUL NEON
     color:black !important;
 
     box-shadow:
-    0 0 22px rgba(0,217,255,0.55),
-    0 0 34px rgba(0,217,255,0.35);
+    0 0 20px rgba(0,217,255,0.55),
+    0 0 30px rgba(0,217,255,0.35);
 }
-
-
-/* CLICK */
-
-.stButton > button:active{
-
-    transform:scale(0.98);
-
-}
-
 /* =====================================================
 CARD
 ===================================================== */
