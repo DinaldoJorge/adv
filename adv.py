@@ -253,7 +253,7 @@ BOTÕES AZUL NEON
         #00d9ff
     ) !important;
 
-    color:#00d9ff !important;
+    color:black !important;
 
     font-size:20px !important;
 
