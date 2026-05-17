@@ -232,51 +232,6 @@ FILE UPLOADER PREMIUM
     padding:0 24px !important;
 
 }
-
-/* =====================================================
-BOTÕES AZUL NEON
-===================================================== */
-
-.stButton > button{
-
-    width:100%;
-
-    height:58px;
-
-    border:none !important;
-
-    border-radius:16px !important;
-
-    background:linear-gradient(
-        135deg,
-        #00d9ff,
-        #00d9ff
-    ) !important;
-
-    color:black !important;
-
-    font-size:20px !important;
-
-    font-weight:900 !important;
-
-    letter-spacing: 2px;
-
-    transition:all 0.25s ease-in-out !important;
-}
-
-.stButton > button:hover{
-
-    transform:translateY(-2px) scale(1.01);
-
-    background:linear-gradient(
-        135deg,
-        #00d9ff,
-        #00d9ff
-    ) !important;
-
-    color: black !important;
-
-}
 /* =====================================================
 BOTÃO ENVIAR DADOS AZUL NEON
 ===================================================== */
