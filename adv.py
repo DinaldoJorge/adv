@@ -167,7 +167,7 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"]{
 
-    background:black !important;
+    background:#00d9ff !important;
 
     border:2px solid #00d9ff !important;
 
@@ -547,7 +547,7 @@ if enviar:
             salvar_dados()
 
             st.success(
-                "Dados enviados com sucesso!"
+                "Dados enviados com sucesso!\n\nClique no botão abaixo para fazer contato com o advogado."
             )
 
             st.markdown("""
