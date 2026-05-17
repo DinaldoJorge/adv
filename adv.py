@@ -72,7 +72,7 @@ FRASE
     font-size:30px;
     font-weight:900;
     color:white;
-    margin-top:10px;
+    margin-top:1px;
     margin-bottom:45px;
 }
 
