@@ -172,7 +172,7 @@ FILE UPLOADER PREMIUM
 
     background:black !important;
 
-    border:2px solid #00d9ff !important;
+    border:2px solid white !important;
 
     border-radius: 2px !important;
 
