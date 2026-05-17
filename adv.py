@@ -245,7 +245,7 @@ BOTÕES AZUL NEON
 
     border:none !important;
 
-    border-radius:2px !important;
+    border-radius:16px !important;
 
     background:linear-gradient(
         135deg,
@@ -274,7 +274,7 @@ BOTÕES AZUL NEON
         #00d9ff
     ) !important;
 
-    color: #00d9ff !important;
+    color: black !important;
 
 }
 
@@ -286,8 +286,8 @@ CARD
 
     background:linear-gradient(
         180deg,
-        #00d9ff,
-        #00d9ff
+        black,
+        black
     );
 
     border:1px solid #00d9ff;
