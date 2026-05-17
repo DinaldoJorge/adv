@@ -96,13 +96,13 @@ INPUTS
 
 .stTextInput input{
 
-    background:#050505 !important;
+    background: black !important;
 
     color:white !important;
 
-    border:4px solid rgba(0,217,255,0.35) !important;
+    border:4px solid green !important;
 
-    border-radius:1px !important;
+    border-radius: 4px green !important;
 
     height:45px !important;
 
@@ -115,16 +115,16 @@ INPUTS
     transition:0.3s !important;
 
     box-shadow:
-    0 0 10px rgba(0,217,255,0.05);
+    0 0 10px green ;
 
 }
 
 .stTextInput input:focus{
 
-    border:4px solid #00ff88 !important;
+    border: 4px solid red !important;
 
     box-shadow:
-    0 0 10px rgba(0,255,136,0.25);
+    0 0 10px red;
 
 }
 
@@ -138,9 +138,9 @@ TEXTAREA
 
     color:white !important;
 
-    border:2px solid rgba(0,217,255,0.35) !important;
+    border: 2px solid white!important;
 
-    border-radius:18px !important;
+    border-radius: 2px white!important;
 
     font-size:19px !important;
 
@@ -157,7 +157,7 @@ TEXTAREA
     border: 4px solid green !important;
 
     box-shadow:
-    0 0 12px rgba(0,255,136,0.25);
+    0 0 12px green;
 
 }
 
@@ -181,9 +181,9 @@ FILE UPLOADER PREMIUM MZA
 
     background: black !important;
 
-    border:2px solid #00d9ff !important;
+    border: 2px solid green !important;
 
-    border-radius:24px !important;
+    border-radius: 2px green !important;
 
     padding:20px !important;
 
