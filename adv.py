@@ -285,6 +285,129 @@ DOWNLOAD BUTTON AZUL NEON
     0 0 30px rgba(0,217,255,0.35);
 }
 /* =====================================================
+TODOS OS BOTÕES AZUL NEON
+===================================================== */
+
+/* BOTÕES NORMAIS */
+
+.stButton > button{
+
+    width:100% !important;
+
+    height:58px !important;
+
+    background:linear-gradient(
+        135deg,
+        #00aaff,
+        #00d9ff
+    ) !important;
+
+    color:black !important;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    font-size:20px !important;
+
+    font-weight:900 !important;
+
+    box-shadow:
+    0 0 14px rgba(0,217,255,0.35),
+    0 0 24px rgba(0,217,255,0.20);
+
+    transition:0.3s ease-in-out !important;
+}
+
+
+/* FORM SUBMIT */
+
+div[data-testid="stFormSubmitButton"] > button{
+
+    width:100% !important;
+
+    height:58px !important;
+
+    background:linear-gradient(
+        135deg,
+        #00aaff,
+        #00d9ff
+    ) !important;
+
+    color:black !important;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    font-size:20px !important;
+
+    font-weight:900 !important;
+
+    box-shadow:
+    0 0 14px rgba(0,217,255,0.35),
+    0 0 24px rgba(0,217,255,0.20);
+
+    transition:0.3s ease-in-out !important;
+}
+
+
+/* LINK BUTTON */
+
+[data-testid="stLinkButton"] a{
+
+    background:linear-gradient(
+        135deg,
+        #00aaff,
+        #00d9ff
+    ) !important;
+
+    color:black !important;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    font-size:20px !important;
+
+    font-weight:900 !important;
+
+    padding:14px 20px !important;
+
+    text-align:center !important;
+
+    display:block !important;
+
+    text-decoration:none !important;
+
+    box-shadow:
+    0 0 14px rgba(0,217,255,0.35),
+    0 0 24px rgba(0,217,255,0.20);
+}
+
+
+/* HOVER GERAL */
+
+.stButton > button:hover,
+div[data-testid="stFormSubmitButton"] > button:hover,
+[data-testid="stLinkButton"] a:hover{
+
+    transform:translateY(-2px) scale(1.01);
+
+    background:linear-gradient(
+        135deg,
+        #00d9ff,
+        #00aaff
+    ) !important;
+
+    color:black !important;
+
+    box-shadow:
+    0 0 22px rgba(0,217,255,0.55),
+    0 0 34px rgba(0,217,255,0.35);
+}
+
+/* =====================================================
 CARD
 ===================================================== */
 
