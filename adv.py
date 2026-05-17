@@ -735,4 +735,3 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
-```
