@@ -278,6 +278,70 @@ BOTÕES AZUL NEON
 
 }
 /* =====================================================
+BOTÃO ENVIAR DADOS AZUL NEON
+===================================================== */
+
+.stButton > button{
+
+    width:100% !important;
+
+    height:58px !important;
+
+    background:linear-gradient(
+        135deg,
+        #00aaff,
+        #00d9ff
+    ) !important;
+
+    color:black !important;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    font-size:20px !important;
+
+    font-weight:900 !important;
+
+    letter-spacing:0.5px !important;
+
+    box-shadow:
+    0 0 14px rgba(0,217,255,0.35),
+    0 0 24px rgba(0,217,255,0.20);
+
+    transition:0.3s ease-in-out !important;
+}
+
+
+/* HOVER */
+
+.stButton > button:hover{
+
+    transform:translateY(-2px) scale(1.01);
+
+    background:linear-gradient(
+        135deg,
+        #00d9ff,
+        #00aaff
+    ) !important;
+
+    color:black !important;
+
+    box-shadow:
+    0 0 22px rgba(0,217,255,0.55),
+    0 0 34px rgba(0,217,255,0.35);
+}
+
+
+/* CLICK */
+
+.stButton > button:active{
+
+    transform:scale(0.98);
+
+}
+
+/* =====================================================
 DOWNLOAD BUTTON AZUL NEON
 ===================================================== */
 
