@@ -1,7 +1,3 @@
-# =====================================================
-# MZA ADVOGADOS - CÓDIGO FINAL COMPLETO
-# =====================================================
-
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -48,6 +44,8 @@ html, body, [class*="css"]{
     color:white;
 }
 
+/* REMOVE ELEMENTOS STREAMLIT */
+
 #MainMenu{
     visibility:hidden;
 }
@@ -88,7 +86,7 @@ LABELS
 
 label{
     color:white !important;
-    font-size:25px !important;
+    font-size:21px !important;
     font-weight:800 !important;
 }
 
@@ -98,15 +96,15 @@ INPUTS
 
 .stTextInput input{
 
-    background:black !important;
+    background:#050505 !important;
 
     color:white !important;
 
-    border:2px solid white !important;
+    border:2px solid rgba(0,217,255,0.35) !important;
 
-    border-radius:4px !important;
+    border-radius:16px !important;
 
-    height:45px !important;
+    height:52px !important;
 
     font-size:18px !important;
 
@@ -115,11 +113,19 @@ INPUTS
     padding-left:18px !important;
 
     transition:0.3s !important;
+
+    box-shadow:
+    0 0 10px rgba(0,217,255,0.05);
+
 }
 
 .stTextInput input:focus{
 
-    border:2px solid #00d9ff !important;
+    border:2px solid #00ff88 !important;
+
+    box-shadow:
+    0 0 12px rgba(0,255,136,0.25);
+
 }
 
 /* =====================================================
@@ -128,13 +134,13 @@ TEXTAREA
 
 .stTextArea textarea{
 
-    background:black !important;
+    background:#050505 !important;
 
     color:white !important;
 
-    border:2px solid white !important;
+    border:2px solid rgba(0,217,255,0.35) !important;
 
-    border-radius:4px !important;
+    border-radius:18px !important;
 
     font-size:19px !important;
 
@@ -143,11 +149,16 @@ TEXTAREA
     padding:18px !important;
 
     transition:0.3s !important;
+
 }
 
 .stTextArea textarea:focus{
 
-    border:2px solid #00d9ff !important;
+    border:2px solid #00ff88 !important;
+
+    box-shadow:
+    0 0 12px rgba(0,255,136,0.25);
+
 }
 
 /* =====================================================
@@ -156,120 +167,158 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color:#00d9ff !important;
+    color:#8f8f8f !important;
 
     opacity:1 !important;
+
 }
 
 /* =====================================================
-FILE UPLOADER PREMIUM
+FILE UPLOADER PREMIUM MZA
 ===================================================== */
 
 [data-testid="stFileUploader"]{
 
-    background:black !important;
+    background:#050505 !important;
 
     border:2px solid #00d9ff !important;
 
-    border-radius:4px !important;
+    border-radius:24px !important;
 
-    padding:22px !important;
+    padding:20px !important;
 
-    margin-top:15px !important;
+    margin-top:10px !important;
+
+    box-shadow:
+    0 0 12px rgba(0,217,255,0.12),
+    0 0 22px rgba(0,255,136,0.08);
+
+    transition:0.3s ease-in-out !important;
 }
+
+/* ÁREA INTERNA */
 
 [data-testid="stFileUploader"] section{
 
-    background:#f5f5f5 !important;
+    background:#101010 !important;
 
-    border-radius:4px !important;
+    border-radius:20px !important;
 
-    border:1px solid rgba(255,255,255,0.15) !important;
+    border:1px solid rgba(255,255,255,0.08) !important;
 
-    padding:22px !important;
+    padding:18px !important;
+
 }
+
+/* TEXTO PRINCIPAL */
+
+[data-testid="stFileUploader"] small{
+
+    color:#e6e6e6 !important;
+
+    font-size:15px !important;
+
+    font-weight:600 !important;
+
+    letter-spacing:0.3px !important;
+}
+
+/* LABEL */
+
+[data-testid="stFileUploader"] label{
+
+    color:white !important;
+
+    font-size:18px !important;
+
+    font-weight:800 !important;
+}
+
+/* BOTÃO ESCOLHER ARQUIVO */
+
+[data-testid="stFileUploader"] button{
+
+    background:linear-gradient(
+        135deg,
+        #00c6ff,
+        #00ff88
+    ) !important;
+
+    color:#000000 !important;
+
+    border:none !important;
+
+    border-radius:16px !important;
+
+    font-size:15px !important;
+
+    font-weight:900 !important;
+
+    height:44px !important;
+
+    padding:0 24px !important;
+
+    box-shadow:
+    0 0 10px rgba(0,255,136,0.25),
+    0 0 18px rgba(0,198,255,0.18);
+
+    transition:all 0.25s ease-in-out !important;
+}
+
+/* HOVER */
+
+[data-testid="stFileUploader"] button:hover{
+
+    transform:translateY(-2px) scale(1.02);
+
+    background:linear-gradient(
+        135deg,
+        #00ff88,
+        #00c6ff
+    ) !important;
+
+    color:black !important;
+
+    box-shadow:
+    0 0 18px rgba(0,255,136,0.45),
+    0 0 28px rgba(0,198,255,0.35);
+}
+
+/* CLIQUE */
+
+[data-testid="stFileUploader"] button:active{
+
+    transform:scale(0.98);
+
+}
+
+/* REMOVE FUNDO BRANCO */
 
 [data-testid="stFileUploader"] div{
 
     background-color:transparent !important;
 }
 
-[data-testid="stFileUploader"] small{
-
-    color:#0066ff !important;
-
-    font-size:17px !important;
-
-    font-weight:350 !important;
-}
-
-[data-testid="stFileUploader"] label{
-
-    color:white !important;
-
-    font-size:20px !important;
-
-    font-weight:800 !important;
-}
+/* TEXTO DRAG */
 
 [data-testid="stFileUploader"] p{
 
-    color:#00d9ff !important;
+    color:#d9d9d9 !important;
 
     font-size:16px !important;
 
-    font-weight:700 !important;
-}
-
-[data-testid="stFileUploader"] button{
-
-    background:linear-gradient(
-        135deg,
-        #0066ff,
-        #00aaff
-    ) !important;
-
-    color:black !important;
-
-    border:none !important;
-
-    border-radius:14px !important;
-
-    font-size:18px !important;
-
-    font-weight:800 !important;
-
-    height:45px !important;
-
-    padding:0 30px !important;
-
-    transition:all 0.25s ease-in-out !important;
-}
-
-[data-testid="stFileUploader"] button:hover{
-
-    background:linear-gradient(
-        135deg,
-        #0055ff,
-        #00ccff
-    ) !important;
-
-    color:black !important;
-
-    transform:translateY(-2px) scale(1.03);
+    font-weight:600 !important;
 }
 
 /* =====================================================
-BOTÕES PREMIUM GERAIS
+BOTÕES PREMIUM
 ===================================================== */
 
-.stForm button,
-.stButton > button,
-[data-testid="stDownloadButton"] button{
+.stButton > button{
 
-    width:100% !important;
+    width:100%;
 
-    height:58px !important;
+    height:58px;
 
     border:none !important;
 
@@ -277,38 +326,46 @@ BOTÕES PREMIUM GERAIS
 
     background:linear-gradient(
         135deg,
-        #0066ff,
-        #00aaff
+        #00c6ff,
+        #00ff88
     ) !important;
 
-    color:black !important;
+    color:#000000 !important;
 
     font-size:20px !important;
 
-    font-weight:900 !important;
+    font-weight:800 !important;
 
-    letter-spacing:0.5px !important;
+    letter-spacing:0.5px;
 
     box-shadow:
-        0 0 12px rgba(0,170,255,0.5),
-        0 0 25px rgba(0,100,255,0.3) !important;
+    0 0 12px rgba(0,255,136,0.35),
+    0 0 20px rgba(0,170,255,0.25);
 
     transition:all 0.25s ease-in-out !important;
 }
 
-.stForm button:hover,
-.stButton > button:hover,
-[data-testid="stDownloadButton"] button:hover{
+.stButton > button:hover{
+
+    transform:translateY(-2px) scale(1.01);
 
     background:linear-gradient(
         135deg,
-        #0055ff,
-        #00ccff
+        #00ff88,
+        #00c6ff
     ) !important;
 
     color:black !important;
 
-    transform:translateY(-2px) scale(1.02);
+    box-shadow:
+    0 0 18px rgba(0,255,136,0.55),
+    0 0 28px rgba(0,170,255,0.45);
+}
+
+.stButton > button:active{
+
+    transform:scale(0.98);
+
 }
 
 /* =====================================================
@@ -319,20 +376,41 @@ CARD
 
     background:linear-gradient(
         180deg,
-        #111111,
-        #0d0d0d
+        #0b0b0b,
+        #131313
     );
 
-    border:2px solid #00d9ff;
+    border:1px solid rgba(0,217,255,0.35);
 
-    border-radius:22px;
+    border-radius:24px;
 
     padding:35px;
 
     margin-bottom:30px;
 
     box-shadow:
-        0 0 15px rgba(0,217,255,0.15);
+    0 0 18px rgba(0,217,255,0.08);
+
+}
+
+/* =====================================================
+TÍTULOS
+===================================================== */
+
+.titulo-admin{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:900;
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+    color:white;
+
 }
 
 /* =====================================================
@@ -343,11 +421,12 @@ FOOTER
 
     text-align:center;
 
-    color:#00d9ff;
+    color:#00ff88;
 
     margin-top:40px;
 
     font-size:13px;
+
 }
 
 </style>
@@ -494,27 +573,8 @@ if enviar:
             salvar_dados()
 
             st.success(
-                "Dados enviados com sucesso!\n\nClique no botão abaixo para fazer contato com o advogado."
+                "Dados enviados com sucesso!"
             )
-
-            st.markdown("""
-            <a href="https://wa.me/5583998234415" target="_blank">
-                <button style="
-                    width:100%;
-                    height:60px;
-                    margin-top:20px;
-                    border:none;
-                    border-radius:18px;
-                    background:linear-gradient(135deg,#0066ff,#00aaff);
-                    color:black;
-                    font-size:20px;
-                    font-weight:900;
-                    cursor:pointer;
-                ">
-                📲 Contato direto MZA-Advogados
-                </button>
-            </a>
-            """, unsafe_allow_html=True)
 
         except Exception as e:
 
@@ -527,3 +587,177 @@ if enviar:
         st.warning(
             "Preencha os campos obrigatórios."
         )
+
+# =====================================================
+# LOGIN
+# =====================================================
+
+st.divider()
+
+st.markdown("""
+<div class="titulo-admin">
+Acesso Painel Jurídico
+</div>
+""", unsafe_allow_html=True)
+
+usuario = st.text_input(
+    "Usuário",
+    placeholder="Digite o usuário"
+)
+
+senha = st.text_input(
+    "Senha",
+    type="password",
+    placeholder="Digite a senha"
+)
+
+if st.button("Entrar no Painel"):
+
+    if usuario == USUARIO and senha == SENHA:
+
+        st.session_state["logado"] = True
+        st.rerun()
+
+    else:
+
+        st.error(
+            "Usuário ou senha inválidos."
+        )
+
+# =====================================================
+# PAINEL ADMIN
+# =====================================================
+
+if st.session_state["logado"]:
+
+    st.divider()
+
+    st.markdown("""
+    <div class="titulo-admin">
+    Painel Jurídico Premium
+    </div>
+    """, unsafe_allow_html=True)
+
+    if st.button("Sair do Painel"):
+
+        st.session_state["logado"] = False
+        st.rerun()
+
+    dados = planilha.get_all_records()
+
+    if dados:
+
+        df = pd.DataFrame(dados)
+
+        df = df.iloc[::-1]
+
+        busca = st.text_input(
+            "Pesquisar cliente",
+            placeholder="Digite nome, email ou telefone"
+        )
+
+        if busca:
+
+            df = df[
+                df.astype(str)
+                .apply(
+                    lambda x:
+                    x.str.contains(
+                        busca,
+                        case=False
+                    )
+                )
+                .any(axis=1)
+            ]
+
+        st.markdown(f"""
+        <div style="
+        font-size:24px;
+        font-weight:900;
+        margin-bottom:30px;
+        color:#00ff88;
+        ">
+        Total de clientes: {len(df)}
+        </div>
+        """, unsafe_allow_html=True)
+
+        for i, row in df.iterrows():
+
+            nome_cliente = row.iloc[0]
+            email_cliente = row.iloc[1]
+            telefone_cliente = row.iloc[2]
+            caso_cliente = row.iloc[3]
+            arquivo_cliente = row.iloc[4]
+            data_cliente = row.iloc[5]
+
+            st.markdown(f"""
+            <div class="card">
+
+            <div style="
+            font-size:30px;
+            font-weight:900;
+            color:#00d9ff;
+            margin-bottom:25px;
+            ">
+            {nome_cliente}
+            </div>
+
+            <div style="
+            font-size:22px;
+            line-height:2.1;
+            color:white;
+            font-weight:700;
+            ">
+
+            📞 {telefone_cliente}<br><br>
+
+            ✉️ {email_cliente}<br><br>
+
+            ⚖️ {caso_cliente}<br><br>
+
+            🕒 {data_cliente}
+
+            </div>
+
+            </div>
+            """, unsafe_allow_html=True)
+
+            if arquivo_cliente != "Nenhum arquivo":
+
+                caminho_arquivo = os.path.join(
+                    "documentos",
+                    arquivo_cliente
+                )
+
+                if os.path.exists(caminho_arquivo):
+
+                    if arquivo_cliente.lower().endswith(
+                        (".png",".jpg",".jpeg")
+                    ):
+
+                        st.image(
+                            caminho_arquivo,
+                            width=450
+                        )
+
+                    with open(
+                        caminho_arquivo,
+                        "rb"
+                    ) as file:
+
+                        st.download_button(
+                            label="⬇️ Baixar Anexo",
+                            data=file,
+                            file_name=arquivo_cliente,
+                            key=f"download_{i}"
+                        )
+
+# =====================================================
+# FOOTER
+# =====================================================
+
+st.markdown("""
+<div class="footer">
+🔒 Seus dados estão protegidos e não serão compartilhados.
+</div>
+""", unsafe_allow_html=True)
