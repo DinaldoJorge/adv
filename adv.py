@@ -68,9 +68,9 @@ FRASE
 ===================================================== */
 
 .frase{
-    text-align: left;
+    text-align: center;
     font-size:30px;
-    font-weight:600;
+    font-weight:300;
     color:white;
     margin-top:19px;
     margin-bottom:25px;
