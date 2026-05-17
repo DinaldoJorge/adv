@@ -379,13 +379,13 @@ TÍTULOS
 
     font-size:28px;
 
-    font-weight:900;
+    font-weight:400;
 
     margin-top:20px;
 
     margin-bottom:25px;
 
-    color:white;
+    color:black;
 }
 
 /* =====================================================
