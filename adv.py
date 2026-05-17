@@ -100,9 +100,9 @@ INPUTS
 
     color:white !important;
 
-    border:4px solid white !important;
+    border: 4px solid white !important;
 
-    border-radius: 4px white !important;
+    border-radius: 4px solid white !important;
 
     height:45px !important;
 
@@ -114,8 +114,8 @@ INPUTS
 
     transition:0.3s !important;
 
-    box-shadow:
-    0 0 10px white ;
+   # box-shadow:
+   #  0 0 10px white ;
 
 }
 
@@ -123,8 +123,8 @@ INPUTS
 
     border: 4px solid green !important;
 
-    box-shadow:
-    0 0 4px green;
+   # box-shadow:
+   # 0 0 4px green;
 
 }
 
@@ -136,11 +136,11 @@ TEXTAREA
 
     background: black !important;
 
-    color:white !important;
+    color: green !important;
 
     border: 4px solid white!important;
 
-    border-radius: 4px white!important;
+    border-radius: 4px solid white!important;
 
     font-size:19px !important;
 
@@ -156,8 +156,8 @@ TEXTAREA
 
     border: 4px solid green !important;
 
-    box-shadow:
-    0 0 4px green;
+    # box-shadow:
+    # 0 0 4px green;
 
 }
 
@@ -167,7 +167,7 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color: white !important;
+    color: green !important;
 
     opacity:1 !important;
 
