@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -100,9 +101,9 @@ INPUTS
 
     border:2px solid white !important;
 
-    border-radius: 2px !important;
+    border-radius:14px !important;
 
-    height:45px !important;
+    height:52px !important;
 
     font-size:18px !important;
 
@@ -117,7 +118,7 @@ INPUTS
 
     border:2px solid #00d9ff !important;
 
-   # box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
+    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
@@ -132,7 +133,7 @@ TEXTAREA
 
     border:2px solid white !important;
 
-    border-radius: 2px !important;
+    border-radius:14px !important;
 
     font-size:19px !important;
 
@@ -147,7 +148,7 @@ TEXTAREA
 
     border:2px solid #00d9ff !important;
 
-   # box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
+    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
@@ -171,13 +172,13 @@ FILE UPLOADER PREMIUM
 
     border:2px solid #00d9ff !important;
 
-    border-radius: 2px !important;
+    border-radius:18px !important;
 
     padding:22px !important;
 
     margin-top:15px !important;
 
-   # box-shadow:0 0 10px rgba(0,217,255,0.15);
+    box-shadow:0 0 10px rgba(0,217,255,0.15);
 }
 
 [data-testid="stFileUploader"] section{
@@ -379,13 +380,13 @@ TÍTULOS
 
     font-size:28px;
 
-    font-weight:400;
+    font-weight:900;
 
     margin-top:20px;
 
     margin-bottom:25px;
 
-    color:#00d9ff;
+    color:white;
 }
 
 /* =====================================================
@@ -550,6 +551,27 @@ if enviar:
                 "Dados enviados com sucesso!"
             )
 
+            st.markdown("""
+            <a href="https://wa.me/5583998234415" target="_blank">
+                <button style="
+                    width:100%;
+                    height:60px;
+                    margin-top:20px;
+                    border:none;
+                    border-radius:18px;
+                    background:linear-gradient(135deg,#25D366,#1ebe5d);
+                    color:black;
+                    font-size:20px;
+                    font-weight:900;
+                    cursor:pointer;
+                    box-shadow:0 0 15px rgba(37,211,102,0.5);
+                    transition:0.3s;
+                ">
+                💬 Entre em contato pelo WhatsApp com o advogado
+                </button>
+            </a>
+            """, unsafe_allow_html=True)
+
         except Exception as e:
 
             st.error(
@@ -649,7 +671,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color:#00d9ff;
+        color:white;
         ">
         Total de clientes: {len(df)}
         </div>
@@ -669,7 +691,7 @@ if st.session_state["logado"]:
 
             <div style="
             font-size:30px;
-            font-weight:400;
+            font-weight:900;
             color:#00d9ff;
             margin-bottom:25px;
             ">
@@ -711,7 +733,7 @@ if st.session_state["logado"]:
 
                         st.image(
                             caminho_arquivo,
-                            width=250
+                            width=450
                         )
 
                     with open(
@@ -735,3 +757,4 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
+```
