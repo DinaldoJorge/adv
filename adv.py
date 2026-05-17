@@ -1,3 +1,4 @@
+# MZA Advogados — Código Final Completo
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -116,8 +117,6 @@ INPUTS
 .stTextInput input:focus{
 
     border:2px solid #00d9ff !important;
-
- 
 }
 
 /* =====================================================
@@ -146,8 +145,6 @@ TEXTAREA
 .stTextArea textarea:focus{
 
     border:2px solid #00d9ff !important;
-
-    
 }
 
 /* =====================================================
@@ -176,8 +173,6 @@ FILE UPLOADER PREMIUM
     padding:22px !important;
 
     margin-top:15px !important;
-
-    
 }
 
 [data-testid="stFileUploader"] section{
@@ -231,7 +226,7 @@ FILE UPLOADER PREMIUM
         #00aaff
     ) !important;
 
-    color:white !important;
+    color:black !important;
 
     border:none !important;
 
@@ -239,13 +234,11 @@ FILE UPLOADER PREMIUM
 
     font-size:18px !important;
 
-    font-weight:600 !important;
+    font-weight:800 !important;
 
     height:45px !important;
 
     padding:0 30px !important;
-
-    
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -258,15 +251,17 @@ FILE UPLOADER PREMIUM
         #00ccff
     ) !important;
 
-    color:white !important;
+    color:black !important;
 
     transform:translateY(-2px) scale(1.03);
 }
 
 /* =====================================================
-BOTÃO BAIXAR ANEXO PREMIUM
+BOTÕES PREMIUM GERAIS
 ===================================================== */
 
+.stForm button,
+.stButton > button,
 [data-testid="stDownloadButton"] button{
 
     width:100% !important;
@@ -298,8 +293,8 @@ BOTÃO BAIXAR ANEXO PREMIUM
     transition:all 0.25s ease-in-out !important;
 }
 
-/* HOVER */
-
+.stForm button:hover,
+.stButton > button:hover,
 [data-testid="stDownloadButton"] button:hover{
 
     background:linear-gradient(
@@ -313,37 +308,11 @@ BOTÃO BAIXAR ANEXO PREMIUM
     transform:translateY(-2px) scale(1.02);
 }
 
-/* CLIQUE */
-
+.stForm button:active,
+.stButton > button:active,
 [data-testid="stDownloadButton"] button:active{
 
     transform:scale(0.97);
-}
-/* =====================================================
-BOTÕES PAINEL
-===================================================== */
-
-.stButton > button{
-
-    width:100%;
-
-    height:58px;
-
-    border:none !important;
-
-    border-radius:18px !important;
-
-    background:linear-gradient(
-        135deg,
-        #00d9ff,
-        #00d9ff
-    ) !important;
-
-    color:black !important;
-
-    font-size:20px !important;
-
-    font-weight:800 !important;
 }
 
 /* =====================================================
@@ -548,7 +517,7 @@ if enviar:
             salvar_dados()
 
             st.success(
-                "Dados enviados com sucesso!\n\nClique no botão para fazer contato"
+                "Dados enviados com sucesso!\n\nClique no botão abaixo para fazer contato com o advogado."
             )
 
             st.markdown("""
@@ -559,15 +528,15 @@ if enviar:
                     margin-top:20px;
                     border:none;
                     border-radius:18px;
-                    background:linear-gradient(135deg,#25D366,#1ebe5d);
+                    background:linear-gradient(135deg,#0066ff,#00aaff);
                     color:black;
                     font-size:20px;
                     font-weight:900;
                     cursor:pointer;
-                    box-shadow:0 0 15px rgba(37,211,102,0.5);
+                    box-shadow:0 0 15px rgba(0,170,255,0.5);
                     transition:0.3s;
                 ">
-                ☎️ Contato direto MZA-Advogados
+                📲 Contato direto MZA-Advogados
                 </button>
             </a>
             """, unsafe_allow_html=True)
