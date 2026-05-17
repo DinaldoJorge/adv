@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -757,4 +756,3 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
-```
