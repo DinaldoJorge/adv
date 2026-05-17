@@ -167,7 +167,7 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color:#8f8f8f !important;
+    color:#00d9ff !important;
 
     opacity:1 !important;
 
