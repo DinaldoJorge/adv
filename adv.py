@@ -202,7 +202,7 @@ FILE UPLOADER PREMIUM
 
     font-size:17px !important;
 
-    font-weight:700 !important;
+    font-weight:350 !important;
 }
 
 [data-testid="stFileUploader"] label{
@@ -239,15 +239,13 @@ FILE UPLOADER PREMIUM
 
     font-size:18px !important;
 
-    font-weight:800 !important;
+    font-weight:600 !important;
 
-    height:52px !important;
+    height:45px !important;
 
     padding:0 30px !important;
 
-    box-shadow:
-        0 0 12px rgba(0,170,255,0.6),
-        0 0 25px rgba(0,100,255,0.4) !important;
+    
 
     transition:all 0.25s ease-in-out !important;
 }
