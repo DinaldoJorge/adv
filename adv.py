@@ -245,7 +245,7 @@ BOTÕES AZUL NEON
 
     border:none !important;
 
-    border-radius:18px !important;
+    border-radius:2px !important;
 
     background:linear-gradient(
         135deg,
@@ -253,13 +253,13 @@ BOTÕES AZUL NEON
         #00d9ff
     ) !important;
 
-    color:black !important;
+    color:#00d9ff !important;
 
     font-size:20px !important;
 
     font-weight:900 !important;
 
-    letter-spacing:0.5px;
+    letter-spacing: 2px;
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -274,7 +274,7 @@ BOTÕES AZUL NEON
         #00d9ff
     ) !important;
 
-    color:black !important;
+    color: #00d9ff !important;
 
 }
 
