@@ -185,7 +185,7 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"] section{
 
-    background: #00d9ff !important;
+    background: white !important;
 
     border-radius:2px !important;
 
