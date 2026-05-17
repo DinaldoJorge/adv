@@ -234,7 +234,7 @@ FILE UPLOADER PREMIUM MZA
         #00d9ff
     ) !important;
 
-    color: #00d9ff !important;
+    color: white !important;
 
     font-size:10px !important;
 
@@ -255,15 +255,12 @@ FILE UPLOADER PREMIUM MZA
 
     background:linear-gradient(
         135deg,
-        green,
-        green
+        #00d9ff,
+        #00d9ff
     ) !important;
 
     color: black !important;
 
-    #box-shadow:
-    #0 0 18px rgba(0,255,136,0.45),
-    #0 0 28px rgba(0,198,255,0.35);
 }
 
 /* CLIQUE */
@@ -308,8 +305,8 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        green,
-        green
+        #00d9ff,
+        #00d9ff
     ) !important;
 
     color: black !important;
@@ -320,9 +317,6 @@ BOTÕES PREMIUM
 
     letter-spacing:0.5px;
 
-    #box-shadow:
-    #0 0 12px rgba(0,255,136,0.35),
-    #0 0 20px rgba(0,170,255,0.25);
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -333,15 +327,12 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        green,
-        green
+        #00d9ff,
+        #00d9ff
     ) !important;
 
     color:black !important;
-
-    #box-shadow:
-    #0 0 18px rgba(0,255,136,0.55),
-    #0 0 28px rgba(0,170,255,0.45);
+   
 }
 
 .stButton > button:active{
@@ -358,21 +349,19 @@ CARD
 
     background:linear-gradient(
         180deg,
-        #0b0b0b,
-        #131313
+        #00d9ff,
+        #00d9ff
     );
 
-    border:1px solid rgba(0,217,255,0.35);
+    border: 2px solid #00d9ff;
 
-    border-radius:24px;
+    border-radius: 2px #00d9ff;
 
     padding:35px;
 
     margin-bottom:30px;
 
-    box-shadow:
-    0 0 18px rgba(0,217,255,0.08);
-
+  
 }
 
 /* =====================================================
@@ -403,7 +392,7 @@ FOOTER
 
     text-align:center;
 
-    color:#00ff88;
+    color: #00d9ff;
 
     margin-top:40px;
 
