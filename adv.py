@@ -167,7 +167,7 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"]{
 
-    background:#00d9ff !important;
+    background:black !important;
 
     border:2px solid #00d9ff !important;
 
@@ -216,7 +216,7 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"] p{
 
-    color:black !important;
+    color:#00d9ff !important;
 
     font-size:16px !important;
 
