@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -44,8 +45,6 @@ html, body, [class*="css"]{
     color:white;
 }
 
-/* REMOVE ELEMENTOS STREAMLIT */
-
 #MainMenu{
     visibility:hidden;
 }
@@ -85,7 +84,7 @@ LABELS
 ===================================================== */
 
 label{
-    color: white !important;
+    color:white !important;
     font-size:25px !important;
     font-weight:800 !important;
 }
@@ -96,15 +95,15 @@ INPUTS
 
 .stTextInput input{
 
-    background: black !important;
+    background:black !important;
 
     color:white !important;
 
-    border: 2px solid white !important;
+    border:2px solid white !important;
 
-    border-radius: 2px solid white !important;
+    border-radius:14px !important;
 
-    height:45px !important;
+    height:52px !important;
 
     font-size:18px !important;
 
@@ -113,16 +112,13 @@ INPUTS
     padding-left:18px !important;
 
     transition:0.3s !important;
-
-   # box-shadow:
-   #  0 0 10px white ;
-
 }
 
 .stTextInput input:focus{
 
-    border: 2px solid #00d9ff !important;
+    border:2px solid #00d9ff !important;
 
+    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
@@ -131,13 +127,13 @@ TEXTAREA
 
 .stTextArea textarea{
 
-    background: black !important;
+    background:black !important;
 
-    color: white !important;
+    color:white !important;
 
-    border: 2px solid white!important;
+    border:2px solid white !important;
 
-    border-radius: 2px solid white!important;
+    border-radius:14px !important;
 
     font-size:19px !important;
 
@@ -146,13 +142,13 @@ TEXTAREA
     padding:18px !important;
 
     transition:0.3s !important;
-
 }
 
 .stTextArea textarea:focus{
 
-    border: 4px solid green !important;
+    border:2px solid #00d9ff !important;
 
+    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
@@ -161,173 +157,170 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color: #00d9ff !important;
+    color:#00d9ff !important;
 
     opacity:1 !important;
-
 }
 
-# Código Streamlit MZA Advogados — Atualizado Completo
-
-Substitua apenas a seção abaixo no seu arquivo atual.
-
-```python
 /* =====================================================
-FILE UPLOADER PREMIUM MZA
+FILE UPLOADER PREMIUM
 ===================================================== */
 
 [data-testid="stFileUploader"]{
 
-    background: black !important;
+    background:black !important;
 
-    border: 2px solid #00d9ff !important;
+    border:2px solid #00d9ff !important;
 
-    border-radius: 18px !important;
+    border-radius:18px !important;
 
-    padding: 22px !important;
+    padding:22px !important;
 
-    margin-top: 15px !important;
+    margin-top:15px !important;
 
-    transition: 0.3s ease-in-out !important;
-
-    box-shadow:
-        0 0 10px rgba(0,217,255,0.15);
+    box-shadow:0 0 10px rgba(0,217,255,0.15);
 }
-
-/* ÁREA INTERNA */
 
 [data-testid="stFileUploader"] section{
 
-    background: #f5f5f5 !important;
+    background:#f5f5f5 !important;
 
-    border-radius: 16px !important;
+    border-radius:16px !important;
 
-    border: 1px solid rgba(255,255,255,0.15) !important;
+    border:1px solid rgba(255,255,255,0.15) !important;
 
-    padding: 22px !important;
+    padding:22px !important;
 }
-
-/* REMOVE FUNDOS INTERNOS */
-
-[data-testid="stFileUploader"] div{
-
-    background-color: transparent !important;
-}
-
-/* TEXTO PRINCIPAL */
-
-[data-testid="stFileUploader"] small{
-
-    color: #0066ff !important;
-
-    font-size: 17px !important;
-
-    font-weight: 700 !important;
-
-    letter-spacing: 0.3px !important;
-}
-
-/* LABEL */
-
-[data-testid="stFileUploader"] label{
-
-    color: white !important;
-
-    font-size: 20px !important;
-
-    font-weight: 800 !important;
-}
-
-/* TEXTO DRAG */
-
-[data-testid="stFileUploader"] p{
-
-    color: black !important;
-
-    font-size: 16px !important;
-
-    font-weight: 700 !important;
-}
-
-/* =====================================================
-BOTÃO UPLOAD AZUL PREMIUM
-===================================================== */
-
-[data-testid="stFileUploader"] button{
-
-    background: linear-gradient(
-        135deg,
-        #0066ff,
-        #00aaff
-    ) !important;
-
-    color: white !important;
-
-    border: none !important;
-
-    border-radius: 14px !important;
-
-    font-size: 18px !important;
-
-    font-weight: 800 !important;
-
-    height: 52px !important;
-
-    padding: 0 30px !important;
-
-    box-shadow:
-        0 0 12px rgba(0,170,255,0.6),
-        0 0 25px rgba(0,100,255,0.4) !important;
-
-    transition: all 0.25s ease-in-out !important;
-}
-
-/* HOVER */
-
-[data-testid="stFileUploader"] button:hover{
-
-    background: linear-gradient(
-        135deg,
-        #0055ff,
-        #00ccff
-    ) !important;
-
-    color: white !important;
-
-    transform: translateY(-2px) scale(1.03);
-
-    box-shadow:
-        0 0 18px rgba(0,170,255,0.8),
-        0 0 35px rgba(0,100,255,0.6) !important;
-}
-
-/* CLIQUE */
-
-[data-testid="stFileUploader"] button:active{
-
-    transform: scale(0.96);
-}
-
-/* REMOVE FUNDO BRANCO */
 
 [data-testid="stFileUploader"] div{
 
     background-color:transparent !important;
 }
 
-/* TEXTO DRAG */
+[data-testid="stFileUploader"] small{
+
+    color:#0066ff !important;
+
+    font-size:17px !important;
+
+    font-weight:700 !important;
+}
+
+[data-testid="stFileUploader"] label{
+
+    color:white !important;
+
+    font-size:20px !important;
+
+    font-weight:800 !important;
+}
 
 [data-testid="stFileUploader"] p{
 
-    color: black !important;
+    color:black !important;
 
     font-size:16px !important;
 
-    font-weight:600 !important;
+    font-weight:700 !important;
+}
+
+[data-testid="stFileUploader"] button{
+
+    background:linear-gradient(
+        135deg,
+        #0066ff,
+        #00aaff
+    ) !important;
+
+    color:white !important;
+
+    border:none !important;
+
+    border-radius:14px !important;
+
+    font-size:18px !important;
+
+    font-weight:800 !important;
+
+    height:52px !important;
+
+    padding:0 30px !important;
+
+    box-shadow:
+        0 0 12px rgba(0,170,255,0.6),
+        0 0 25px rgba(0,100,255,0.4) !important;
+
+    transition:all 0.25s ease-in-out !important;
+}
+
+[data-testid="stFileUploader"] button:hover{
+
+    background:linear-gradient(
+        135deg,
+        #0055ff,
+        #00ccff
+    ) !important;
+
+    color:white !important;
+
+    transform:translateY(-2px) scale(1.03);
 }
 
 /* =====================================================
-BOTÕES PREMIUM
+BOTÃO ENVIAR DADOS PREMIUM
+===================================================== */
+
+.stForm button{
+
+    width:100% !important;
+
+    height:58px !important;
+
+    border:none !important;
+
+    border-radius:18px !important;
+
+    background:linear-gradient(
+        135deg,
+        #0066ff,
+        #00aaff
+    ) !important;
+
+    color:black !important;
+
+    font-size:20px !important;
+
+    font-weight:900 !important;
+
+    letter-spacing:0.5px !important;
+
+    box-shadow:
+        0 0 12px rgba(0,170,255,0.5),
+        0 0 25px rgba(0,100,255,0.3) !important;
+
+    transition:all 0.25s ease-in-out !important;
+}
+
+.stForm button:hover{
+
+    background:linear-gradient(
+        135deg,
+        #0055ff,
+        #00ccff
+    ) !important;
+
+    color:black !important;
+
+    transform:translateY(-2px) scale(1.02);
+}
+
+.stForm button:active{
+
+    transform:scale(0.97);
+}
+
+/* =====================================================
+BOTÕES PAINEL
 ===================================================== */
 
 .stButton > button{
@@ -346,36 +339,11 @@ BOTÕES PREMIUM
         #00d9ff
     ) !important;
 
-    color: black !important;
+    color:black !important;
 
     font-size:20px !important;
 
     font-weight:800 !important;
-
-    letter-spacing:0.5px;
-
-
-    transition:all 0.25s ease-in-out !important;
-}
-
-.stButton > button:hover{
-
-    transform:translateY(-2px) scale(1.01);
-
-    background:linear-gradient(
-        135deg,
-        #00d9ff,
-        #00d9ff
-    ) !important;
-
-    color:black !important;
-   
-}
-
-.stButton > button:active{
-
-    transform:scale(0.98);
-
 }
 
 /* =====================================================
@@ -386,19 +354,20 @@ CARD
 
     background:linear-gradient(
         180deg,
-        #00d9ff,
-        #00d9ff
+        #111111,
+        #0d0d0d
     );
 
-    border: 2px solid #00d9ff;
+    border:2px solid #00d9ff;
 
-    border-radius: 2px #00d9ff;
+    border-radius:22px;
 
     padding:35px;
 
     margin-bottom:30px;
 
-  
+    box-shadow:
+        0 0 15px rgba(0,217,255,0.15);
 }
 
 /* =====================================================
@@ -418,7 +387,6 @@ TÍTULOS
     margin-bottom:25px;
 
     color:white;
-
 }
 
 /* =====================================================
@@ -429,12 +397,11 @@ FOOTER
 
     text-align:center;
 
-    color: #00d9ff;
+    color:#00d9ff;
 
     margin-top:40px;
 
     font-size:13px;
-
 }
 
 </style>
@@ -683,7 +650,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color: black;
+        color:white;
         ">
         Total de clientes: {len(df)}
         </div>
@@ -704,7 +671,7 @@ if st.session_state["logado"]:
             <div style="
             font-size:30px;
             font-weight:900;
-            color:green;
+            color:#00d9ff;
             margin-bottom:25px;
             ">
             {nome_cliente}
@@ -713,7 +680,7 @@ if st.session_state["logado"]:
             <div style="
             font-size:22px;
             line-height:2.1;
-            color: white;
+            color:white;
             font-weight:700;
             ">
 
@@ -740,7 +707,7 @@ if st.session_state["logado"]:
                 if os.path.exists(caminho_arquivo):
 
                     if arquivo_cliente.lower().endswith(
-                        (".png",".jpg",".jpeg")
+                        (".png", ".jpg", ".jpeg")
                     ):
 
                         st.image(
@@ -769,3 +736,4 @@ st.markdown("""
 🔒 Seus dados estão protegidos e não serão compartilhados.
 </div>
 """, unsafe_allow_html=True)
+```
