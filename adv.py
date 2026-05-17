@@ -615,7 +615,7 @@ if enviar:
             )
 
             st.link_button(
-                "☎ Fazer contato com MZA-ADVOGADOS",
+                "☎ FAZER CONTATO COM MZA-ADVOGADOS",
                 "https://wa.me/5583998234415"
             )
 
@@ -715,7 +715,7 @@ if st.session_state["logado"]:
 
         st.markdown(f"""
         <div style="
-        font-size:24px;
+        font-size:25px;
         font-weight:900;
         margin-bottom:30px;
         color:#00d9ff;
@@ -737,7 +737,7 @@ if st.session_state["logado"]:
             <div class="card">
 
             <div style="
-            font-size:30px;
+            font-size:25px;
             font-weight:900;
             color:#00d9ff;
             margin-bottom:25px;
@@ -746,7 +746,7 @@ if st.session_state["logado"]:
             </div>
 
             <div style="
-            font-size:22px;
+            font-size:25px;
             line-height:2.1;
             color:white;
             font-weight:700;
@@ -781,7 +781,7 @@ if st.session_state["logado"]:
                     st.markdown("""
                     <div style="
                     color:#00d9ff;
-                    font-size:20px;
+                    font-size:25px;
                     font-weight:900;
                     margin-bottom:15px;
                     ">
@@ -809,7 +809,7 @@ if st.session_state["logado"]:
                             PDFbyte = pdf_file.read()
 
                             st.download_button(
-                                label="📄 Baixar PDF",
+                                label="🡇 Baixar PDF",
                                 data=PDFbyte,
                                 file_name=arquivo_cliente,
                                 mime="application/pdf",
