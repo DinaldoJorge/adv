@@ -121,10 +121,7 @@ INPUTS
 
 .stTextInput input:focus{
 
-    border: 2px solid green !important;
-
-   # box-shadow:
-   # 0 0 4px green;
+    border: 2px solid #00d9ff !important;
 
 }
 
@@ -156,9 +153,6 @@ TEXTAREA
 
     border: 4px solid green !important;
 
-    # box-shadow:
-    # 0 0 4px green;
-
 }
 
 /* =====================================================
@@ -167,7 +161,7 @@ PLACEHOLDER
 
 ::placeholder{
 
-    color: green !important;
+    color: #00d9ff !important;
 
     opacity:1 !important;
 
@@ -181,17 +175,13 @@ FILE UPLOADER PREMIUM MZA
 
     background: black !important;
 
-    border: 2px solid green !important;
+    border: 2px solid #00d9ff !important;
 
-    border-radius: 2px green !important;
+    border-radius: 2px #00d9ff !important;
 
     padding:20px !important;
 
     margin-top:10px !important;
-
-    #box-shadow:
-    #0 0 12px white,
-    #0 0 22px green;
 
     transition:0.3s ease-in-out !important;
 }
@@ -240,11 +230,11 @@ FILE UPLOADER PREMIUM MZA
 
     background:linear-gradient(
         135deg,
-        green,
-        green
+        #00d9ff,
+        #00d9ff
     ) !important;
 
-    color: white !important;
+    color: #00d9ff !important;
 
     font-size:10px !important;
 
