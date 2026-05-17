@@ -85,8 +85,8 @@ LABELS
 ===================================================== */
 
 label{
-    color:white !important;
-    font-size:21px !important;
+    color: green !important;
+    font-size:19px !important;
     font-weight:800 !important;
 }
 
