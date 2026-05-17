@@ -102,7 +102,7 @@ INPUTS
 
     border: 4px solid white !important;
 
-    border-radius: 4px solid white !important;
+    border-radius: 2px solid white !important;
 
     height:45px !important;
 
@@ -121,7 +121,7 @@ INPUTS
 
 .stTextInput input:focus{
 
-    border: 4px solid green !important;
+    border: 2px solid green !important;
 
    # box-shadow:
    # 0 0 4px green;
@@ -136,11 +136,11 @@ TEXTAREA
 
     background: black !important;
 
-    color: green !important;
+    color: white !important;
 
     border: 4px solid white!important;
 
-    border-radius: 4px solid white!important;
+    border-radius: 2px solid white!important;
 
     font-size:19px !important;
 
