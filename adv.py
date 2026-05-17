@@ -100,9 +100,9 @@ INPUTS
 
     color:white !important;
 
-    border:4px solid green !important;
+    border:4px solid white !important;
 
-    border-radius: 4px green !important;
+    border-radius: 4px white !important;
 
     height:45px !important;
 
@@ -115,16 +115,16 @@ INPUTS
     transition:0.3s !important;
 
     box-shadow:
-    0 0 10px green ;
+    0 0 10px white ;
 
 }
 
 .stTextInput input:focus{
 
-    border: 4px solid red !important;
+    border: 4px solid green !important;
 
     box-shadow:
-    0 0 10px red;
+    0 0 10px green;
 
 }
 
@@ -189,9 +189,9 @@ FILE UPLOADER PREMIUM MZA
 
     margin-top:10px !important;
 
-    box-shadow:
-    0 0 12px white,
-    0 0 22px green;
+    #box-shadow:
+    #0 0 12px white,
+    #0 0 22px green;
 
     transition:0.3s ease-in-out !important;
 }
@@ -200,11 +200,11 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] section{
 
-    background:white !important;
+    background: black !important;
 
-    border-radius: 5px !important;
+    border-radius: 2px white !important;
 
-    border: 2px solid green !important;
+    border: 2px solid white !important;
 
     padding:18px !important;
 
@@ -214,7 +214,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] small{
 
-    color:#e6e6e6 !important;
+    color: red !important;
 
     font-size:15px !important;
 
@@ -227,7 +227,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] label{
 
-    color:white !important;
+    color: pink !important;
 
     font-size:18px !important;
 
