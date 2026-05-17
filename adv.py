@@ -132,7 +132,7 @@ TEXTAREA
 
     color:white !important;
 
-    border:2px solid green !important;
+    border:2px solid #00d9ff !important;
 
     border-radius: 2px !important;
 
@@ -170,31 +170,26 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"]{
 
-    background:#050505 !important;
+    background:black !important;
 
     border:2px solid #00d9ff !important;
 
-    border-radius:24px !important;
+    border-radius: 2px !important;
 
     padding:20px !important;
 
     margin-top:10px !important;
-
-    box-shadow:
-    0 0 12px rgba(0,217,255,0.12),
-    0 0 22px rgba(0,217,255,0.10);
-
 }
 
 /* ÁREA INTERNA */
 
 [data-testid="stFileUploader"] section{
 
-    background:#101010 !important;
+    background: #00d9ff !important;
 
-    border-radius:20px !important;
+    border-radius:2px !important;
 
-    border:1px solid rgba(255,255,255,0.08) !important;
+    border:1px solid #00d9ff !important;
 
     padding:18px !important;
 
@@ -204,7 +199,7 @@ FILE UPLOADER PREMIUM
 
 [data-testid="stFileUploader"] small{
 
-    color:#e6e6e6 !important;
+    color:#00d9ff !important;
 
     font-size:15px !important;
 
@@ -218,7 +213,7 @@ FILE UPLOADER PREMIUM
 
     background:linear-gradient(
         135deg,
-        #00aaff,
+        #00d9ff,
         #00d9ff
     ) !important;
 
@@ -226,7 +221,7 @@ FILE UPLOADER PREMIUM
 
     border:none !important;
 
-    border-radius:16px !important;
+    border-radius: 2px !important;
 
     font-size:15px !important;
 
@@ -235,9 +230,6 @@ FILE UPLOADER PREMIUM
     height:44px !important;
 
     padding:0 24px !important;
-
-    box-shadow:
-    0 0 10px rgba(0,217,255,0.35);
 
 }
 
@@ -257,7 +249,7 @@ BOTÕES AZUL NEON
 
     background:linear-gradient(
         135deg,
-        #00aaff,
+        #00d9ff,
         #00d9ff
     ) !important;
 
@@ -269,10 +261,6 @@ BOTÕES AZUL NEON
 
     letter-spacing:0.5px;
 
-    box-shadow:
-    0 0 12px rgba(0,217,255,0.35),
-    0 0 22px rgba(0,217,255,0.20);
-
     transition:all 0.25s ease-in-out !important;
 }
 
@@ -283,14 +271,11 @@ BOTÕES AZUL NEON
     background:linear-gradient(
         135deg,
         #00d9ff,
-        #00aaff
+        #00d9ff
     ) !important;
 
     color:black !important;
 
-    box-shadow:
-    0 0 18px rgba(0,217,255,0.55),
-    0 0 30px rgba(0,217,255,0.30);
 }
 
 /* =====================================================
@@ -301,20 +286,17 @@ CARD
 
     background:linear-gradient(
         180deg,
-        #0b0b0b,
-        #131313
+        #00d9ff,
+        #00d9ff
     );
 
-    border:1px solid rgba(0,217,255,0.35);
+    border:1px solid #00d9ff;
 
-    border-radius:24px;
+    border-radius: 4px;
 
     padding:35px;
 
     margin-bottom:30px;
-
-    box-shadow:
-    0 0 18px rgba(0,217,255,0.08);
 
 }
 
