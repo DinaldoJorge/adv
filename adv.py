@@ -96,15 +96,15 @@ INPUTS
 
 .stTextInput input{
 
-    background:#050505 !important;
+    background: black !important;
 
     color:white !important;
 
-    border:2px solid rgba(0,217,255,0.35) !important;
+    border:2px solid white !important;
 
-    border-radius:16px !important;
+    border-radius:2px !important;
 
-    height:52px !important;
+    height:45px !important;
 
     font-size:18px !important;
 
@@ -114,17 +114,11 @@ INPUTS
 
     transition:0.3s !important;
 
-    box-shadow:
-    0 0 10px rgba(0,217,255,0.05);
-
 }
 
 .stTextInput input:focus{
 
     border:2px solid #00d9ff !important;
-
-    box-shadow:
-    0 0 12px rgba(0,217,255,0.35);
 
 }
 
@@ -134,13 +128,13 @@ TEXTAREA
 
 .stTextArea textarea{
 
-    background:#050505 !important;
+    background:black !important;
 
     color:white !important;
 
-    border:2px solid rgba(0,217,255,0.35) !important;
+    border:2px solid green !important;
 
-    border-radius:18px !important;
+    border-radius: 2px !important;
 
     font-size:19px !important;
 
@@ -155,9 +149,6 @@ TEXTAREA
 .stTextArea textarea:focus{
 
     border:2px solid #00d9ff !important;
-
-    box-shadow:
-    0 0 12px rgba(0,217,255,0.35);
 
 }
 
