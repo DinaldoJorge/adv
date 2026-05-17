@@ -240,11 +240,11 @@ FILE UPLOADER PREMIUM MZA
 
     background:linear-gradient(
         135deg,
-        red,
+        green,
         green
     ) !important;
 
-    color: pink !important;
+    color: white !important;
 
     border:none !important;
 
@@ -274,10 +274,10 @@ FILE UPLOADER PREMIUM MZA
     background:linear-gradient(
         135deg,
         green,
-        red
+        green
     ) !important;
 
-    color: green !important;
+    color: black !important;
 
     #box-shadow:
     #0 0 18px rgba(0,255,136,0.45),
@@ -326,11 +326,11 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        #00c6ff,
-        #00ff88
+        green,
+        green
     ) !important;
 
-    color:#000000 !important;
+    color: black !important;
 
     font-size:20px !important;
 
@@ -338,9 +338,9 @@ BOTÕES PREMIUM
 
     letter-spacing:0.5px;
 
-    box-shadow:
-    0 0 12px rgba(0,255,136,0.35),
-    0 0 20px rgba(0,170,255,0.25);
+    #box-shadow:
+    #0 0 12px rgba(0,255,136,0.35),
+    #0 0 20px rgba(0,170,255,0.25);
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -351,15 +351,15 @@ BOTÕES PREMIUM
 
     background:linear-gradient(
         135deg,
-        #00ff88,
-        #00c6ff
+        green,
+        green
     ) !important;
 
     color:black !important;
 
-    box-shadow:
-    0 0 18px rgba(0,255,136,0.55),
-    0 0 28px rgba(0,170,255,0.45);
+    #box-shadow:
+    #0 0 18px rgba(0,255,136,0.55),
+    #0 0 28px rgba(0,170,255,0.45);
 }
 
 .stButton > button:active{
