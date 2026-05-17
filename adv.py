@@ -124,7 +124,7 @@ INPUTS
     border: 4px solid green !important;
 
     box-shadow:
-    0 0 10px green;
+    0 0 4px green;
 
 }
 
@@ -138,9 +138,9 @@ TEXTAREA
 
     color:white !important;
 
-    border: 2px solid white!important;
+    border: 4px solid white!important;
 
-    border-radius: 2px white!important;
+    border-radius: 4px white!important;
 
     font-size:19px !important;
 
@@ -157,7 +157,7 @@ TEXTAREA
     border: 4px solid green !important;
 
     box-shadow:
-    0 0 12px green;
+    0 0 4px green;
 
 }
 
@@ -200,7 +200,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] section{
 
-    background: black !important;
+    background: white !important;
 
     border-radius: 2px white !important;
 
@@ -240,11 +240,11 @@ FILE UPLOADER PREMIUM MZA
 
     background:linear-gradient(
         135deg,
-        #00c6ff,
-        #00ff88
+        red,
+        green
     ) !important;
 
-    color:#000000 !important;
+    color: pink !important;
 
     border:none !important;
 
@@ -258,9 +258,9 @@ FILE UPLOADER PREMIUM MZA
 
     padding:0 24px !important;
 
-    box-shadow:
-    0 0 10px rgba(0,255,136,0.25),
-    0 0 18px rgba(0,198,255,0.18);
+    #box-shadow:
+    #0 0 10px rgba(0,255,136,0.25),
+    #0 0 18px rgba(0,198,255,0.18);
 
     transition:all 0.25s ease-in-out !important;
 }
@@ -273,15 +273,15 @@ FILE UPLOADER PREMIUM MZA
 
     background:linear-gradient(
         135deg,
-        #00ff88,
-        #00c6ff
+        green,
+        red
     ) !important;
 
-    color:black !important;
+    color: green !important;
 
-    box-shadow:
-    0 0 18px rgba(0,255,136,0.45),
-    0 0 28px rgba(0,198,255,0.35);
+    #box-shadow:
+    #0 0 18px rgba(0,255,136,0.45),
+    #0 0 28px rgba(0,198,255,0.35);
 }
 
 /* CLIQUE */
