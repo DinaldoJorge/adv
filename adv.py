@@ -214,7 +214,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] small{
 
-    color: red !important;
+    color: white !important;
 
     font-size:15px !important;
 
