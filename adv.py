@@ -264,10 +264,10 @@ FILE UPLOADER PREMIUM
 }
 
 /* =====================================================
-BOTÃO ENVIAR DADOS PREMIUM
+BOTÃO BAIXAR ANEXO PREMIUM
 ===================================================== */
 
-.stForm button{
+[data-testid="stDownloadButton"] button{
 
     width:100% !important;
 
@@ -298,7 +298,9 @@ BOTÃO ENVIAR DADOS PREMIUM
     transition:all 0.25s ease-in-out !important;
 }
 
-.stForm button:hover{
+/* HOVER */
+
+[data-testid="stDownloadButton"] button:hover{
 
     background:linear-gradient(
         135deg,
@@ -311,11 +313,12 @@ BOTÃO ENVIAR DADOS PREMIUM
     transform:translateY(-2px) scale(1.02);
 }
 
-.stForm button:active{
+/* CLIQUE */
+
+[data-testid="stDownloadButton"] button:active{
 
     transform:scale(0.97);
 }
-
 /* =====================================================
 BOTÕES PAINEL
 ===================================================== */
