@@ -566,7 +566,7 @@ if enviar:
                     box-shadow:0 0 15px rgba(37,211,102,0.5);
                     transition:0.3s;
                 ">
-                💬 Contato direto MZA-Advogados
+                ☎️ Contato direto MZA-Advogados
                 </button>
             </a>
             """, unsafe_allow_html=True)
