@@ -824,7 +824,7 @@ if st.session_state["logado"]:
                     ) as file:
 
                         st.download_button(
-                            label="⬇️ Baixar Anexo",
+                            label="🡇 Baixar Anexo",
                             data=file,
                             file_name=arquivo_cliente,
                             key=f"download_{i}"
