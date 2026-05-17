@@ -646,7 +646,7 @@ if st.session_state["logado"]:
         font-size:24px;
         font-weight:900;
         margin-bottom:30px;
-        color:#00ff88;
+        color:#00d9ff;
         ">
         Total de clientes: {len(df)}
         </div>
@@ -667,7 +667,7 @@ if st.session_state["logado"]:
             <div style="
             font-size:30px;
             font-weight:900;
-            color:#00d9ff;
+            color:green;
             margin-bottom:25px;
             ">
             {nome_cliente}
@@ -676,7 +676,7 @@ if st.session_state["logado"]:
             <div style="
             font-size:22px;
             line-height:2.1;
-            color:white;
+            color: pink;
             font-weight:700;
             ">
 
