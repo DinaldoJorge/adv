@@ -615,7 +615,7 @@ if enviar:
             )
 
             st.link_button(
-                "📞 Fazer contato com MZA-ADVOGADOS",
+                "☎ Fazer contato com MZA-ADVOGADOS",
                 "https://wa.me/5583998234415"
             )
 
