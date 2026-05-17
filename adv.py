@@ -102,7 +102,7 @@ INPUTS
 
     border-radius:14px !important;
 
-    height:52px !important;
+    height:45px !important;
 
     font-size:18px !important;
 
