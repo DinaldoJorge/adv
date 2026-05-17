@@ -147,7 +147,7 @@ TEXTAREA
 
     border:2px solid #00d9ff !important;
 
-    box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
+   # box-shadow:0 0 12px rgba(0,217,255,0.5) !important;
 }
 
 /* =====================================================
@@ -171,13 +171,13 @@ FILE UPLOADER PREMIUM
 
     border:2px solid #00d9ff !important;
 
-    border-radius:18px !important;
+    border-radius: 2px !important;
 
     padding:22px !important;
 
     margin-top:15px !important;
 
-    box-shadow:0 0 10px rgba(0,217,255,0.15);
+   # box-shadow:0 0 10px rgba(0,217,255,0.15);
 }
 
 [data-testid="stFileUploader"] section{
