@@ -511,7 +511,7 @@ with col2:
 
         st.image(
             "logomza.png",
-            width=420
+             width=600
         )
 
 # =====================================================
@@ -557,7 +557,7 @@ with st.form("formulario", clear_on_submit=True):
     )
 
     enviar = st.form_submit_button(
-        "⚖️ Enviar Dados"
+        "🡅 Enviar Dados"
     )
 
 # =====================================================
