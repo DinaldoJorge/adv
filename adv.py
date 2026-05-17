@@ -85,8 +85,8 @@ LABELS
 ===================================================== */
 
 label{
-    color: green !important;
-    font-size:19px !important;
+    color: white !important;
+    font-size:25px !important;
     font-weight:800 !important;
 }
 
@@ -100,7 +100,7 @@ INPUTS
 
     color:white !important;
 
-    border: 4px solid white !important;
+    border: 2px solid white !important;
 
     border-radius: 2px solid white !important;
 
@@ -138,7 +138,7 @@ TEXTAREA
 
     color: white !important;
 
-    border: 4px solid white!important;
+    border: 2px solid white!important;
 
     border-radius: 2px solid white!important;
 
@@ -227,7 +227,7 @@ FILE UPLOADER PREMIUM MZA
 
 [data-testid="stFileUploader"] label{
 
-    color: pink !important;
+    color: white !important;
 
     font-size:18px !important;
 
@@ -246,10 +246,6 @@ FILE UPLOADER PREMIUM MZA
 
     color: white !important;
 
-    border:none !important;
-
-    border-radius:16px !important;
-
     font-size:10px !important;
 
     font-weight:900 !important;
@@ -257,10 +253,6 @@ FILE UPLOADER PREMIUM MZA
     height:44px !important;
 
     padding:0 24px !important;
-
-    #box-shadow:
-    #0 0 10px rgba(0,255,136,0.25),
-    #0 0 18px rgba(0,198,255,0.18);
 
     transition:all 0.25s ease-in-out !important;
 }
