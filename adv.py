@@ -70,7 +70,7 @@ FRASE
 .frase{
     text-align:center;
     font-size:30px;
-    font-weight:900;
+    font-weight:600;
     color:white;
     margin-top:1px;
     margin-bottom:5px;
