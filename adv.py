@@ -70,10 +70,10 @@ FRASE
 .frase{
     text-align: center;
     font-size:30px;
-    font-weight:300;
+    font-weight:600;
     color:white;
-    margin-top:19px;
-    margin-bottom:25px;
+    margin-top:25px;
+    margin-bottom:5px;
 }
 
 .frase span{
@@ -86,7 +86,7 @@ LABELS
 
 label{
     color:white !important;
-    font-size:21px !important;
+    font-size:25px !important;
     font-weight:600 !important;
 }
 
