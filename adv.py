@@ -167,6 +167,11 @@ PLACEHOLDER
 
 }
 
+# Código Streamlit MZA Advogados — Atualizado Completo
+
+Substitua apenas a seção abaixo no seu arquivo atual.
+
+```python
 /* =====================================================
 FILE UPLOADER PREMIUM MZA
 ===================================================== */
@@ -177,40 +182,49 @@ FILE UPLOADER PREMIUM MZA
 
     border: 2px solid #00d9ff !important;
 
-    border-radius: 2px #00d9ff !important;
+    border-radius: 18px !important;
 
-    padding:20px !important;
+    padding: 22px !important;
 
-    margin-top:10px !important;
+    margin-top: 15px !important;
 
-    transition:0.3s ease-in-out !important;
+    transition: 0.3s ease-in-out !important;
+
+    box-shadow:
+        0 0 10px rgba(0,217,255,0.15);
 }
 
 /* ÁREA INTERNA */
 
 [data-testid="stFileUploader"] section{
 
-    background: white !important;
+    background: #f5f5f5 !important;
 
-    border-radius: 2px white !important;
+    border-radius: 16px !important;
 
-    border: 2px solid white !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
 
-    padding:18px !important;
+    padding: 22px !important;
+}
 
+/* REMOVE FUNDOS INTERNOS */
+
+[data-testid="stFileUploader"] div{
+
+    background-color: transparent !important;
 }
 
 /* TEXTO PRINCIPAL */
 
 [data-testid="stFileUploader"] small{
 
-    color: white !important;
+    color: #0066ff !important;
 
-    font-size:15px !important;
+    font-size: 17px !important;
 
-    font-weight:600 !important;
+    font-weight: 700 !important;
 
-    letter-spacing:0.3px !important;
+    letter-spacing: 0.3px !important;
 }
 
 /* LABEL */
@@ -219,56 +233,79 @@ FILE UPLOADER PREMIUM MZA
 
     color: white !important;
 
-    font-size:18px !important;
+    font-size: 20px !important;
 
-    font-weight:800 !important;
+    font-weight: 800 !important;
 }
 
-/* BOTÃO ESCOLHER ARQUIVO */
+/* TEXTO DRAG */
+
+[data-testid="stFileUploader"] p{
+
+    color: black !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700 !important;
+}
+
+/* =====================================================
+BOTÃO UPLOAD AZUL PREMIUM
+===================================================== */
 
 [data-testid="stFileUploader"] button{
 
-    background:linear-gradient(
+    background: linear-gradient(
         135deg,
-        #00d9ff,
-        #00d9ff
+        #0066ff,
+        #00aaff
     ) !important;
 
     color: white !important;
 
-    font-size:10px !important;
+    border: none !important;
 
-    font-weight:900 !important;
+    border-radius: 14px !important;
 
-    height:44px !important;
+    font-size: 18px !important;
 
-    padding:0 24px !important;
+    font-weight: 800 !important;
 
-    transition:all 0.25s ease-in-out !important;
+    height: 52px !important;
+
+    padding: 0 30px !important;
+
+    box-shadow:
+        0 0 12px rgba(0,170,255,0.6),
+        0 0 25px rgba(0,100,255,0.4) !important;
+
+    transition: all 0.25s ease-in-out !important;
 }
 
 /* HOVER */
 
 [data-testid="stFileUploader"] button:hover{
 
-    transform:translateY(-2px) scale(1.02);
-
-    background:linear-gradient(
+    background: linear-gradient(
         135deg,
-        #00d9ff,
-        #00d9ff
+        #0055ff,
+        #00ccff
     ) !important;
 
-    color: black !important;
+    color: white !important;
 
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 0 18px rgba(0,170,255,0.8),
+        0 0 35px rgba(0,100,255,0.6) !important;
 }
 
 /* CLIQUE */
 
 [data-testid="stFileUploader"] button:active{
 
-    transform:scale(0.98);
-
+    transform: scale(0.96);
 }
 
 /* REMOVE FUNDO BRANCO */
